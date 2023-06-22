@@ -1,5 +1,24 @@
 @import-normalize; /* bring in normalize.css styles */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 700;
+  src: local('Poppins'), url(./fonts/Poppins-Bold.ttf) format('opentype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 600;
+  src: local('Poppins'), url(./fonts/Poppins-SemiBold.ttf) format('opentype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 500;
+  src: local('Poppins'), url(./fonts/Poppins-Medium.ttf) format('opentype');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 400;
+  src: local('Poppins'), url(./fonts/Poppins-Regular.ttf) format('opentype');
+}
 
 body {
   margin: 0;
@@ -115,7 +134,7 @@ a {
 
 @media screen and (min-width: 375px) {
   .container {
-    width: 375px;
+    width: 335px;
     padding: 0 20px;
     margin: 0 auto;
   }
@@ -125,7 +144,7 @@ a {
 
 @media screen and (min-width: 768px) {
   .container {
-    width: 768px;
+    width: 704px;
     padding: 0 32px;
   }
 }
@@ -134,7 +153,7 @@ a {
 
 @media screen and (min-width: 1200px) {
   .container {
-    width: 1280px;
+    width: 1248px;
     padding: 0 16px;
   }
 }

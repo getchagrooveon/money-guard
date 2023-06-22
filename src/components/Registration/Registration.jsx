@@ -2,36 +2,37 @@ import css from './Registration.module.css';
 import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
-import { registerUser } from 'components/redux/Auth/operations';
 import { Link } from 'react-router-dom';
+import { registerUser } from 'redux/auth/operations';
+
+const validationSchema = Yup.object({
+  username: Yup.string().required('Please enter your name'),
+  email: Yup.string()
+    .email('Invalid email address')
+    .required('Please enter your email'),
+  password: Yup.string()
+    .required('Please enter your password')
+    .min(6, 'Password must be at least 6 characters')
+    .max(12, 'Password should be no longer than 12 characters'),
+  confirmPassword: Yup.string()
+    .oneOf([Yup.ref('password'), null], 'Passwords must match')
+    .required('Please confirm your password'),
+});
 
 export const Registration = () => {
   const dispatch = useDispatch();
 
-  const validationSchema = Yup.object({
-    username: Yup.string().required('Please enter your name'),
-    email: Yup.string()
-      .email('Invalid email address')
-      .required('Please enter your email'),
-    password: Yup.string()
-      .required('Please enter your password')
-      .min(6, 'Password must be at least 6 characters')
-      .max(12, 'Password should be no longer than 12 characters'),
-    confirmPassword: Yup.string()
-      .oneOf([Yup.ref('password'), null], 'Passwords must match')
-      .required('Please confirm your password'),
-  });
-
   const onSubmit = values => {
     const { confirmPassword, ...payload } = values;
-    dispatch(registerUser(payload)).then(res => {
-      if (res.payload === 409) {
-        return alert('User with such email already exists');
-      }
-      if (res.payload === 400) {
-        return alert('Validation error');
-      }
-    });
+    dispatch(registerUser(payload));
+    // .then(res => {
+    //   if (res.payload === 409) {
+    //     return alert('User with such email already exists');
+    //   }
+    //   if (res.payload === 400) {
+    //     return alert('Validation error');
+    //   }
+    // });
   };
 
   const formik = useFormik({
