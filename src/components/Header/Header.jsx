@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom/dist';
+import { IconExit } from '../Icons/IconExit';
+import { LogoSVG } from '../Icons/LogoSVG';
 import css from './Header.module.css';
-import { LogoSVG } from './LogoSVG';
-import { IconExit } from './IconExit';
 
 export const Header = () => {
   return (
