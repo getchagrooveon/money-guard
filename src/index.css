@@ -17,7 +17,8 @@ html {
 }
 
 :root {
-  --main-bg-color: #101010;;
+  --main-bg-color: #101010;
+  --main-text-color:#FBFBFB;
 --small-form-control: rgba(83, 61, 186, 1),
   rgba(80, 48, 154, 1),
   rgba(106, 70, 165, 1),
