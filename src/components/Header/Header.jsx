@@ -10,8 +10,7 @@ export const Header = () => {
       <div className="container">
         <NavLink to="/" className={css.logo}>
           <LogoSVG className={css.logoSvg} />
-          <img src=".../images/logo/logo.png" alt="" />
-          <span>Money Guard</span>
+          <span className={css.logoText}>Money Guard</span>
         </NavLink>
         <div className={css.headerLeft}>
           <p className={css.name}>Name</p>
