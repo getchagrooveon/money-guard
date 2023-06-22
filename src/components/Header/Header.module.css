@@ -12,9 +12,14 @@
   align-items: center;
 }
 
-/* .logo {
-} */
+.logo {
+  text-align: center;
+}
 
+.logoSvg {
+  width: 18px;
+  height: 18px;
+}
 .logo span {
   display: block;
   color: #fbfbfb;

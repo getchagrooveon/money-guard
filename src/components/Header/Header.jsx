@@ -1,12 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom/dist';
 import css from './Header.module.css';
+import { LogoSVG } from './LogoSVG';
 
 export const Header = () => {
   return (
     <header className={css.header}>
       <div className="container">
         <NavLink to="/" className={css.logo}>
+          <LogoSVG className={css.logoSvg} />
           <img src=".../images/logo/logo.png" alt="" />
           {/* <svg width={18} height={18}>
             <use href="../images/logo.png/logo.png"></use>
