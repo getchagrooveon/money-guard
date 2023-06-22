@@ -2,6 +2,18 @@
   margin-bottom: 12px;
 }
 
+.navLink span {
+  display: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .navLink span {
+    display: block;
+    color: #fbfbfb;
+    font-size: 18px;
+  }
+}
+
 .navLink:hover span {
   font-weight: 700;
 }

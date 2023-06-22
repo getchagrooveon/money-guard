@@ -1,7 +1,8 @@
 .homeTab {
-  background: linear-gradient(
-    220deg,
-    rgba(109, 84, 235, 0.6) 3.47%,
-    rgba(101, 35, 146, 0.6) 90.06%
-  );
+  background-image: linear-gradient(to bottom, #937eff, #b45af0),
+    radial-gradient(circle, #512da8, #311b92);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 12px 0;
 }

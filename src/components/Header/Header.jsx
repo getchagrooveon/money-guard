@@ -5,12 +5,15 @@ import css from './Header.module.css';
 export const Header = () => {
   return (
     <header className={css.header}>
-      <NavLink to="/home" className={css.Logo}>
-        Money Guard
-      </NavLink>
-      <div className={css.headerLeft}>
-        <p className={css.name}>Name</p>
-        <p className={css.hiddenExit}>Exit</p>
+      <div className="container">
+        <NavLink to="/" className={css.Logo}>
+          Money Guard
+        </NavLink>
+        <div className={css.headerLeft}>
+          <p className={css.name}>Name</p>
+          <div className={css.verticalLine}></div>
+          <p className={css.hiddenExit}>Exit</p>
+        </div>
       </div>
     </header>
   );

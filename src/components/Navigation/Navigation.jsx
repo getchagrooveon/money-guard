@@ -7,13 +7,13 @@ export const Navigation = () => {
     <nav>
       <ul>
         <li className={css.navItem}>
-          <NavLink to="/home" className={css.navLink}>
+          <NavLink to="/" className={css.navLink}>
             <span>Home</span>
           </NavLink>
         </li>
         <li className={css.navItem}>
           <NavLink to="/statistics" className={css.navLink}>
-            Statistics
+            <span>Statistics</span>
           </NavLink>
         </li>
       </ul>

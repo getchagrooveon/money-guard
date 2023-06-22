@@ -8,12 +8,13 @@ import css from './Home.module.css';
 export const Home = () => {
   return (
     <div className={css.homeTab}>
-      <Navigation />
-      <Balance />
+      <div className="container">
+        <Navigation />
+        <Balance />
 
-      <Statistics />
-
-      <Transactions />
+        <Transactions />
+        <Statistics />
+      </div>
     </div>
   );
 };

@@ -1,11 +1,15 @@
 .header {
   padding: 16px 0;
-  display: flex;
-  align-items: center;
+
   background: linear-gradient(276deg, #2e1746 3.19%, #2e225f 100%);
   box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25),
     0px -3px 2px 0px rgba(0, 0, 0, 0.1) inset;
   color: rgba(255, 255, 255, 0.6);
+}
+
+.header > div {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
@@ -15,18 +19,19 @@
 
 .headerLeft {
   display: flex;
+  align-items: center;
   margin-left: auto;
 }
 
 .hiddenExit {
   display: none;
 }
-/* 
-.name {
+
+.verticalLine {
   height: 30px;
- 
+  margin-left: 12px;
   border-right: 1px solid rgba(255, 255, 255, 0.6);
-} */
+}
 
 @media screen and (min-width: 768px) {
   .hiddenExit {
