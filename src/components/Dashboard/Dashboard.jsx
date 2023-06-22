@@ -5,11 +5,11 @@ import Header from 'components/Header/Header';
 
 export const Dashboard = () => {
   return (
-    <div>
+    <body>
       <Header />
       <Home />
       <Currency />
-    </div>
+    </body>
   );
 };
 
