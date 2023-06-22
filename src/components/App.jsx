@@ -7,13 +7,13 @@ import Home from './Home/Home';
 import Statistics from './Statistics/Statistics';
 import Currency from './Currency/Currency';
 import { Navigate, Routes, Route } from 'react-router-dom';
-import Loader from './Loader/Loader';
+// import Loader from './Loader/Loader';
 
 export const App = () => {
   return (
     <>
       <div>
-        <Loader />
+        {/* <Loader /> */}
         <Routes>
           <Route path="/" element={<Navigate to={'/dashboard'} />} />
           <Route path="/" element={<PublicRoutes />}>
