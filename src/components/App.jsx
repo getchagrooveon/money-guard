@@ -12,7 +12,7 @@ import { Navigate, Routes, Route } from 'react-router-dom';
 export const App = () => {
   return (
     <>
-      {/* {authStatus === 'Loading' && <Loader>} */}
+      {/* {authStatus === 'loading' && <Loader />} */}
       <div>
         <Routes>
           <Route path="/" element={<Navigate to={'/dashboard'} />} />
