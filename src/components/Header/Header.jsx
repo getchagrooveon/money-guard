@@ -7,6 +7,10 @@ export const Header = () => {
     <header className={css.header}>
       <div className="container">
         <NavLink to="/" className={css.logo}>
+          <img src=".../images/logo/logo.png" alt="" />
+          {/* <svg width={18} height={18}>
+            <use href="../images/logo.png/logo.png"></use>
+          </svg> */}
           <span>Money Guard</span>
         </NavLink>
         <div className={css.headerLeft}>

@@ -11,10 +11,11 @@
   font-size: 12px;
   margin-bottom: 12px;
   text-transform: uppercase;
-  color: var(--white-40, rgba(255, 255, 255, 0.4));
+  /* color: var(--white-40-percent); */
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .balance {
-  color: #fbfbfb;
+  color: var(--main-text-color);
   font-size: 30px;
 }
