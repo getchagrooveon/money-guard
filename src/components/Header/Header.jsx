@@ -15,8 +15,10 @@ export const Header = () => {
         <div className={css.headerLeft}>
           <p className={css.name}>Name</p>
           <div className={css.verticalLine}></div>
-          <IconExit className={css.iconExit} />
-          <p className={css.hiddenExit}>Exit</p>
+          <button type="button" className={css.btnLogOut}>
+            <IconExit className={css.iconExit} />
+            <p className={css.hiddenExit}>Exit</p>
+          </button>
         </div>
       </div>
     </header>

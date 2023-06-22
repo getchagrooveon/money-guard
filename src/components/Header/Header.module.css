@@ -52,6 +52,23 @@
   fill: rgba(255, 255, 255, 0.6);
 }
 
+.btnLogOut {
+  display: flex;
+  border: none;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.btnLogOut:hover,
+.btnLogOut:focus {
+  color: var(--main-text-color);
+}
+
+.btnLogOut:hover .iconExit,
+.btnLogOut:focus .iconExit {
+  fill: var(--main-text-color);
+}
+
 @media screen and (min-width: 768px) {
   .header {
     padding: 16px 0;
