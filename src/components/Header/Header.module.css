@@ -12,8 +12,11 @@
   align-items: center;
 }
 
-.logo {
-  text-decoration: none;
+/* .logo {
+} */
+
+.logo span {
+  display: block;
   color: #fbfbfb;
 }
 

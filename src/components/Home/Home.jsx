@@ -5,7 +5,7 @@ import { Navigation } from 'components/Navigation/Navigation';
 import { Balance } from 'components/Balance/Balance';
 import css from './Home.module.css';
 
-export const Home = () => {
+const Home = () => {
   return (
     <div className={css.homeTab}>
       <div className="container">
