@@ -1,0 +1,7 @@
+.navItem:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.navLink:hover span {
+  font-weight: 700;
+}
