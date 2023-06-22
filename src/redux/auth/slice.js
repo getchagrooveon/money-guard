@@ -18,27 +18,27 @@ const handlePending = state => {
   state.error = null;
   state.isLoading = true;
 };
-// const handleSetToken = (state, { payload }) => {
-//   state.token = payload.token;
-// };
+const handleRefreshFulfiled = (state, { payload }) => {
+  state.isLoggedIn = true;
+  state.isLoading = false;
+  state.user = payload;
+};
 const handleRegisterFulfilled = (state, { payload }) => {
   state.isLoggedIn = true;
   state.isLoading = false;
   state.user = payload.user;
+  state.token = payload.token;
 };
 const handleLoginRejected = (state, { error }) => {
   state.isLoading = false;
   state.error = error.message;
-  console.log('slise console', error);
 };
 const handleLogout = state => {
   state.isLoading = false;
   state.isLoggedIn = false;
   state.token = null;
+  state.user = initialState.user;
 };
-// const clearUser = state => {
-//   state.user = initialState.user;
-// };
 
 const authSlise = createSlice({
   name: 'auth',
@@ -47,19 +47,15 @@ const authSlise = createSlice({
     builder
       .addCase(registerUser.pending, handlePending)
       .addCase(registerUser.fulfilled, handleRegisterFulfilled)
-      // .addCase(registerUser.fulfilled, handleSetToken)
       .addCase(registerUser.rejected, handleLoginRejected)
       .addCase(loginUser.pending, handlePending)
       .addCase(loginUser.fulfilled, handleRegisterFulfilled)
-      // .addCase(loginUser.fulfilled, handleSetToken)
       .addCase(loginUser.rejected, handleLoginRejected)
       .addCase(refreshUser.pending, handlePending)
-      .addCase(refreshUser.fulfilled, handleRegisterFulfilled)
+      .addCase(refreshUser.fulfilled, handleRefreshFulfiled)
       .addCase(refreshUser.rejected, handleLoginRejected)
-      // .addCase(refreshUser.rejected, clearUser)
       .addCase(logoutUser.pending, handlePending)
       .addCase(logoutUser.fulfilled, handleLogout)
-      // .addCase(logoutUser.fulfilled, clearUser)
       .addCase(logoutUser.rejected, handleLogout);
   },
 });
