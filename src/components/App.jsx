@@ -7,9 +7,20 @@ import Home from './Home/Home';
 import Statistics from './Statistics/Statistics';
 import Currency from './Currency/Currency';
 import { Navigate, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { refreshUser } from 'redux/auth/operations';
+import { selectToken } from 'redux/auth/selectors';
 // import Loader from './Loader/Loader';
 
 export const App = () => {
+  const dispatch = useDispatch();
+  const token = useSelector(selectToken);
+
+  useEffect(() => {
+    dispatch(refreshUser(token));
+  }, [dispatch, token]);
+
   return (
     <>
       <div>
@@ -17,7 +28,7 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Navigate to={'/dashboard'} />} />
           <Route path="/" element={<PublicRoutes />}>
-            <Route path="/register" element={<Registration />} />
+            <Route path="/registration" element={<Registration />} />
             <Route path="/login" element={<Login />} />
           </Route>
           <Route path="/" element={<PrivateRoutes />}>
