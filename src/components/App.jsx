@@ -26,7 +26,7 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Navigate to={'/dashboard'} />} />
           <Route path="/" element={<PublicRoutes />}>
-            <Route path="/register" element={<Registration />} />
+            <Route path="/registration" element={<Registration />} />
             <Route path="/login" element={<Login />} />
           </Route>
           <Route path="/" element={<PrivateRoutes />}>
