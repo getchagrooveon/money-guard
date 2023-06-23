@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { refreshUser } from 'redux/auth/operations';
 import { selectToken } from 'redux/auth/selectors';
+import Transactions from './Transactions/Transactions';
 // import Loader from './Loader/Loader';
 
 export const App = () => {
@@ -31,8 +32,9 @@ export const App = () => {
             <Route path="/registration" element={<Registration />} />
             <Route path="/login" element={<Login />} />
           </Route>
+          <Route path="/transactions" element={<Transactions />} />
           <Route path="/" element={<PrivateRoutes />}>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="dashboard" element={<Dashboard />} />
             <Route path="home" element={<Home />} />
             <Route path="statistics" element={<Statistics />} />
             <Route path="currency" element={<Currency />} />
