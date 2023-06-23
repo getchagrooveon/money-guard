@@ -13,12 +13,13 @@ export const token = {
   },
 };
 
-export const refresh = async token => {
+export const refresh = async body => {
   try {
-    token.set(token);
+    token.set(body);
     const { data } = await privateAPI.get('api/users/current');
     return data;
   } catch (error) {
+    console.log(error);
     token.unset();
     throw error;
   }
@@ -46,8 +47,8 @@ export const addTransaction = async body => {
 };
 
 export const removeTransaction = async id => {
-  const { data } = await privateAPI.get(`api/transactions/${id}`);
-  return data;
+  await privateAPI.delete(`api/transactions/${id}`);
+  return id;
 };
 
 export const editTransaction = async ({
@@ -68,7 +69,7 @@ export const getCategories = async () => {
   return data;
 };
 
-export const getSummary = async body => {
-  const { data } = await privateAPI.get('api/transactions-summary', body);
+export const getSummary = async params => {
+  const { data } = await privateAPI.get('api/transactions-summary', { params });
   return data;
 };
