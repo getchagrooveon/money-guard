@@ -18,4 +18,28 @@
 .balance {
   color: var(--main-text-color);
   font-size: 30px;
+  font-weight: 600;
+}
+
+.uah {
+  font-weight: 400;
+}
+
+@media screen and (min-width: 768px) {
+  .balanceBox {
+    margin-top: 28px;
+    max-width: 336px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .balanceBox {
+    margin-top: 28px;
+    max-width: 100%;
+    border-radius: 0;
+    padding-left: 56px;
+    padding-right: 56px;
+  }
 }
