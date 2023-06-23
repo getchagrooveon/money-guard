@@ -10,7 +10,7 @@ export const Navigation = () => {
     <nav className={css.nav}>
       <ul className={css.navList}>
         <li className={css.navItem}>
-          <NavLink to="/" className={css.navLink}>
+          <NavLink to="/home" className={css.navLink}>
             <IconHome className={css.navIcon} />
             <span className={css.navText}>Home</span>
           </NavLink>
@@ -22,7 +22,7 @@ export const Navigation = () => {
           </NavLink>
         </li>
         <li className={css.hiddenItem}>
-          <NavLink to="/statistics" className={css.navLink}>
+          <NavLink to="/currency" className={css.navLink}>
             <IconCurrency className={css.navIcon} />
           </NavLink>
         </li>
