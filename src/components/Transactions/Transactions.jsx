@@ -20,7 +20,6 @@ import { formatMoney } from 'utils/formatMoney';
 import { MediaQuery } from 'components/MediaQuery/MediaQuery';
 import { useEffect } from 'react';
 import { categoriesThunk, getAllThunk } from 'redux/transactions/operation';
-import { Button } from '@mui/material';
 
 const colors = [
   '#FED057',
@@ -118,19 +117,19 @@ export default function Transactions() {
                       {formatMoney(el.amount).replace('-', '')}
                     </Sum>
                     <td>
-                      <Button type="button" onClick={handleClick}>
+                      <button type="button" onClick={handleClick}>
                         Edit
-                      </Button>
+                      </button>
                     </td>
                     <td>
-                      <Button>Delete</Button>
+                      <button>Delete</button>
                     </td>
                   </TableRow>
                 ))
               : ''}
           </TableBody>
         </Table>
-        <Button>Add transaction</Button>
+        <button>Add transaction</button>
       </MediaQuery>
     </>
   );
