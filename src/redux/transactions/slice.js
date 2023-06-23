@@ -23,31 +23,34 @@ const handleRejected = (state, { payload }) => {
   state.isLoading = false;
   console.log('Error occurred:', payload);
 };
-const handleAllTransactions = (state, payload) => {
+const handleAllTransactions = (state, { payload }) => {
   state.transactions = payload;
   state.isLoading = false;
 };
 const handlePending = state => {
   state.isLoading = true;
 };
-const handleAdd = (state, payload) => {
+const handleAdd = (state, { payload }) => {
+  console.log('add:', payload);
   state.transactions.push(payload);
   state.isLoading = false;
 };
-const handleEdit = (state, payload) => {
-  state.transactions.map(e => (e.id === payload.id ? payload : e));
+const handleEdit = (state, { payload }) => {
+  state.transactions = state.transactions.map(e =>
+    e.id === payload.id ? payload : e
+  );
   state.isLoading = false;
 };
-const handleDelete = (state, payload) => {
+const handleDelete = (state, { payload }) => {
   state.isLoading = false;
-  console.log(payload);
+  state.transactions = state.transactions.filter(e => e.id !== payload);
 };
-const handleCategories = (state, payload) => {
+const handleCategories = (state, { payload }) => {
   state.categories = payload;
   state.isLoading = false;
 };
-const handleSummary = (state, payload) => {
-  state.categoriesSummary = payload.summary;
+const handleSummary = (state, { payload }) => {
+  state.categoriesSummary = payload.categoriesSummary;
   state.expenseSummary = payload.expenseSummary;
   state.incomeSummary = payload.incomeSummary;
   state.periodTotal = payload.periodTotal;
