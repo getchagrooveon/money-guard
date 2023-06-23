@@ -1,13 +1,12 @@
 import NavBar from 'components/NavBar/NavBar';
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Outlet, Navigate } from 'react-router-dom';
-<<<<<<< Updated upstream
-=======
 import { selectIsLoggedIn } from 'redux/auth/selectors';
->>>>>>> Stashed changes
 
-const isAuth = true;
 const PrivateRoutes = () => {
+  const isAuth = useSelector(selectIsLoggedIn);
+
   return isAuth ? (
     <>
       <NavBar /> <Outlet />
