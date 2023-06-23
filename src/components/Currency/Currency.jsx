@@ -3,7 +3,7 @@ import css from './Currency.module.css';
 
 const Currency = () => {
   return (
-    <div className="container">
+    <div className="container currency">
       <div className={css.currencyheader}>
         <span>Currency</span>
         <span>Purchase</span>

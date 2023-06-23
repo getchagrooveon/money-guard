@@ -8,16 +8,18 @@ import Statistics from './Statistics/Statistics';
 import Currency from './Currency/Currency';
 import { Navigate, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { refreshUser } from 'redux/auth/operations';
+import { selectToken } from 'redux/auth/selectors';
 // import Loader from './Loader/Loader';
 
 export const App = () => {
   const dispatch = useDispatch();
+  const token = useSelector(selectToken);
 
   useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch]);
+    dispatch(refreshUser(token));
+  }, [dispatch, token]);
 
   return (
     <>

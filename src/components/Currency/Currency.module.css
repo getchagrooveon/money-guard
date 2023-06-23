@@ -5,5 +5,8 @@
     color: var(--main-text-color);
     font-size: 16px;
     font-weight: 600;
-    background-color: var(--linear-gradient-light)
+    background-color: rgba(255, 255, 255, 0.20);
+}
+.currency {
+    background-color: rgba(74, 86, 226, 0.10)
 }

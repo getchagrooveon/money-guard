@@ -16,10 +16,9 @@ export const token = {
 export const refresh = async body => {
   try {
     token.set(body);
-    const { data } = await privateAPI.get('api/users/current');
+    const { data } = await privateAPI.get('api/users/current', body);
     return data;
   } catch (error) {
-    console.log(error);
     token.unset();
     throw error;
   }
