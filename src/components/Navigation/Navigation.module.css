@@ -15,6 +15,7 @@
 .navLink:hover .navIcon,
 .navLink:focus .navIcon {
   fill: #4a56e2;
+  /* background-color: var(--main-text-color); */
 }
 
 .navText {
@@ -36,6 +37,7 @@
     display: flex;
     gap: 20px;
     align-items: center;
+    width: 140px;
   }
 
   .navText {

@@ -11,7 +11,6 @@ const Home = () => {
       <div className="container">
         <Navigation />
         <Balance />
-
         <Transactions />
         <Statistics />
       </div>

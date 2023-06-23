@@ -5,13 +5,24 @@ import { LogoSVG } from '../Icons/LogoSVG';
 import css from './Header.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from 'redux/auth/operations';
+import { useState } from 'react';
 
 export const Header = () => {
+  const [modal, setModal] = useState(false);
   const dispatch = useDispatch();
   const userName = useSelector(state => state.auth.user.username);
 
   const handleLogOut = () => {
     dispatch(logoutUser());
+  };
+
+  const openModal = () => {
+    setModal(true);
+    console.log('open modal log out');
+  };
+
+  const closeModal = () => {
+    setModal(false);
   };
 
   return (
@@ -24,11 +35,7 @@ export const Header = () => {
         <div className={css.headerLeft}>
           <p className={css.name}>{userName}</p>
           <div className={css.verticalLine}></div>
-          <button
-            type="button"
-            className={css.btnLogOut}
-            onClick={handleLogOut}
-          >
+          <button type="button" className={css.btnLogOut} onClick={openModal}>
             <IconExit className={css.iconExit} />
             <p className={css.hiddenExit}>Exit</p>
           </button>
