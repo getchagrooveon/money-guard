@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { refreshUser } from 'redux/auth/operations';
 import { selectToken } from 'redux/auth/selectors';
+import { getCurrencyThunk } from 'redux/currency/operations';
 // import Loader from './Loader/Loader';
 
 export const App = () => {
@@ -19,6 +20,7 @@ export const App = () => {
 
   useEffect(() => {
     dispatch(refreshUser(token));
+    dispatch(getCurrencyThunk());
   }, [dispatch, token]);
 
   return (

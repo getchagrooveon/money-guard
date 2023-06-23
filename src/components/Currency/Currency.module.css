@@ -1,12 +1,80 @@
-.currencyheader {
-    max-width: 100%;
-    width: 320px;
+.currencytable {
+    min-width: 100%;
     text-align: center;
     color: var(--main-text-color);
     font-size: 16px;
     font-weight: 600;
-    background-color: rgba(255, 255, 255, 0.20);
+    margin: 0 auto;
+    border: none
 }
-.currency {
-    background-color: rgba(74, 86, 226, 0.10)
+
+.currency{
+    background-image: linear-gradient(to bottom, #937eff, #b45af0), radial-gradient(circle, #512da8, #311b92);
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+thead {
+    height: 50px;
+        padding: 0;
+            background-color: rgba(255, 255, 255, 0.20);
+}
+tr > td {
+    border-top: 8px solid transparent;
+}
+
+th,
+td {
+    width: 33.33%;
+}
+
+td {
+    font-weight: 400;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media screen and (max-width: 374.98px) {
+    .container {
+        max-width: 320px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .container {
+        width: 335px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+}
+
+/* tablet */
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 704px;
+        padding: 0 32px;
+    }
+}
+
+/* desktop */
+
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 1248px;
+        padding: 0 16px;
+    }
 }

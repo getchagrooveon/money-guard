@@ -12,6 +12,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import { transactionsReducer } from './transactions/slice';
+import { currencyReducer } from './currency/slice';
 
 const persistConfig = {
   key: 'root',
@@ -24,6 +25,7 @@ export const store = configureStore({
   reducer: {
     auth: persistedReducer,
     transaction: transactionsReducer,
+    currency: currencyReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
