@@ -1,19 +1,55 @@
-.navItem:not(:last-child) {
-  margin-bottom: 12px;
+.navList {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
 }
 
-.navLink span {
-  display: hidden;
+.navIcon {
+  fill: rgba(255, 255, 255, 0.6);
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.navLink:hover .navIcon,
+.navLink:focus .navIcon {
+  fill: #4a56e2;
+}
+
+.navText {
+  display: none;
+}
+
+.navLink:hover .navText,
+.navLink:focus .navText {
+  font-weight: 700;
 }
 
 @media screen and (min-width: 768px) {
-  .navLink span {
-    display: block;
-    color: #fbfbfb;
+  .navList {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .navLink {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .navText {
+    display: inline-block;
+    color: var(--main-text-color);
     font-size: 18px;
   }
-}
 
-.navLink:hover span {
-  font-weight: 700;
+  .navIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .hiddenItem {
+    display: none;
+  }
 }

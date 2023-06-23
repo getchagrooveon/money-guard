@@ -1,7 +1,6 @@
 .header {
-  padding: 16px 0;
-
-  background: linear-gradient(276deg, #2e1746 3.19%, #2e225f 100%);
+  padding: 12px 0;
+  background-image: linear-gradient(276deg, #2e1746 3.19%, #2e225f 100%);
   box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25),
     0px -3px 2px 0px rgba(0, 0, 0, 0.1) inset;
   color: rgba(255, 255, 255, 0.6);
@@ -20,9 +19,11 @@
   width: 18px;
   height: 18px;
 }
-.logo span {
+
+.logoText {
   display: block;
   color: #fbfbfb;
+  font-size: 12px;
 }
 
 .headerLeft {
@@ -31,19 +32,76 @@
   margin-left: auto;
 }
 
+.name {
+  font-family: Circe;
+  font-size: 18px;
+}
+
 .hiddenExit {
   display: none;
 }
 
 .verticalLine {
-  height: 30px;
-  margin-left: 12px;
-  border-right: 1px solid rgba(255, 255, 255, 0.6);
+  display: none;
+}
+
+.iconExit {
+  width: 18px;
+  height: 18px;
+  margin-left: 8px;
+  fill: rgba(255, 255, 255, 0.6);
+}
+
+.btnLogOut {
+  display: flex;
+  border: none;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.btnLogOut:hover,
+.btnLogOut:focus {
+  color: var(--main-text-color);
+}
+
+.btnLogOut:hover .iconExit,
+.btnLogOut:focus .iconExit {
+  fill: var(--main-text-color);
 }
 
 @media screen and (min-width: 768px) {
+  .header {
+    padding: 16px 0;
+  }
+
+  .logoSvg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .logoText {
+    font-size: 18px;
+  }
+
+  .verticalLine {
+    display: block;
+    height: 30px;
+    margin-left: 12px;
+    border-right: 1px solid rgba(255, 255, 255, 0.6);
+  }
   .hiddenExit {
+    font-family: Circe;
+    font-size: 18px;
     display: block;
     margin-left: 8px;
+  }
+
+  .name {
+    font-family: Circe;
+    font-size: 18px;
+  }
+
+  .iconExit {
+    margin-left: 12px;
   }
 }
