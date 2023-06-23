@@ -206,6 +206,47 @@
   height: 26px;
   width: 26px;
 }
+@media (min-width: 768px) {
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    padding: 40px 0;
+  }
+  .screen {
+    width: 533px;
+    border-radius: 6px;
+    padding: 40px 0;
+  }
+  .title {
+    font-size: 27px;
+  }
+  .logoSvg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .login__input {
+    padding: 12px;
+    padding-left: 58px;
+    font-size: 18px;
+    width: 340px;
+    min-width: 216px;
+  }
+  .login__submit {
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .registration__link {
+    width: 300px;
+  }
+  .strong_passworg {
+    width: 410px;
+  }
+}
+
 /* 
 .strength-indicator {
   display: flex;
