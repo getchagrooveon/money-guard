@@ -1,0 +1,50 @@
+.overlayLogout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: #220d5b3b;
+}
+
+.modalLogout {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.logoutAlert {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--main-text-color);
+}
+
+.btnModalLogout {
+  display: block;
+  background-image: linear-gradient(
+    167deg,
+    #ffc727 0%,
+    #9e40ba 61.46%,
+    #7000ff 90.54%
+  );
+  width: 280px;
+  height: 50px;
+  border: none;
+  border-radius: 32px;
+  margin-top: 40px;
+}
+
+.btnCancelLogout {
+  display: block;
+  border: none;
+  border-radius: 32px;
+  width: 280px;
+  height: 50px;
+  margin-top: 20px;
+}

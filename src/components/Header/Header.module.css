@@ -33,7 +33,6 @@
 }
 
 .name {
-  font-family: Circe;
   font-size: 18px;
 }
 
@@ -53,7 +52,6 @@
 }
 
 .btnLogOut {
-  display: flex;
   border: none;
   background-color: transparent;
   color: rgba(255, 255, 255, 0.6);
@@ -89,8 +87,13 @@
     margin-left: 12px;
     border-right: 1px solid rgba(255, 255, 255, 0.6);
   }
+  .btnLogOut {
+    display: flex;
+    align-items: center;
+  }
+
   .hiddenExit {
-    font-family: Circe;
+    /* font-family: Circe; */
     font-size: 18px;
     display: block;
     margin-left: 8px;
