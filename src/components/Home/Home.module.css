@@ -3,6 +3,12 @@
     radial-gradient(circle, #512da8, #311b92);
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 12px;
+  /* padding: 12px 0; */
+}
 
-  padding: 12px 0;
+@media screen and (min-width: 768px) {
+  .homeTab {
+    padding-top: 40px;
+  }
 }
