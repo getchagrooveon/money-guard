@@ -7,9 +7,18 @@ import Home from './Home/Home';
 import Statistics from './Statistics/Statistics';
 import Currency from './Currency/Currency';
 import { Navigate, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { refreshUser } from 'redux/auth/operations';
 // import Loader from './Loader/Loader';
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   return (
     <>
       <div>
