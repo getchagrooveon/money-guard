@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom/dist';
 import css from './Navigation.module.css';
+import { IconHome } from 'components/Icons/IconHome';
 
 export const Navigation = () => {
   return (
@@ -8,6 +9,7 @@ export const Navigation = () => {
       <ul>
         <li className={css.navItem}>
           <NavLink to="/" className={css.navLink}>
+            <IconHome className={css.iconHome} />
             <span>Home</span>
           </NavLink>
         </li>

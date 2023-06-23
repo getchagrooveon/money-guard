@@ -2,19 +2,32 @@
   margin-bottom: 12px;
 }
 
+.iconHome {
+  fill: rgba(255, 255, 255, 0.6);
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+}
+
+.navLink:hover .iconHome,
+.navLink:focus .iconHome {
+  fill: #734aef;
+  background-color: var(--main-text-color);
+}
+
 .navLink span {
   display: hidden;
+}
+
+.navLink:hover span {
+  font-weight: 700;
 }
 
 @media screen and (min-width: 768px) {
   .navLink span {
     display: inline-block;
 
-    color: #fbfbfb;
+    color: var(--main-text-color);
     font-size: 18px;
   }
-}
-
-.navLink:hover span {
-  font-weight: 700;
 }
