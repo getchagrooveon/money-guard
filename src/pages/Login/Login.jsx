@@ -8,7 +8,7 @@ import { LogoSVG } from 'components/Icons/LogoSVG';
 import css from './Login.module.css';
 import { IconEmail } from 'components/Icons/IconEmail';
 import { IconLock } from 'components/Icons/IconLock';
-import backgroundDesktop from '../../img/img_temporary/desktop-min.png';
+import backgroundDesktop from '../../img/img_temporary/registr-min.png';
 
 const LoginForm = () => {
   const dispatch = useDispatch();

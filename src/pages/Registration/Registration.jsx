@@ -8,6 +8,7 @@ import { LogoSVG } from 'components/Icons/LogoSVG';
 import { IconUser } from 'components/Icons/IconUser';
 import { IconLock } from 'components/Icons/IconLock';
 import { IconEmail } from 'components/Icons/IconEmail';
+// import backgroundDesktop from '../../img/img_temporary/registr-min.png';
 import backgroundDesktop from '../../img/img_temporary/registr-min.png';
 
 const validationSchema = Yup.object({
