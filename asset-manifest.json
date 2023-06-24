@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/money-guard/static/css/main.0295ac25.css",
-    "main.js": "/money-guard/static/js/main.3a1a43b3.js",
+    "main.js": "/money-guard/static/js/main.1ff20f8d.js",
     "static/media/registr-min.png": "/money-guard/static/media/registr-min.41891f8c8433e0b720ec.png",
     "static/media/desktop-min.png": "/money-guard/static/media/desktop-min.efa89faf7f55fd66c5bb.png",
     "static/media/Poppins-Regular.ttf": "/money-guard/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
@@ -10,10 +10,10 @@
     "static/media/Poppins-Bold.ttf": "/money-guard/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
     "index.html": "/money-guard/index.html",
     "main.0295ac25.css.map": "/money-guard/static/css/main.0295ac25.css.map",
-    "main.3a1a43b3.js.map": "/money-guard/static/js/main.3a1a43b3.js.map"
+    "main.1ff20f8d.js.map": "/money-guard/static/js/main.1ff20f8d.js.map"
   },
   "entrypoints": [
     "static/css/main.0295ac25.css",
-    "static/js/main.3a1a43b3.js"
+    "static/js/main.1ff20f8d.js"
   ]
 }
