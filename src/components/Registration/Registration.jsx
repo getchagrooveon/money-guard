@@ -8,6 +8,7 @@ import { LogoSVG } from 'components/Icons/LogoSVG';
 import { IconUser } from 'components/Icons/IconUser';
 import { IconLock } from 'components/Icons/IconLock';
 import { IconEmail } from 'components/Icons/IconEmail';
+import backgroundDesktop from '../../img/img_temporary/registr-min.png';
 
 const validationSchema = Yup.object({
   username: Yup.string().required('Please enter your name'),
@@ -52,100 +53,106 @@ export const Registration = () => {
 
   return (
     <div className="container">
-      <div className={css.screen}>
-        <div className={css.screen__content}>
-          <NavLink to="/" className={css.logo}>
-            <LogoSVG className={css.logoSvg} />
-          </NavLink>
-          <h1 className={css.title}>Money Guard</h1>
-          <form className={css.login} onSubmit={formik.handleSubmit}>
-            <div className={css.login__field}>
-              <IconEmail className={css.icon_email} />
-              <input
-                type="email"
-                name="email"
-                placeholder="E-mail"
-                autoComplete="username"
-                className={css.login__input}
-                onChange={formik.handleChange}
-                value={formik.values.email}
-              />
-            </div>
-            {formik.touched.email && formik.errors.email ? (
-              <div className={css.error_message_email}>
-                {formik.errors.email}
-              </div>
-            ) : null}
-            <div className={css.login__field}>
-              <span className={css.user_icon__field}>
-                <IconLock className={css.icon_lock} />
-              </span>
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                autoComplete="new-password"
-                className={css.login__input}
-                onChange={formik.handleChange}
-                value={formik.values.password}
-              />
-            </div>
-            {formik.touched.password && formik.errors.password ? (
-              <div className={css.error_message_password}>
-                {formik.errors.password}
-              </div>
-            ) : null}
-            <div className={css.login__field}>
-              <span className={css.user_icon__field}>
-                <IconLock className={css.icon_lock} />
-              </span>
-              <input
-                type="password"
-                name="confirmPassword"
-                placeholder="Confirm password"
-                autoComplete="new-password"
-                className={css.login__input}
-                onChange={formik.handleChange}
-                value={formik.values.confirmPassword}
-              />
-            </div>
-            {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
-              <div className={css.error_message_password}>
-                {formik.errors.confirmPassword}
-              </div>
-            ) : null}
-            <div className={css.strong_passworg}></div>
-            <div className={css.input_wrapper}>
+      <div
+        className={css.wrapper}
+        style={{ backgroundImage: `url(${backgroundDesktop})` }}
+      >
+        <div className={css.screen}>
+          <div className={css.screen__content}>
+            <NavLink to="/" className={css.logo}>
+              <LogoSVG className={css.logoSvg} />
+            </NavLink>
+            <h1 className={css.title}>Money Guard</h1>
+            <form className={css.login} onSubmit={formik.handleSubmit}>
               <div className={css.login__field}>
-                <span className={css.user_icon__field}>
-                  <IconUser className={css.icon_user} />
-                </span>
+                <IconEmail className={css.icon_email} />
                 <input
-                  type="text"
-                  name="username"
-                  placeholder="First name"
+                  type="email"
+                  name="email"
+                  placeholder="E-mail"
                   autoComplete="username"
                   className={css.login__input}
                   onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.username}
+                  value={formik.values.email}
                 />
               </div>
-              {formik.touched.username && formik.errors.username ? (
-                <div className={css.error_wrapper}>
-                  <div className={css.error_message_name}>
-                    {formik.errors.username}
-                  </div>
+              {formik.touched.email && formik.errors.email ? (
+                <div className={css.error_message_email}>
+                  {formik.errors.email}
                 </div>
               ) : null}
-            </div>
-            <button type="submit" className={css.login__submit}>
-              <span className={css.button__text}>Register</span>
-            </button>
-            <div className={css.login__link}>
-              <Link to="/login">Log in</Link>
-            </div>
-          </form>
+              <div className={css.login__field}>
+                <span className={css.user_icon__field}>
+                  <IconLock className={css.icon_lock} />
+                </span>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  autoComplete="new-password"
+                  className={css.login__input}
+                  onChange={formik.handleChange}
+                  value={formik.values.password}
+                />
+              </div>
+              {formik.touched.password && formik.errors.password ? (
+                <div className={css.error_message_password}>
+                  {formik.errors.password}
+                </div>
+              ) : null}
+              <div className={css.login__field}>
+                <span className={css.user_icon__field}>
+                  <IconLock className={css.icon_lock} />
+                </span>
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  placeholder="Confirm password"
+                  autoComplete="new-password"
+                  className={css.login__input}
+                  onChange={formik.handleChange}
+                  value={formik.values.confirmPassword}
+                />
+              </div>
+              {formik.touched.confirmPassword &&
+              formik.errors.confirmPassword ? (
+                <div className={css.error_message_password}>
+                  {formik.errors.confirmPassword}
+                </div>
+              ) : null}
+              <div className={css.strong_passworg}></div>
+              <div className={css.input_wrapper}>
+                <div className={css.login__field}>
+                  <span className={css.user_icon__field}>
+                    <IconUser className={css.icon_user} />
+                  </span>
+                  <input
+                    type="text"
+                    name="username"
+                    placeholder="First name"
+                    autoComplete="username"
+                    className={css.login__input}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.username}
+                  />
+                </div>
+                {formik.touched.username && formik.errors.username ? (
+                  <div className={css.error_wrapper}>
+                    <div className={css.error_message_name}>
+                      {formik.errors.username}
+                    </div>
+                  </div>
+                ) : null}
+              </div>
+              <button type="submit" className={css.login__submit}>
+                <span className={css.button__text}>Register</span>
+              </button>
+              <div className={css.login__link}>
+                <Link to="/login">Log in</Link>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
