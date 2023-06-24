@@ -1,4 +1,3 @@
-import { IconCurrency } from 'components/Icons/IconCurrency';
 import css from './Currency.module.css';
 import { useSelector } from 'react-redux';
 import {
@@ -8,6 +7,7 @@ import {
   USDSellRate,
 } from 'redux/currency/selectors';
 import { IconRateGraph } from 'components/Icons/IconRateGraph';
+import { IconRateGraphOutline } from 'components/Icons/IconRateGraphOutline';
 
 export const Currency = () => {
   const usdPurchaseValue = useSelector(USDBuyRate);
@@ -48,6 +48,7 @@ export const Currency = () => {
         </table>
       </div>
       <IconRateGraph className={css.iconRateGraph} />
+      <IconRateGraphOutline className={css.iconRateGraphOutline} />
     </div>
   );
 };
