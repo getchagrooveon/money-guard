@@ -25,6 +25,7 @@ import {
   getAllThunk,
   removeThunk,
 } from 'redux/transactions/operation';
+import { BtnAddTransaction } from 'components/BtnAddTransaction/BtnAddTransaction';
 
 const colors = [
   '#FED057',
@@ -149,6 +150,7 @@ export default function Transactions() {
           </TableBody>
         </Table>
       </MediaQuery>
+      <BtnAddTransaction />
     </>
   );
 }
