@@ -17,11 +17,14 @@ import { getCurrencyThunk } from 'redux/currency/operations';
 export const App = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
+  const LoggedIn = useSelector(selectToken);
 
   useEffect(() => {
-    dispatch(refreshUser(token));
-    dispatch(getCurrencyThunk());
-  }, [dispatch, token]);
+    if (LoggedIn) {
+      dispatch(refreshUser(token));
+      dispatch(getCurrencyThunk());
+    }
+  }, [dispatch, token, LoggedIn]);
 
   return (
     <>
