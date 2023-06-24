@@ -1,24 +1,24 @@
 import css from './Currency.module.css';
-// import { useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { getCurrencyThunk } from 'redux/currency/operations';
-// import {
-//   EURBuyRate,
-//   EURSellRate,
-//   USDBuyRate,
-//   USDSellRate,
-// } from 'redux/currency/selectors';
+import { useSelector } from 'react-redux';
+import {
+  EURBuyRate,
+  EURSellRate,
+  USDBuyRate,
+  USDSellRate,
+} from 'redux/currency/selectors';
 
 export const Currency = () => {
-  // const usdPurchaseValue = useSelector(USDBuyRate);
-  // const usdSellValue = useSelector(USDSellRate);
-  // const eurPurchaseValue = useSelector(EURBuyRate);
-  // const eurSellValue = useSelector(EURSellRate);
+  const usdPurchaseValue = useSelector(USDBuyRate);
+  const usdSellValue = useSelector(USDSellRate);
+  const eurPurchaseValue = useSelector(EURBuyRate);
+  const eurSellValue = useSelector(EURSellRate);
 
-  const usdPurchaseValue = '27.00';
-  const usdSellValue = '27.00';
-  const eurPurchaseValue = '27.00';
-  const eurSellValue = '27.00';
+  const values = {
+    usdBuy: usdPurchaseValue ? usdPurchaseValue : 'N/A',
+    usdSell: usdSellValue ? usdSellValue : 'N/A',
+    eurBuy: eurPurchaseValue ? eurPurchaseValue : 'N/A',
+    eurSell: eurSellValue ? eurSellValue : 'N/A',
+  };
 
   return (
     <div className={css.currency}>
@@ -34,13 +34,13 @@ export const Currency = () => {
           <tbody className={css.currencybody}>
             <tr>
               <td className={css.left}>USD</td>
-              <td>{usdPurchaseValue}</td>
-              <td className={css.right}>{usdSellValue}</td>
+              <td>{values.usdBuy}</td>
+              <td className={css.right}>{values.usdSell}</td>
             </tr>
             <tr>
               <td className={css.left}>EUR</td>
-              <td>{eurPurchaseValue}</td>
-              <td className={css.right}>{eurSellValue}</td>
+              <td>{values.eurBuy}</td>
+              <td className={css.right}>{values.eurSell}</td>
             </tr>
           </tbody>
         </table>
