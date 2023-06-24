@@ -15,11 +15,16 @@ import {
   Table,
   TableRow,
   Sum,
+  ButtonContainer,
 } from './Transactions.styled';
 import { formatMoney } from 'utils/formatMoney';
 import { MediaQuery } from 'components/MediaQuery/MediaQuery';
 import { useEffect } from 'react';
-import { categoriesThunk, getAllThunk } from 'redux/transactions/operation';
+import {
+  categoriesThunk,
+  getAllThunk,
+  removeThunk,
+} from 'redux/transactions/operation';
 
 const colors = [
   '#FED057',
@@ -42,7 +47,7 @@ export default function Transactions() {
     dispatch(getAllThunk());
     dispatch(categoriesThunk());
   }, [dispatch]);
-  const handleClick = object => console.log('enter Edit');
+  const handleEditClick = object => console.log('enter Edit');
 
   return (
     <>
@@ -62,7 +67,7 @@ export default function Transactions() {
                   <TransactionDetailsItemTitle>
                     Type
                   </TransactionDetailsItemTitle>
-                  {el.type[0] + el.type.slice(1).toLowerCase()}
+                  {el.amount > 0 ? '+' : '-'}
                 </TransactionDetailsItem>
                 <TransactionDetailsItem color={colors[i < 9 ? i : i % 9]}>
                   <TransactionDetailsItemTitle>
@@ -84,9 +89,16 @@ export default function Transactions() {
                 </TransactionDetailsItem>
                 <TransactionDetailsItem color={colors[i < 9 ? i : i % 9]}>
                   <TransactionDetailsItemTitle>
-                    Balance
+                    <button
+                      type="button"
+                      onClick={() => dispatch(removeThunk(el.id))}
+                    >
+                      Delete
+                    </button>
                   </TransactionDetailsItemTitle>
-                  {formatMoney(el.balanceAfter).replace('-', '')}
+                  <button type="button" onClick={handleEditClick}>
+                    Edit
+                  </button>
                 </TransactionDetailsItem>
               </TransactionDetails>
             ))
@@ -96,11 +108,13 @@ export default function Transactions() {
         <Table>
           <TableBody>
             <TableHead>
-              <TableHeader className="alignRight">Date</TableHeader>
-              <TableHeader className="alignRight">Type</TableHeader>
-              <TableHeader className="alignRight">Category</TableHeader>
-              <TableHeader className="alignRight">Comment</TableHeader>
-              <TableHeader className="alignRight">Sum</TableHeader>
+              <TableHeader className="align">Date</TableHeader>
+              <TableHeader className="align">Type</TableHeader>
+              <TableHeader className="align">Category</TableHeader>
+              <TableHeader className="align">Comment</TableHeader>
+              <TableHeader className="align">Sum</TableHeader>
+              <TableHeader className="align"></TableHeader>
+              <TableHeader className="align"></TableHeader>
             </TableHead>
             {transactions.length > 0 && categories.length > 0
               ? transactions.map(el => (
@@ -116,20 +130,24 @@ export default function Transactions() {
                     <Sum color={el.amount < 0 ? '#FF6596' : '#24CCA7'}>
                       {formatMoney(el.amount).replace('-', '')}
                     </Sum>
-                    <td>
-                      <button type="button" onClick={handleClick}>
+                    <ButtonContainer>
+                      <button type="button" onClick={handleEditClick}>
                         Edit
                       </button>
-                    </td>
-                    <td>
-                      <button>Delete</button>
-                    </td>
+                    </ButtonContainer>
+                    <ButtonContainer>
+                      <button
+                        type="button"
+                        onClick={() => dispatch(removeThunk(el.id))}
+                      >
+                        Delete
+                      </button>
+                    </ButtonContainer>
                   </TableRow>
                 ))
               : ''}
           </TableBody>
         </Table>
-        <button>Add transaction</button>
       </MediaQuery>
     </>
   );

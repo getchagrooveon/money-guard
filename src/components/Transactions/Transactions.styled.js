@@ -51,7 +51,7 @@ export const TableBody = styled.tbody`
 
 export const TableHead = styled.tr`
   display: grid;
-  grid-template-columns: 1.8fr 1.2fr 2.2fr 2.2fr 1.4fr 1.4fr;
+  grid-template-columns: 1.8fr 1.2fr 2.2fr 2.2fr 1.4fr 0.7fr 0.7fr; /* Змінили шаблон гріда */
   width: 100%;
   background-color: ${({ theme }) => theme.colors.white};
   padding: 16px 20px;
@@ -61,18 +61,17 @@ export const TableHead = styled.tr`
 `;
 
 export const TableHeader = styled.th`
-  &.alignRight {
-    text-align: right;
+  &.align {
+    text-align: left;
   }
 `;
 
 export const TableRow = styled.tr`
   position: relative;
-
   padding: 16px 20px;
-
   display: grid;
-  grid-template-columns: 1.8fr 1.2fr 2.2fr 2.2fr 1.4fr 1.4fr;
+  grid-template-columns: 1.8fr 1.2fr 2.2fr 2.2fr 1.4fr 0.7fr 0.7fr; /* Змінили шаблон гріда */
+
   width: 100%;
 
   &:after {
@@ -87,10 +86,11 @@ export const TableRow = styled.tr`
 `;
 
 export const Sum = styled.td`
-  text-align: right;
+  text-align: left;
   color: ${props => props.color};
 `;
 
-export const Balance = styled.td`
-  text-align: right;
+export const ButtonContainer = styled.td`
+  display: flex;
+  justify-content: flex-end;
 `;
