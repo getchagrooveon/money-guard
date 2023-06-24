@@ -39,6 +39,17 @@ td {
     font-weight: 400;
 }
 
+.iconRateGraph {
+    width: 320px;
+    height: 70px;
+    flex-shrink: 0;
+    fill:rgba(255, 255, 255, 0.20)
+}
+
+
+
+
+
 .container {
     width: 100%;
     margin: 0 auto;

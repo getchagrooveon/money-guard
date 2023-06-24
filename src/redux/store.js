@@ -19,13 +19,24 @@ const persistConfig = {
   storage,
   whitelist: ['token'],
 };
+
+const currencyPersistConfig = {
+  key: 'currencyRates',
+  storage,
+  whitelist: ['USD', 'EUR'],
+};
+
 const persistedReducer = persistReducer(persistConfig, authReducer);
+const currencyPersistedReducer = persistReducer(
+  currencyPersistConfig,
+  currencyReducer
+);
 
 export const store = configureStore({
   reducer: {
     auth: persistedReducer,
     transaction: transactionsReducer,
-    currency: currencyReducer,
+    currency: currencyPersistedReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
