@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/money-guard/static/css/main.04822ba0.css",
-    "main.js": "/money-guard/static/js/main.b872e504.js",
+    "main.css": "/money-guard/static/css/main.d24db4bf.css",
+    "main.js": "/money-guard/static/js/main.5f62152d.js",
     "static/media/registr-min.png": "/money-guard/static/media/registr-min.41891f8c8433e0b720ec.png",
     "static/media/desktop-min.png": "/money-guard/static/media/desktop-min.efa89faf7f55fd66c5bb.png",
     "static/media/Poppins-Regular.ttf": "/money-guard/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
@@ -9,11 +9,11 @@
     "static/media/Poppins-SemiBold.ttf": "/money-guard/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
     "static/media/Poppins-Bold.ttf": "/money-guard/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
     "index.html": "/money-guard/index.html",
-    "main.04822ba0.css.map": "/money-guard/static/css/main.04822ba0.css.map",
-    "main.b872e504.js.map": "/money-guard/static/js/main.b872e504.js.map"
+    "main.d24db4bf.css.map": "/money-guard/static/css/main.d24db4bf.css.map",
+    "main.5f62152d.js.map": "/money-guard/static/js/main.5f62152d.js.map"
   },
   "entrypoints": [
-    "static/css/main.04822ba0.css",
-    "static/js/main.b872e504.js"
+    "static/css/main.d24db4bf.css",
+    "static/js/main.5f62152d.js"
   ]
 }
