@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/money-guard/static/css/main.5de1886e.css",
-    "main.js": "/money-guard/static/js/main.879f3299.js",
+    "main.js": "/money-guard/static/js/main.c0d40a57.js",
     "static/css/947.a2deef90.chunk.css": "/money-guard/static/css/947.a2deef90.chunk.css",
     "static/js/947.5a06dc91.chunk.js": "/money-guard/static/js/947.5a06dc91.chunk.js",
     "static/css/709.a934b82f.chunk.css": "/money-guard/static/css/709.a934b82f.chunk.css",
@@ -13,7 +13,7 @@
     "static/media/Poppins-Bold.ttf": "/money-guard/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
     "index.html": "/money-guard/index.html",
     "main.5de1886e.css.map": "/money-guard/static/css/main.5de1886e.css.map",
-    "main.879f3299.js.map": "/money-guard/static/js/main.879f3299.js.map",
+    "main.c0d40a57.js.map": "/money-guard/static/js/main.c0d40a57.js.map",
     "947.a2deef90.chunk.css.map": "/money-guard/static/css/947.a2deef90.chunk.css.map",
     "947.5a06dc91.chunk.js.map": "/money-guard/static/js/947.5a06dc91.chunk.js.map",
     "709.a934b82f.chunk.css.map": "/money-guard/static/css/709.a934b82f.chunk.css.map",
@@ -21,6 +21,6 @@
   },
   "entrypoints": [
     "static/css/main.5de1886e.css",
-    "static/js/main.879f3299.js"
+    "static/js/main.c0d40a57.js"
   ]
 }
