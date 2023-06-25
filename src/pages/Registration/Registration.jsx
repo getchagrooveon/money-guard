@@ -8,24 +8,22 @@ import { LogoSVG } from 'components/Icons/LogoSVG';
 import { IconUser } from 'components/Icons/IconUser';
 import { IconLock } from 'components/Icons/IconLock';
 import { IconEmail } from 'components/Icons/IconEmail';
-// import backgroundDesktop from '../../img/img_temporary/registr-min.png';
-import backgroundDesktop from '../../img/img_temporary/registr-min.png';
-
-const validationSchema = Yup.object({
-  username: Yup.string().required('Please enter your name'),
-  email: Yup.string()
-    .email('Invalid email address')
-    .required('Please enter your email'),
-  password: Yup.string()
-    .required('Please enter your password')
-    .min(6, 'Password must be at least 6 characters')
-    .max(12, 'Password should be no longer than 12 characters'),
-  confirmPassword: Yup.string()
-    .oneOf([Yup.ref('password'), null], 'Passwords must match')
-    .required('Please confirm your password'),
-});
+import PasswordStrengthIndicator from 'components/PasswordStrengthIndicator/PasswordStrengthIndicator';
 
 export const Registration = () => {
+  const validationSchema = Yup.object({
+    username: Yup.string().required('Please enter your name'),
+    email: Yup.string()
+      .email('Invalid email address')
+      .required('Please enter your email'),
+    password: Yup.string()
+      .required('Please enter your password')
+      .min(6, 'Password must be at least 6 characters')
+      .max(12, 'Password should be no longer than 12 characters'),
+    confirmPassword: Yup.string()
+      .oneOf([Yup.ref('password'), null], 'Passwords must match')
+      .required('Please confirm your password'),
+  });
   const dispatch = useDispatch();
 
   const onSubmit = values => {
@@ -56,7 +54,7 @@ export const Registration = () => {
     <div className="container">
       <div
         className={css.wrapper}
-        style={{ backgroundImage: `url(${backgroundDesktop})` }}
+        // style={{ backgroundImage: `url(${backgroundDesktop})` }}
       >
         <div className={css.screen}>
           <div className={css.screen__content}>
@@ -78,9 +76,7 @@ export const Registration = () => {
                 />
               </div>
               {formik.touched.email && formik.errors.email ? (
-                <div className={css.error_message_email}>
-                  {formik.errors.email}
-                </div>
+                <div className={css.error_message}>{formik.errors.email}</div>
               ) : null}
               <div className={css.login__field}>
                 <span className={css.user_icon__field}>
@@ -97,7 +93,7 @@ export const Registration = () => {
                 />
               </div>
               {formik.touched.password && formik.errors.password ? (
-                <div className={css.error_message_password}>
+                <div className={css.error_message}>
                   {formik.errors.password}
                 </div>
               ) : null}
@@ -115,14 +111,17 @@ export const Registration = () => {
                   value={formik.values.confirmPassword}
                 />
               </div>
+              <div className={css.password_srtength}>
+                <PasswordStrengthIndicator password={formik.values.password} />
+              </div>
+              <div className={css.strong_passworg}></div>
               {formik.touched.confirmPassword &&
               formik.errors.confirmPassword ? (
-                <div className={css.error_message_password}>
+                <div className={css.error_message}>
                   {formik.errors.confirmPassword}
                 </div>
               ) : null}
-              <div className={css.strong_passworg}></div>
-              <div className={css.input_wrapper}>
+              <div>
                 <div className={css.login__field}>
                   <span className={css.user_icon__field}>
                     <IconUser className={css.icon_user} />
@@ -140,7 +139,7 @@ export const Registration = () => {
                 </div>
                 {formik.touched.username && formik.errors.username ? (
                   <div className={css.error_wrapper}>
-                    <div className={css.error_message_name}>
+                    <div className={css.error_message}>
                       {formik.errors.username}
                     </div>
                   </div>

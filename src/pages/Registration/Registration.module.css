@@ -1,10 +1,7 @@
 .screen {
-  background: linear-gradient(
-    rgba(83, 61, 186, 1),
-    rgba(80, 48, 154, 1),
-    rgba(106, 70, 165, 1),
-    rgba(133, 93, 175, 1)
-  );
+  background: radial-gradient(rgba(47, 21, 176, 1), rgba(106, 70, 165, 1));
+  box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
   /* background-color: var(--form-control); */
 
   text-align: center;
@@ -33,15 +30,15 @@
   position: relative;
 }
 
-.strong_passworg {
+.password_srtength {
   width: 286px;
   height: 4px;
-  border-radius: 6px;
-  background-color: orange;
+  border-radius: 8px;
   margin-left: auto;
   margin-right: auto;
   margin-top: -22px;
   margin-bottom: 24px;
+  transition: width 0.5s ease-in-out;
 }
 
 .icon_user {
@@ -119,8 +116,12 @@
 
 .login__submit:active,
 .login__submit:focus,
-.login__submit:hover {
-  background-color: #9e40ba;
+.login__submit:hover,
+.login__link:active,
+.login__link:hover,
+.login__link:focus {
+  scale: 0.99;
+  box-shadow: 1px 5px 8px 0px rgba(0, 0, 0, 0.5);
 }
 
 .login__link {
@@ -144,80 +145,33 @@
   cursor: pointer;
   transition: 0.2s;
 }
-.input_wrapper {
-  position: relative;
+
+.error_message {
+  color: rgb(162, 68, 68);
+  margin-top: -14px;
 }
 
-.error_wrapper {
-  position: relative;
-}
-.error_message_name {
-  position: absolute;
-  top: -100px;
-  left: 130px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 180px;
-  height: 46px;
-  color: #4c489d;
-  background-color: #fff;
-  border: 1px solid #4c489d;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  font-size: 14px;
-  border-radius: 5px;
-  text-align: center;
-}
-.error_message_email {
-  position: absolute;
-  top: -20px;
-  left: 130px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 180px;
-  height: 46px;
-  color: #4c489d;
-  background-color: #fff;
-  border: 1px solid #4c489d;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  font-size: 14px;
-  border-radius: 5px;
-  text-align: center;
-}
-.error_message_password {
-  position: absolute;
-  top: 124px;
-  left: 130px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 180px;
-  height: 46px;
-  color: #4c489d;
-  background-color: #fff;
-  border: 1px solid #4c489d;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  font-size: 14px;
-  border-radius: 5px;
-  text-align: center;
-}
 .logoSvg {
   height: 26px;
   width: 26px;
 }
 @media (min-width: 768px) {
   .wrapper {
+    background: url(../../img/desktop/golden-coins-background-left-desktop.png)
+        left,
+      url(../../img/desktop/golden-coins-background-right-desktop.png) right,
+      linear-gradient(rgba(46, 23, 70, 1), rgba(106, 70, 165, 1));
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-size: cover;
-    padding: 40px 0;
+    padding: 40px 0px 40px 0px;
   }
   .screen {
     width: 533px;
     border-radius: 6px;
     padding: 40px 0;
+    opacity: 0.8;
   }
   .title {
     font-size: 27px;
@@ -239,35 +193,10 @@
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  .registration__link {
+  .login__link {
     width: 300px;
   }
-  .strong_passworg {
+  .password_srtength {
     width: 410px;
   }
 }
-
-/* 
-.strength-indicator {
-  display: flex;
-  justify-content: space-between;
-  height: 10px;
-  margin-top: 10px; */
-/* } */
-
-/* .strength-indicator__bar {
-  flex-grow: 1;
-  height: 100%;
-}
-
-.strength-indicator__bar--weak {
-  background-color: red;
-}
-
-.strength-indicator__bar--medium {
-  background-color: orange;
-}
-
-.strength-indicator__bar--strong {
-  background-color: green;
-} */
