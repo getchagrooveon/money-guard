@@ -11,15 +11,14 @@ export const device = {
 
 export const theme = Object.freeze({
   colors: {
-    white: '#ffffff',
+    white: 'rgba(251, 251, 251, 1)',
     black: '#000000',
-    grey: '#BDBDBD',
-    lightGrey: '#e0e0e0',
-    accentBlue: '#4A56E2',
-    accentGreen: '#24CCA7',
-    accentPink: '#FF6596',
-    accentViolet: '#6e78e8',
-    background: '#E7EAF2',
+    yellow: 'rgba(255, 182, 39, 1)',
+    dashboardText: 'rgba(255, 134, 141, 1)',
+    white60: 'rgba(255, 255, 255, 0.6)',
+    white40: 'rgba(255, 255, 255, 0.4)',
+    iconViolet: 'rgba(255, 255, 255, 1)',
+    background: 'rgba(47, 21, 176, 0.73)',
   },
   fonts: {
     primary: '"Circe", sans-serif',
@@ -34,11 +33,10 @@ export const theme = Object.freeze({
   },
   fontWeight: {
     normal: 400,
-    bold: 700,
+    bold: 600,
   },
   shadows: {
     regular: '0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25)',
-    accentGreen: '0px 4px 4px #24cca738, 0px 4px 4px #24cca738',
   },
   spacing: value => `${4 * value}px`,
   animation: {
