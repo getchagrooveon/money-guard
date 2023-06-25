@@ -28,6 +28,7 @@ import {
   getAllThunk,
   removeThunk,
 } from 'redux/transactions/operation';
+import { BtnAddTransaction } from 'components/BtnAddTransaction/BtnAddTransaction';
 
 export default function Transactions() {
   const dispatch = useDispatch();
@@ -143,6 +144,7 @@ export default function Transactions() {
           </TableBody>
         </Table>
       </MediaQuery>
+      <BtnAddTransaction />
     </>
   );
 }

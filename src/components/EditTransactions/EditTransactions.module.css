@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+.overlay {
+}
+
+.modal {
+  width: 320px;
+  height: 600px;
+  padding: 32px 20px 32px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #7000ff;
+}
+.backgroundColor {
+  background-color: #7000ff;
+  box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(50px);
+}
+.title {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  line-height: calc(36 / 24);
+  color: #fbfbfb;
+}
+.toggle {
+  background-color: #7000ff;
+  border: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: calc(24 / 16);
+  color: #fbfbfb;
+}
+.toggle:focus {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: calc(24 / 16);
+  color: #ffb627;
+}
+.toggle:hover {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: calc(24 / 16);
+  color: #ffb627;
+}
+.toggleContainer {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+.inputLine {
+  display: block;
+  width: 100%;
+  background-color: #7000ff;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  line-height: calc(27 / 18);
+  color: #fbfbfb;
+  padding-bottom: 8px;
+}
+.inputLine:hover {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: calc(27 / 18);
+  color: #fbfbfb;
+}
+
+.btnSaveCancel {
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  width: 280px;
+  height: 50px;
+  padding: 13px 115px 13px 115px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  line-height: calc(27 / 18);
+  background-color: #fbfbfb;
+  color: #623f8b;
+  margin-top: 20px;
+}
+.btnSaveCancel:focus {
+  color: #fbfbfb;
+  background-image: linear-gradient(
+    96.76deg,
+    #ffc727 -16.42%,
+    #9e40ba 97.04%,
+    #7000ff 150.71%
+  );
+  box-shadow: 1px 9px 15px rgba(0, 0, 0, 0.2);
+  transition: background-image 250ms ease;
+  background-position: 100% 0;
+}
+.btnSaveCancel:hover {
+  color: #fbfbfb;
+  background-image: linear-gradient(
+    96.76deg,
+    #ffc727 -16.42%,
+    #9e40ba 97.04%,
+    #7000ff 150.71%
+  );
+  box-shadow: 1px 9px 15px rgba(0, 0, 0, 0.2);
+  transition: background-image 250ms ease;
+}
+
+.toggleSwitch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.toggleSwitch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggleSlider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.toggleSlider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .toggleSlider {
+  background-color: #2196f3;
+}
+
+input:focus + .toggleSlider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .toggleSlider:before {
+  transform: translateX(26px);
+  transition: transform 0.4s;
+}
