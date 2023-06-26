@@ -12,7 +12,7 @@ const Home = () => {
   const isModalEditShow = useSelector(selectTransaction) ? true : false;
   return (
     <div className={css.homeTab}>
-      <div className="container">
+      <div>
         {isMobile && <Balance />}
         <Transactions />
         {isModalEditShow && <EditTransactions />}
