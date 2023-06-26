@@ -3,6 +3,7 @@ import Transactions from '../../pages/Transactions/Transactions';
 import css from './Home.module.css';
 import { useMediaQuery } from 'react-responsive';
 import { Balance } from 'components/Balance/Balance';
+import { BtnAddTransaction } from 'components/BtnAddTransaction/BtnAddTransaction';
 // import { useSelector } from 'react-redux';
 // import { selectTransaction } from 'redux/global/selectors';
 // import EditTransactions from 'components/EditTransactions/EditTransactions';
