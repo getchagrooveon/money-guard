@@ -25,25 +25,30 @@
 }
 
 .backgroundColor {
+  background: transparent;
   background-image: var(--mainGradient), var(--secondaryGradient);
 }
 .title {
   display: flex;
   justify-content: center;
+  margin: 0 auto;
   margin-top: 32px;
+  margin-bottom: 32px;
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
   line-height: calc(36 / 24);
   color: #fbfbfb;
+  font-weight: 400;
 }
 .toggle {
-  background-color: #7000ff;
+  background-color: transparent;
   border: none;
   outline: none;
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
+  font-weight: 400;
   line-height: calc(24 / 16);
-  color: #fbfbfb;
+  color: rgba(255, 255, 255, 0.4);
 }
 .toggle:focus {
   font-family: 'Poppins', sans-serif;
@@ -66,65 +71,73 @@
   margin-bottom: 10px;
   justify-content: center;
 }
-.inputLine {
-  display: block;
-  width: 100%;
+.slash {
+  color: rgba(255, 255, 255, 0.4);
+}
 
+.inputForm {
+  position: relative;
+}
+
+.inputLine {
+  min-width: 100%;
   outline: none;
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   line-height: calc(27 / 18);
-  color: #fbfbfb;
-  padding-bottom: 8px;
+  /* padding-bottom: 8px; */
   padding-left: 20px;
+  background: none;
+  padding: 10px;
+
+  color: rgba(255, 255, 255, 0.6);
+  /* 
+  min-width: 216px; */
+  transition: 0.2s;
+  position: relative;
 }
 .inputLine:hover {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: calc(27 / 18);
-  color: #fbfbfb;
+  outline: none;
+  border-bottom-color: #6a679e;
 }
 
 .btnSaveCancel {
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background: linear-gradient(
+    167deg,
+    #ffc727 0%,
+    #9e40ba 61.46%,
+    #7000ff 90.54%
+  );
+  font-size: 18px;
+  margin-top: 11px;
+  padding: 12px 0px;
   border-radius: 20px;
   border: none;
-  outline: none;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
   width: 280px;
-  height: 50px;
-  padding: 13px 115px 13px 115px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  line-height: calc(27 / 18);
-  background-color: #fbfbfb;
-  color: #623f8b;
-  margin-top: 20px;
+  color: var(--main-text-color);
+  box-shadow: 1px 9px 15px 0px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: 0.2s;
 }
+
+.btnSaveCancel:active,
+.btnSaveCancel:focus,
+.btnSaveCancel:hover,
+.btnSaveCancel:active,
+.btnSaveCancel:hover,
 .btnSaveCancel:focus {
-  color: #fbfbfb;
-  background-image: linear-gradient(
-    96.76deg,
-    #ffc727 -16.42%,
-    #9e40ba 97.04%,
-    #7000ff 150.71%
-  );
-  box-shadow: 1px 9px 15px rgba(0, 0, 0, 0.2);
-  transition: background-image 250ms ease;
-  background-position: 100% 0;
-}
-.btnSaveCancel:hover {
-  color: #fbfbfb;
-  background-image: linear-gradient(
-    96.76deg,
-    #ffc727 -16.42%,
-    #9e40ba 97.04%,
-    #7000ff 150.71%
-  );
-  box-shadow: 1px 9px 15px rgba(0, 0, 0, 0.2);
-  transition: background-image 250ms ease;
+  scale: 0.99;
+  box-shadow: 1px 5px 8px 0px rgba(0, 0, 0, 0.5);
 }
 
 .toggleSwitch {
@@ -204,4 +217,52 @@ input:checked + .toggleSlider:before {
 }
 .amount {
   margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .modal {
+    background: url(../../img/desktop/golden-coins-background-left-desktop.png)
+        left,
+      url(../../img/desktop/golden-coins-background-right-desktop.png) right,
+      linear-gradient(rgba(46, 23, 70, 1), rgba(106, 70, 165, 1));
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0px 40px 0px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .inputLine {
+    padding: 12px;
+    padding-left: 58px;
+    font-size: 18px;
+    width: 340px;
+    min-width: 216px;
+  }
+  .btnSaveCancel {
+    width: 300px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+inputLine.react-datetime-picker {
+  background-image: url('https://fonts.gstatic.com/s/i/materialicons/date_range/v11/24px.svg');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 24px;
+  padding-left: 40px;
+}
+.cssB1qh8zInput {
+  display: none;
+}
+
+.rdtPicker {
+  background: transparent;
+  color: blue;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 4px;
 }
