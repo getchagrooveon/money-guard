@@ -46,7 +46,10 @@ export default function Transactions() {
       <MediaQuery deviceName={'mobileAll'}>
         {transactions.length > 0 && categories.length > 0
           ? transactions.map((el, i) => (
-              <TransactionDetails key={el.id}>
+              <TransactionDetails
+                key={el.id}
+                color={el.amount < 0 ? '#FF868D' : '#FFB627'}
+              >
                 <TransactionDetailsItem>
                   <TransactionDetailsItemTitle>
                     Date
@@ -75,7 +78,9 @@ export default function Transactions() {
                 </TransactionDetailsItem>
                 <TransactionDetailsItem>
                   <TransactionDetailsItemTitle>Sum</TransactionDetailsItemTitle>
-                  <SumText>{formatMoney(el.amount).replace('-', '')}</SumText>
+                  <SumText color={el.amount < 0 ? '#FF868D' : '#FFB627'}>
+                    {formatMoney(el.amount).replace('-', '')}
+                  </SumText>
                 </TransactionDetailsItem>
                 <TransactionDetailsItem>
                   <TransactionDetailsItemTitle>
@@ -108,7 +113,6 @@ export default function Transactions() {
               <TableHeader>Comment</TableHeader>
               <TableHeader>Sum</TableHeader>
               <TableHeader></TableHeader>
-              <TableHeader></TableHeader>
             </TableHead>
             {transactions.length > 0 && categories.length > 0
               ? transactions.map(el => (
@@ -121,7 +125,7 @@ export default function Transactions() {
                     <td>{el.amount > 0 ? '+' : '-'}</td>
                     <td>{categories.find(e => e.id === el.categoryId).name}</td>
                     <td>{el.comment}</td>
-                    <Sum color={el.amount < 0 ? '#FF6596' : '#24CCA7'}>
+                    <Sum color={el.amount < 0 ? '#FF868D' : '#FFB627'}>
                       {formatMoney(el.amount).replace('-', '')}
                     </Sum>
                     <ButtonContainer>

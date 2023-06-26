@@ -21,7 +21,6 @@ export const theme = Object.freeze({
     background: 'rgba(47, 21, 176, 0.73)',
   },
   fonts: {
-    primary: '"Circe", sans-serif',
     secondary: 'Poppins, sans-serif',
   },
   fontSizes: {
