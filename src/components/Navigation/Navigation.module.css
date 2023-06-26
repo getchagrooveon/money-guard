@@ -18,8 +18,8 @@
   fill: #4a56e2;
   background: radial-gradient(
     circle,
-    rgba(255, 255, 255, 1) 30%,
-    rgba(74, 86, 226, 0.1)
+    rgba(255, 255, 255, 1) 50%,
+    rgba(1, 9, 90, 0.1) 30%
   );
 }
 
@@ -55,6 +55,7 @@
   }
 
   .navIcon {
+    border-radius: 4px;
     width: 24px;
     height: 24px;
   }
