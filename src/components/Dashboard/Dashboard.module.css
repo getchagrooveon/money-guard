@@ -1,5 +1,5 @@
-/* @media screen and (min-width: 768px) {
-  .dashboard {
-    height: 100vh;
-  }
-} */
+.dashboard {
+  background-image: linear-gradient(to bottom, #937eff, #b45af0), radial-gradient(circle, #512da8, #311b92);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

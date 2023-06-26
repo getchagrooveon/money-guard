@@ -14,13 +14,13 @@ const Dashboard = () => {
     <>
       <Header />
       {isMobile && (
-        <div className={`${css.dashboard} container`}>
+        <div className={css.dashboard}>
           <Navigation />
           <Outlet />
         </div>
       )}
       {isDesktop && (
-        <div className={`${css.dashboard} container`}>
+        <div className={css.dashboard}>
           <main style={{ display: 'flex' }}>
             <div>
               <Navigation />
@@ -32,7 +32,7 @@ const Dashboard = () => {
         </div>
       )}
       {!isDesktop && !isMobile && (
-        <div className="container">
+        <div className={css.dashboard}>
           <main style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ display: 'flex' }}>
               <div>
