@@ -13,6 +13,7 @@ import {
 } from 'redux-persist';
 import { transactionsReducer } from './transactions/slice';
 import { currencyReducer } from './currency/slice';
+import { globalReducer } from './global/slice';
 
 const persistConfig = {
   key: 'root',
@@ -37,6 +38,7 @@ export const store = configureStore({
     auth: persistedReducer,
     transaction: transactionsReducer,
     currency: currencyPersistedReducer,
+    global: globalReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

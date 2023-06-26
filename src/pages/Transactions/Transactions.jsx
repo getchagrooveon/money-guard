@@ -16,9 +16,6 @@ import {
   TableRow,
   Sum,
   ButtonContainer,
-  ButtonDelTransaction,
-  ButtonEditTransaction,
-  StyledBiPencil,
 } from './Transactions.styled';
 import { formatMoney } from 'utils/formatMoney';
 import { MediaQuery } from 'components/MediaQuery/MediaQuery';
@@ -29,8 +26,11 @@ import {
   removeThunk,
 } from 'redux/transactions/operation';
 import { BtnAddTransaction } from 'components/BtnAddTransaction/BtnAddTransaction';
+import { setUpdatedTransaction } from 'redux/global/slice';
 
 export default function Transactions() {
+  // const [editTransaction, setEditTransaction] = useState(null);
+
   const dispatch = useDispatch();
   const transactions = useSelector(selectTransactions);
   const categories = useSelector(selectCategories);
@@ -39,7 +39,9 @@ export default function Transactions() {
     dispatch(getAllThunk());
     dispatch(categoriesThunk());
   }, [dispatch]);
-  const handleEditClick = object => console.log('enter Edit');
+  const handleEditClick = object => {
+    dispatch(setUpdatedTransaction(object));
+  };
 
   return (
     <>
@@ -47,7 +49,7 @@ export default function Transactions() {
         {transactions.length > 0 && categories.length > 0
           ? transactions.map((el, i) => (
               <TransactionDetails key={el.id}>
-                <TransactionDetailsItem>
+                <TransactionDetailsItem color={colors[i < 9 ? i : i % 9]}>
                   <TransactionDetailsItemTitle>
                     Date
                   </TransactionDetailsItemTitle>
@@ -55,44 +57,47 @@ export default function Transactions() {
                     .toLocaleDateString()
                     .replace(/\//g, '.')}
                 </TransactionDetailsItem>
-                <TransactionDetailsItem>
+                <TransactionDetailsItem color={colors[i < 9 ? i : i % 9]}>
                   <TransactionDetailsItemTitle>
                     Type
                   </TransactionDetailsItemTitle>
                   {el.amount > 0 ? '+' : '-'}
                 </TransactionDetailsItem>
-                <TransactionDetailsItem>
+                <TransactionDetailsItem color={colors[i < 9 ? i : i % 9]}>
                   <TransactionDetailsItemTitle>
                     Category
                   </TransactionDetailsItemTitle>
                   {categories.find(e => e.id === el.categoryId).name}
                 </TransactionDetailsItem>
-                <TransactionDetailsItem>
+                <TransactionDetailsItem color={colors[i < 9 ? i : i % 9]}>
                   <TransactionDetailsItemTitle>
                     Comment
                   </TransactionDetailsItemTitle>
                   {el.comment}
                 </TransactionDetailsItem>
-                <TransactionDetailsItem>
+                <TransactionDetailsItem color={colors[i < 9 ? i : i % 9]}>
                   <TransactionDetailsItemTitle>Sum</TransactionDetailsItemTitle>
-                  <SumText>{formatMoney(el.amount).replace('-', '')}</SumText>
+                  <SumText color={colors[i < 9 ? i : i % 9]}>
+                    {formatMoney(el.amount).replace('-', '')}
+                  </SumText>
                 </TransactionDetailsItem>
-                <TransactionDetailsItem>
+                <TransactionDetailsItem color={colors[i < 9 ? i : i % 9]}>
                   <TransactionDetailsItemTitle>
-                    <ButtonDelTransaction
+                    <button
                       type="button"
                       onClick={() => dispatch(removeThunk(el.id))}
                     >
                       Delete
-                    </ButtonDelTransaction>
+                    </button>
                   </TransactionDetailsItemTitle>
-                  <ButtonEditTransaction
+                  <button
                     type="button"
-                    onClick={handleEditClick}
+                    onClick={() => {
+                      handleEditClick(el);
+                    }}
                   >
-                    <StyledBiPencil />
                     Edit
-                  </ButtonEditTransaction>
+                  </button>
                 </TransactionDetailsItem>
               </TransactionDetails>
             ))
@@ -102,13 +107,13 @@ export default function Transactions() {
         <Table>
           <TableBody>
             <TableHead>
-              <TableHeader>Date</TableHeader>
-              <TableHeader>Type</TableHeader>
-              <TableHeader>Category</TableHeader>
-              <TableHeader>Comment</TableHeader>
-              <TableHeader>Sum</TableHeader>
-              <TableHeader></TableHeader>
-              <TableHeader></TableHeader>
+              <TableHeader className="align">Date</TableHeader>
+              <TableHeader className="align">Type</TableHeader>
+              <TableHeader className="align">Category</TableHeader>
+              <TableHeader className="align">Comment</TableHeader>
+              <TableHeader className="align">Sum</TableHeader>
+              <TableHeader className="align"></TableHeader>
+              <TableHeader className="align"></TableHeader>
             </TableHead>
             {transactions.length > 0 && categories.length > 0
               ? transactions.map(el => (
@@ -125,18 +130,17 @@ export default function Transactions() {
                       {formatMoney(el.amount).replace('-', '')}
                     </Sum>
                     <ButtonContainer>
-                      <ButtonEditTransaction
-                        type="button"
-                        onClick={handleEditClick}
-                      >
-                        <StyledBiPencil />
-                      </ButtonEditTransaction>
-                      <ButtonDelTransaction
+                      <button type="button" onClick={handleEditClick}>
+                        Edit
+                      </button>
+                    </ButtonContainer>
+                    <ButtonContainer>
+                      <button
                         type="button"
                         onClick={() => dispatch(removeThunk(el.id))}
                       >
                         Delete
-                      </ButtonDelTransaction>
+                      </button>
                     </ButtonContainer>
                   </TableRow>
                 ))
