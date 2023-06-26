@@ -7,7 +7,7 @@ import { IconCurrency } from 'components/Icons/IconCurrency';
 
 export const Navigation = () => {
   return (
-    <nav className={`${css.nav} container`}>
+    <nav className={css.nav}>
       <ul className={css.navList}>
         <li className={css.navItem}>
           <NavLink to="/home" className={css.navLink}>

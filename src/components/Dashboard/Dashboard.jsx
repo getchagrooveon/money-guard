@@ -1,51 +1,12 @@
 import React from 'react';
-import { Header } from 'components/Header/Header';
 import css from './Dashboard.module.css';
-import { Balance } from 'components/Balance/Balance';
-import { Outlet } from 'react-router-dom';
-import { useMediaQuery } from 'react-responsive';
-import { Navigation } from 'components/Navigation/Navigation';
-import Currency from 'components/Currency/Currency';
+import { Layout } from 'components/Layout/Layout';
 
 const Dashboard = () => {
-  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
-  const isDesktop = useMediaQuery({ query: '(min-width:1280px)' });
   return (
-    <>
-      <Header />
-      {isMobile && (
-        <div className={css.dashboard}>
-          <Navigation />
-          <Outlet />
-        </div>
-      )}
-      {isDesktop && (
-        <div className={css.dashboard}>
-          <main style={{ display: 'flex' }}>
-            <div>
-              <Navigation />
-              <Balance />
-              <Currency />
-            </div>
-            <Outlet />
-          </main>
-        </div>
-      )}
-      {!isDesktop && !isMobile && (
-        <div className={css.dashboard}>
-          <main style={{ display: 'flex', flexDirection: 'column' }}>
-            <div style={{ display: 'flex' }}>
-              <div>
-                <Navigation />
-                <Balance />
-              </div>
-              <Currency />
-            </div>
-            <Outlet />
-          </main>
-        </div>
-      )}
-    </>
+    <div className={css.dashboard}>
+      <Layout />
+    </div>
   );
 };
 

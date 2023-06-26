@@ -2,6 +2,7 @@
   display: flex;
   gap: 32px;
   justify-content: center;
+  width: 320px;
 }
 
 .navIcon {
@@ -28,6 +29,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .nav {
+    padding-top: 40px;
+  }
   .navList {
     flex-direction: column;
     gap: 12px;
