@@ -11,13 +11,13 @@ const Home = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   const isModalEditShow = useSelector(selectTransaction) ? true : false;
   return (
-    <div className={css.homeTab}>
-      <div className="container">
-        {isMobile && <Balance />}
-        <Transactions />
-        {isModalEditShow && <EditTransactions />}
-      </div>
-    </div>
+    // <div className={css.homeTab}>
+    <>
+      {isMobile && <Balance />}
+      <Transactions />
+      {isModalEditShow && <EditTransactions />}
+    </>
+    // </div>
   );
 };
 
