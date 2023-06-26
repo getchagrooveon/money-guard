@@ -24,30 +24,32 @@ export const Currency = () => {
 
   return (
     <div className={css.currency}>
-      <table className={css.currencytable} cellSpacing="0" cellPadding="0">
-        <thead>
-          <tr>
-            <th className={css.left}>Currency</th>
-            <th>Purchase</th>
-            <th className={css.right}>Sell</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className={css.left}>USD</td>
-            <td>{values.usdBuy}</td>
-            <td className={css.right}>{values.usdSell}</td>
-          </tr>
-          <tr>
-            <td className={css.left}>EUR</td>
-            <td>{values.eurBuy}</td>
-            <td className={css.right}>{values.eurSell}</td>
-          </tr>
-        </tbody>
-      </table>
       <div className="container">
-        <IconRateGraphOutline className={css.outline} />
-        <IconRateGraph className={css.main} />
+        <table className={css.currencytable} cellSpacing="0" cellPadding="0">
+          <thead>
+            <tr>
+              <th className={css.left}>Currency</th>
+              <th>Purchase</th>
+              <th className={css.right}>Sell</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className={css.left}>USD</td>
+              <td>{values.usdBuy}</td>
+              <td className={css.right}>{values.usdSell}</td>
+            </tr>
+            <tr>
+              <td className={css.left}>EUR</td>
+              <td>{values.eurBuy}</td>
+              <td className={css.right}>{values.eurSell}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          {/* <IconRateGraphOutline className={css.outline} /> */}
+          <IconRateGraph className={css.main} />
+        </div>
       </div>
     </div>
   );

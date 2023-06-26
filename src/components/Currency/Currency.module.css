@@ -5,15 +5,13 @@
     font-weight: 600;
     margin: 0 auto;
     border: none;
-    width: 375px;
+    width: 335px;
 }
 
 .currency{
         background-repeat: no-repeat;
         background-size: cover;
         padding-bottom: 310px;
-        padding-left: 20px;
-        padding-right: 20px;
         background:
                 radial-gradient(at 18% 99%, rgba(111, 50, 145, 1) 0px, transparent 50%) repeat scroll 0% 0%,
                 radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%) repeat scroll 0% 0%,
@@ -24,6 +22,7 @@
                 rgb(28, 24, 151) radial-gradient(at 57% 33%,
                     rgba(96, 55, 169, 1) 0px,
                     rgb(101, 32, 190) 10%) repeat scroll 0% 0%;
+                    margin: 0 auto;
 
 }
 
@@ -39,12 +38,10 @@
 
 .left {
     text-align: left;
-    padding-left: 20px;
 }
 
 .right {
     text-align: right;
-    padding-right: 20px;
 }
 
 thead {
@@ -57,7 +54,7 @@ tr > td {
 
 th,
 td {
-    width: 33.33%;
+    min-width: 33.33%;
 }
 
 td {
@@ -75,8 +72,6 @@ border-bottom-right-radius: 5px;
 }
 
 .outline {
-    /* position: absolute;
-    bottom: 54%; */
     width: 335px;
     height: 80px;
 }
@@ -87,18 +82,19 @@ border-bottom-right-radius: 5px;
     .currency {
         display: block;
         align-items: center;
+        padding-bottom: 0;
+    }
+    .currencytable {
+        width: 335px;
     }
     .graphsContainer {
-        align-content: center;
         margin: 0 auto;
+        padding: 0;
     }
 }
 
 /* desktop */
 
 @media screen and (min-width: 1280px) {
-    .container {
-        width: 1248px;
-        padding: 0 16px;
-    }
+
 }
