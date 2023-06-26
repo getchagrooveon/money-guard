@@ -1,0 +1,148 @@
+.transactionMobContainer {
+    width: 320px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.transactionDetails {
+    border-radius: 10px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 32px;
+    margin-bottom: 8px;
+}
+
+.transactionDetailsItem {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-weight: normal;
+    background: linear-gradient(220deg, #6d54eb 3.47%, #652392 90.06%);
+    padding: 12px 20px;
+    font-size: 16px;
+}
+
+.transactionDetailsItemTitle {
+    font-weight: bold;
+}
+
+.sumText {
+    color: var(--color);
+}
+
+.table {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+}
+
+.transactionTabletContainer {
+    max-width: 768px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.transactionDesktopContainer {
+    max-width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 69px;
+    padding-right: 16px;
+}
+
+.tableBody {
+    display: block;
+}
+
+.tableHead {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.2fr 1.5fr 1.2fr 0.4fr 0.6fr;
+    width: 100%;
+    color: #fbfbfb;
+    background-color: rgba(82, 59, 126, 0.6);
+    padding-left: 20px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(50px);
+}
+
+.tableHeader {
+    font-weight: bold;
+    font-size: 16px;
+    color: #fbfbfb;
+    text-align: left;
+}
+
+.tableRow {
+    font: var(--secondary-font);
+    font-weight: normal;
+    font-size: 14px;
+    color: #fbfbfb;
+    text-align: left;
+    position: relative;
+    display: grid;
+    padding: 16px 20px;
+    grid-template-columns: 1.2fr 1fr 1.2fr 1.5fr 1.2fr 0.4fr 0.6fr;
+    width: 100%;
+}
+
+.sum {
+    text-align: right;
+    font-weight: bold;
+    color: var(--color);
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    margin-left: auto;
+    margin-right: 12px;
+}
+
+.buttonDelTransaction {
+    text-align: center;
+    background: linear-gradient(167deg, #ffc727 0%, #9e40ba 61.46%, #7000ff 90.54%);
+    font-size: 14px;
+    font-weight: 400;
+    padding: 4px 12px;
+    border-radius: 18px;
+    border: none;
+    width: 69px;
+    height: 29px;
+    color: var(--white60);
+    box-shadow: 1px 9px 15px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.buttonEditTransaction {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+    background: transparent;
+    font-size: 16px;
+    padding: 4px 12px;
+    border-radius: 18px;
+    border: none;
+    width: 69px;
+    height: 29px;
+    color: var(--white60);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.styledBiPencil {
+    width: 14px;
+    height: 14px;
+    fill: rgba(255, 255, 255, 0.6);
+}
