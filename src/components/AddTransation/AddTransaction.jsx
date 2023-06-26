@@ -10,7 +10,7 @@ import { addThunk } from 'redux/transactions/operation';
 import 'flatpickr/dist/themes/material_green.css';
 import Flatpickr from 'react-flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
-import 'flatpickr/dist/themes/dark.css';
+// import 'flatpickr/dist/themes/dark.css';
 
 export const AddTransaction = ({ closeModal }) => {
   const dispatch = useDispatch();
