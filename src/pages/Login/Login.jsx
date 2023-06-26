@@ -8,13 +8,13 @@ import { LogoSVG } from 'components/Icons/LogoSVG';
 import css from './Login.module.css';
 import { IconEmail } from 'components/Icons/IconEmail';
 import { IconLock } from 'components/Icons/IconLock';
-import backgroundDesktop from '../../img/img_temporary/registr-min.png';
+// import backgroundDesktop from '../../img/img_temporary/registr-min.png';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
 
   const validationSchema = Yup.object().shape({
-    email: Yup.string().email('Invalid email').required('Email is required'),
+    email: Yup.string().email('Invalid e-mail').required('E-mail is required'),
     password: Yup.string().required('Password is required'),
   });
 
@@ -38,10 +38,9 @@ const LoginForm = () => {
     <div className="container">
       <div
         className={css.wrapper}
-        style={{ backgroundImage: `url(${backgroundDesktop})` }}
+        // style={{ backgroundImage: `url(${backgroundDesktop})` }}
       >
         <div className={css.screen}>
-          {/* <div className={css.screen__content}> */}
           <NavLink to="/" className={css.logo}>
             <LogoSVG className={css.logoSvg} />
           </NavLink>
@@ -61,9 +60,7 @@ const LoginForm = () => {
               />
             </div>
             {formik.touched.email && formik.errors.email ? (
-              <div className={css.error_message_email}>
-                {formik.errors.email}
-              </div>
+              <div className={css.error_message}>{formik.errors.email}</div>
             ) : null}
             <div className={css.login__field}>
               <IconLock className={css.icon_lock} />
@@ -79,9 +76,7 @@ const LoginForm = () => {
               />
             </div>
             {formik.touched.password && formik.errors.password ? (
-              <div className={css.error_message_password}>
-                {formik.errors.password}
-              </div>
+              <div className={css.error_message}>{formik.errors.password}</div>
             ) : null}
             <button type="submit" className={css.login__submit}>
               <span className={css.button__text}>Log in</span>
@@ -90,7 +85,6 @@ const LoginForm = () => {
               <Link to="/registration">Register</Link>
             </div>
           </form>
-          {/* </div> */}
         </div>
       </div>
     </div>
