@@ -51,11 +51,8 @@ export const Registration = () => {
   });
 
   return (
-    <div className="container">
-      <div
-        className={css.wrapper}
-        // style={{ backgroundImage: `url(${backgroundDesktop})` }}
-      >
+    <section className={css.wrapper}>
+      <div className="container">
         <div className={css.screen}>
           <div className={css.screen__content}>
             <NavLink to="/" className={css.logo}>
@@ -145,17 +142,17 @@ export const Registration = () => {
                   </div>
                 ) : null}
               </div>
-              <button type="submit" className={css.login__submit}>
+              <button type="submit" no-opacity className={css.login__submit}>
                 <span className={css.button__text}>Register</span>
               </button>
-              <div className={css.login__link}>
-                <Link to="/login">Log in</Link>
-              </div>
+              <Link to="/login">
+                <div className={css.login__link}>Log in</div>
+              </Link>
             </form>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

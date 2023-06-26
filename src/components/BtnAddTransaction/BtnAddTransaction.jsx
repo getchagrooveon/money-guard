@@ -1,15 +1,20 @@
 import { AddTransaction } from 'components/AddTransation/AddTransaction';
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectShowAddModal } from 'redux/global/selectors';
+import { closeAddModal, showAddModal } from 'redux/global/slice';
 
 export const BtnAddTransaction = () => {
-  const [modal, setModal] = useState(false);
+  const isAddTransaction = useSelector(selectShowAddModal);
 
-  const closeModal = bul => {
-    setModal(bul);
+  const dispatch = useDispatch();
+
+  const closeModal = () => {
+    dispatch(closeAddModal());
   };
 
   const handelClick = () => {
-    setModal(true);
+    dispatch(showAddModal());
   };
 
   return (
@@ -17,7 +22,7 @@ export const BtnAddTransaction = () => {
       <button type="button" onClick={handelClick}>
         AddTransaction
       </button>
-      {modal && <AddTransaction closeModal={closeModal} />}
+      {isAddTransaction && <AddTransaction closeModal={closeModal} />}
     </>
   );
 };

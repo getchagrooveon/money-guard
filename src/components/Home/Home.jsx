@@ -1,22 +1,32 @@
 import React from 'react';
 import Transactions from '../../pages/Transactions/Transactions';
 import css from './Home.module.css';
-import EditTransactions from 'components/EditTransactions/EditTransactions';
 import { useMediaQuery } from 'react-responsive';
 import { Balance } from 'components/Balance/Balance';
-import { useSelector } from 'react-redux';
-import { selectTransaction } from 'redux/global/selectors';
+// import { useSelector } from 'react-redux';
+// import { selectTransaction } from 'redux/global/selectors';
+// import EditTransactions from 'components/EditTransactions/EditTransactions';
 
 const Home = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
-  const isModalEditShow = useSelector(selectTransaction) ? true : false;
+  const isDesktop = useMediaQuery({ query: '(min-width:1280px)' });
+  // const isModalEditShow = useSelector(selectTransaction) ? true : false;
   return (
     <div className={css.homeTab}>
-      <div>
-        {isMobile && <Balance />}
-        <Transactions />
-        {isModalEditShow && <EditTransactions />}
-      </div>
+      {isMobile && (
+        <div className="container">
+          <Balance />
+          <Transactions />
+        </div>
+      )}
+
+      {!isDesktop && !isMobile && (
+        <div className="container">
+          <Transactions />
+        </div>
+      )}
+
+      {isDesktop && <Transactions />}
     </div>
   );
 };
