@@ -1,6 +1,5 @@
 import PublicRoutes from './PublicRoutes/PublicRoutes';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
-import Home from './Home/Home';
 import Currency from './Currency/Currency';
 import { Navigate, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -12,6 +11,7 @@ import Loader from './Loader/Loader';
 import { Suspense, lazy } from 'react';
 import { currencyQueryTime } from 'redux/currency/selectors';
 import Statistics from 'pages/Statistics/Statistics';
+import Home from './Home/Home';
 
 const Registration = lazy(() => import('../pages/Registration/Registration'));
 const Login = lazy(() => import('../pages/Login/Login'));
