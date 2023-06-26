@@ -1,5 +1,7 @@
-.layout {
-  height: 100vh;
+@media screen and (min-width: 768px) {
+  .layout {
+    height: 100vh;
+  }
 }
 
 .balancrDesktop {
@@ -18,7 +20,6 @@
 }
 
 .desktopSidebar {
-  max-width: 480px;
   border-right: 1px solid rgba(255, 255, 255, 0.6);
   height: calc(100vh - 81px);
 }
