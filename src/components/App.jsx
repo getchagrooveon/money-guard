@@ -27,13 +27,11 @@ export const App = () => {
     if (LoggedIn) {
       dispatch(refreshUser(token));
     }
-  }, [dispatch, token, LoggedIn]);
-
-  useEffect(() => {
     if (Date.now() - lastCurrencyQueryTime > 600000) {
-      dispatch(getCurrencyThunk());
+      return;
     }
-  }, [dispatch, lastCurrencyQueryTime]);
+    dispatch(getCurrencyThunk());
+  }, [dispatch, token, LoggedIn, lastCurrencyQueryTime]);
 
   return (
     <>
