@@ -49,7 +49,7 @@ export default function Transactions() {
         {transactions.length > 0 && categories.length > 0
           ? transactions.map((el, i) => (
               <TransactionDetails key={el.id}>
-                <TransactionDetailsItem color={colors[i < 9 ? i : i % 9]}>
+                <TransactionDetailsItem>
                   <TransactionDetailsItemTitle>
                     Date
                   </TransactionDetailsItemTitle>
@@ -57,31 +57,29 @@ export default function Transactions() {
                     .toLocaleDateString()
                     .replace(/\//g, '.')}
                 </TransactionDetailsItem>
-                <TransactionDetailsItem color={colors[i < 9 ? i : i % 9]}>
+                <TransactionDetailsItem>
                   <TransactionDetailsItemTitle>
                     Type
                   </TransactionDetailsItemTitle>
                   {el.amount > 0 ? '+' : '-'}
                 </TransactionDetailsItem>
-                <TransactionDetailsItem color={colors[i < 9 ? i : i % 9]}>
+                <TransactionDetailsItem>
                   <TransactionDetailsItemTitle>
                     Category
                   </TransactionDetailsItemTitle>
                   {categories.find(e => e.id === el.categoryId).name}
                 </TransactionDetailsItem>
-                <TransactionDetailsItem color={colors[i < 9 ? i : i % 9]}>
+                <TransactionDetailsItem>
                   <TransactionDetailsItemTitle>
                     Comment
                   </TransactionDetailsItemTitle>
                   {el.comment}
                 </TransactionDetailsItem>
-                <TransactionDetailsItem color={colors[i < 9 ? i : i % 9]}>
+                <TransactionDetailsItem>
                   <TransactionDetailsItemTitle>Sum</TransactionDetailsItemTitle>
-                  <SumText color={colors[i < 9 ? i : i % 9]}>
-                    {formatMoney(el.amount).replace('-', '')}
-                  </SumText>
+                  <SumText>{formatMoney(el.amount).replace('-', '')}</SumText>
                 </TransactionDetailsItem>
-                <TransactionDetailsItem color={colors[i < 9 ? i : i % 9]}>
+                <TransactionDetailsItem>
                   <TransactionDetailsItemTitle>
                     <button
                       type="button"

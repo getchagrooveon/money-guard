@@ -1,0 +1,26 @@
+<svg
+  class="vector-10"
+  width="280"
+  viewBox="0 0 280 20"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M0 0L280 0"
+    stroke="url(#paint0_linear_63_2002)"
+    stroke-opacity="0.2"
+  />
+  <defs>
+    <linearGradient
+      id="paint0_linear_63_2002"
+      x1="0"
+      y1="1.12322e-05"
+      x2="280"
+      y2="4.77762e-06"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="white" stop-opacity="0.41" />
+      <stop offset="1" stop-color="white" />
+    </linearGradient>
+  </defs>
+</svg>
