@@ -149,6 +149,13 @@ a {
     max-width: 1248px;
     padding: 0 16px;
   }
+  .graphsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 /* .vector-10 {
