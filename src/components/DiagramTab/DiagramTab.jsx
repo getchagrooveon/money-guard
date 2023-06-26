@@ -9,6 +9,7 @@ import {
 } from 'redux/transactions/selectors';
 import { getRandomHexColor } from 'utils/getRandomColor';
 import Select from 'react-select';
+import css from './DiagramTab.module.css';
 
 const months = [
   { label: 'January', value: 0 },
@@ -54,27 +55,36 @@ export default function DiagramTab() {
     dispatch(summaryThunk());
   }, [dispatch]);
   return (
-    <div style={{ width: '300px' }}>
-      <Chart sumData={sumData} />
-      <Select
-        options={months}
-        onChange={e => {
-          if (e.value !== currentMonth) {
-            currentMonth = e.value;
-            console.log('Sended query', e);
-          }
-        }}
-      />
-      <Select
-        options={years}
-        onChange={e => {
-          if (e.value !== currentYear) {
-            currentYear = e.value;
-            console.log('Sended query', e);
-          }
-        }}
-      />
-      <TableBlock data={sumData} />
+    <div className={css.diagram}>
+      <div>
+        <h2 className={css.statistics}>Statistics</h2>
+        <Chart sumData={sumData} />
+      </div>
+      <div>
+        <div className={css.selectWrapper}>
+          <Select
+            className={css.select}
+            options={months}
+            onChange={e => {
+              if (e.value !== currentMonth) {
+                currentMonth = e.value;
+                console.log('Sended query', e);
+              }
+            }}
+          />
+          <Select
+            className={css.select}
+            options={years}
+            onChange={e => {
+              if (e.value !== currentYear) {
+                currentYear = e.value;
+                console.log('Sended query', e);
+              }
+            }}
+          />
+        </div>
+        <TableBlock data={sumData} />
+      </div>
     </div>
   );
 }
