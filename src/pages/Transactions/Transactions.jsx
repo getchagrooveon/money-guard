@@ -16,6 +16,9 @@ import {
   TableRow,
   Sum,
   ButtonContainer,
+  TransactionMobContainer,
+  TransactionTabletContainer,
+  TransactionDesktopContainer,
 } from './Transactions.styled';
 import { formatMoney } from 'utils/formatMoney';
 import { MediaQuery } from 'components/MediaQuery/MediaQuery';
@@ -48,107 +51,165 @@ export default function Transactions() {
       <MediaQuery deviceName={'mobileAll'}>
         {transactions.length > 0 && categories.length > 0
           ? transactions.map((el, i) => (
-              <TransactionDetails
-                key={el.id}
-                color={el.amount < 0 ? '#FF868D' : '#FFB627'}
-              >
-                <TransactionDetailsItem>
-                  <TransactionDetailsItemTitle>
-                    Date
-                  </TransactionDetailsItemTitle>
-                  {new Date(el.transactionDate)
-                    .toLocaleDateString()
-                    .replace(/\//g, '.')}
-                </TransactionDetailsItem>
-                <TransactionDetailsItem>
-                  <TransactionDetailsItemTitle>
-                    Type
-                  </TransactionDetailsItemTitle>
-                  {el.amount > 0 ? '+' : '-'}
-                </TransactionDetailsItem>
-                <TransactionDetailsItem>
-                  <TransactionDetailsItemTitle>
-                    Category
-                  </TransactionDetailsItemTitle>
-                  {categories.find(e => e.id === el.categoryId).name}
-                </TransactionDetailsItem>
-                <TransactionDetailsItem>
-                  <TransactionDetailsItemTitle>
-                    Comment
-                  </TransactionDetailsItemTitle>
-                  {el.comment}
-                </TransactionDetailsItem>
-                <TransactionDetailsItem>
-                  <TransactionDetailsItemTitle>Sum</TransactionDetailsItemTitle>
-                  <SumText color={el.amount < 0 ? '#FF868D' : '#FFB627'}>
-                    {formatMoney(el.amount).replace('-', '')}
-                  </SumText>
-                </TransactionDetailsItem>
-                <TransactionDetailsItem>
-                  <TransactionDetailsItemTitle>
-                    <button
-                      type="button"
-                      onClick={() => dispatch(removeThunk(el.id))}
-                    >
-                      Delete
-                    </button>
-                  </TransactionDetailsItemTitle>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      handleEditClick(el);
-                    }}
-                  >
-                    Edit
-                  </button>
-                </TransactionDetailsItem>
-              </TransactionDetails>
-            ))
-          : ''}
-      </MediaQuery>
-      <MediaQuery deviceName={'tabletFrom'}>
-        <Table>
-          <TableBody>
-            <TableHead>
-              <TableHeader>Date</TableHeader>
-              <TableHeader>Type</TableHeader>
-              <TableHeader>Category</TableHeader>
-              <TableHeader>Comment</TableHeader>
-              <TableHeader>Sum</TableHeader>
-              <TableHeader></TableHeader>
-            </TableHead>
-            {transactions.length > 0 && categories.length > 0
-              ? transactions.map(el => (
-                  <TableRow key={el.id}>
-                    <td>
-                      {new Date(el.transactionDate)
-                        .toLocaleDateString()
-                        .replace(/\//g, '.')}
-                    </td>
-                    <td>{el.amount > 0 ? '+' : '-'}</td>
-                    <td>{categories.find(e => e.id === el.categoryId).name}</td>
-                    <td>{el.comment}</td>
-                    <Sum color={el.amount < 0 ? '#FF868D' : '#FFB627'}>
+              <TransactionMobContainer>
+                <TransactionDetails
+                  key={el.id}
+                  color={el.amount < 0 ? '#FF868D' : '#FFB627'}
+                >
+                  <TransactionDetailsItem>
+                    <TransactionDetailsItemTitle>
+                      Date
+                    </TransactionDetailsItemTitle>
+                    {new Date(el.transactionDate)
+                      .toLocaleDateString()
+                      .replace(/\//g, '.')}
+                  </TransactionDetailsItem>
+                  <TransactionDetailsItem>
+                    <TransactionDetailsItemTitle>
+                      Type
+                    </TransactionDetailsItemTitle>
+                    {el.amount > 0 ? '+' : '-'}
+                  </TransactionDetailsItem>
+                  <TransactionDetailsItem>
+                    <TransactionDetailsItemTitle>
+                      Category
+                    </TransactionDetailsItemTitle>
+                    {categories.find(e => e.id === el.categoryId).name}
+                  </TransactionDetailsItem>
+                  <TransactionDetailsItem>
+                    <TransactionDetailsItemTitle>
+                      Comment
+                    </TransactionDetailsItemTitle>
+                    {el.comment}
+                  </TransactionDetailsItem>
+                  <TransactionDetailsItem>
+                    <TransactionDetailsItemTitle>
+                      Sum
+                    </TransactionDetailsItemTitle>
+                    <SumText color={el.amount < 0 ? '#FF868D' : '#FFB627'}>
                       {formatMoney(el.amount).replace('-', '')}
-                    </Sum>
-                    <ButtonContainer>
-                      <button type="button" onClick={handleEditClick}>
-                        Edit
-                      </button>
-                    </ButtonContainer>
-                    <ButtonContainer>
+                    </SumText>
+                  </TransactionDetailsItem>
+                  <TransactionDetailsItem>
+                    <TransactionDetailsItemTitle>
                       <button
                         type="button"
                         onClick={() => dispatch(removeThunk(el.id))}
                       >
                         Delete
                       </button>
-                    </ButtonContainer>
-                  </TableRow>
-                ))
-              : ''}
-          </TableBody>
-        </Table>
+                    </TransactionDetailsItemTitle>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        handleEditClick(el);
+                      }}
+                    >
+                      Edit
+                    </button>
+                  </TransactionDetailsItem>
+                </TransactionDetails>
+              </TransactionMobContainer>
+            ))
+          : ''}
+      </MediaQuery>
+      <MediaQuery deviceName={'tablet'}>
+        <TransactionTabletContainer>
+          <Table>
+            <TableBody>
+              <TableHead>
+                <TableHeader>Date</TableHeader>
+                <TableHeader>Type</TableHeader>
+                <TableHeader>Category</TableHeader>
+                <TableHeader>Comment</TableHeader>
+                <TableHeader>Sum</TableHeader>
+                <TableHeader></TableHeader>
+                <TableHeader></TableHeader>
+              </TableHead>
+              {transactions.length > 0 && categories.length > 0
+                ? transactions.map(el => (
+                    <TableRow key={el.id}>
+                      <td>
+                        {new Date(el.transactionDate)
+                          .toLocaleDateString()
+                          .replace(/\//g, '.')}
+                      </td>
+                      <td>{el.amount > 0 ? '+' : '-'}</td>
+                      <td>
+                        {categories.find(e => e.id === el.categoryId).name}
+                      </td>
+                      <td>{el.comment}</td>
+                      <Sum color={el.amount < 0 ? '#FF868D' : '#FFB627'}>
+                        {formatMoney(el.amount).replace('-', '')}
+                      </Sum>
+                      <ButtonContainer>
+                        <button type="button" onClick={handleEditClick}>
+                          Edit
+                        </button>
+                      </ButtonContainer>
+                      <ButtonContainer>
+                        <button
+                          type="button"
+                          onClick={() => dispatch(removeThunk(el.id))}
+                        >
+                          Delete
+                        </button>
+                      </ButtonContainer>
+                    </TableRow>
+                  ))
+                : ''}
+            </TableBody>
+          </Table>
+        </TransactionTabletContainer>
+      </MediaQuery>
+      <MediaQuery deviceName={'desktop'}>
+        <TransactionDesktopContainer>
+          <Table>
+            <TableBody>
+              <TableHead>
+                <TableHeader>Date</TableHeader>
+                <TableHeader>Type</TableHeader>
+                <TableHeader>Category</TableHeader>
+                <TableHeader>Comment</TableHeader>
+                <TableHeader>Sum</TableHeader>
+                <TableHeader></TableHeader>
+                <TableHeader></TableHeader>
+              </TableHead>
+              {transactions.length > 0 && categories.length > 0
+                ? transactions.map(el => (
+                    <TableRow key={el.id}>
+                      <td>
+                        {new Date(el.transactionDate)
+                          .toLocaleDateString()
+                          .replace(/\//g, '.')}
+                      </td>
+                      <td>{el.amount > 0 ? '+' : '-'}</td>
+                      <td>
+                        {categories.find(e => e.id === el.categoryId).name}
+                      </td>
+                      <td>{el.comment}</td>
+                      <Sum color={el.amount < 0 ? '#FF868D' : '#FFB627'}>
+                        {formatMoney(el.amount).replace('-', '')}
+                      </Sum>
+                      <ButtonContainer>
+                        <button type="button" onClick={handleEditClick}>
+                          Edit
+                        </button>
+                      </ButtonContainer>
+                      <ButtonContainer>
+                        <button
+                          type="button"
+                          onClick={() => dispatch(removeThunk(el.id))}
+                        >
+                          Delete
+                        </button>
+                      </ButtonContainer>
+                    </TableRow>
+                  ))
+                : ''}
+            </TableBody>
+          </Table>
+        </TransactionDesktopContainer>
       </MediaQuery>
       <BtnAddTransaction />
     </>
