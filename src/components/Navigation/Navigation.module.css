@@ -16,7 +16,11 @@
 .navLink:hover .navIcon,
 .navLink:focus .navIcon {
   fill: #4a56e2;
-  /* background-color: var(--main-text-color); */
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 30%,
+    rgba(74, 86, 226, 0.1)
+  );
 }
 
 .navText {
