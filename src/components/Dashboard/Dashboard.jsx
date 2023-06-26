@@ -12,16 +12,15 @@ const Dashboard = () => {
   const isDesktop = useMediaQuery({ query: '(min-width:1280px)' });
   return (
     <>
+      <Header />
       {isMobile && (
-        <div className={css.dashboard}>
-          <Header />
+        <div className={`${css.dashboard} container`}>
           <Navigation />
           <Outlet />
         </div>
       )}
       {isDesktop && (
-        <div className={css.dashboard}>
-          <Header />
+        <div className={`${css.dashboard} container`}>
           <main style={{ display: 'flex' }}>
             <div>
               <Navigation />
@@ -33,14 +32,18 @@ const Dashboard = () => {
         </div>
       )}
       {!isDesktop && !isMobile && (
-        <main style={{ display: 'flex', flexDirection: 'column' }}>
-          <div>
-            <Navigation />
-            <Balance />
-            <Currency />
-          </div>
-          <Outlet />
-        </main>
+        <div className="container">
+          <main style={{ display: 'flex', flexDirection: 'column' }}>
+            <div style={{ display: 'flex' }}>
+              <div>
+                <Navigation />
+                <Balance />
+              </div>
+              <Currency />
+            </div>
+            <Outlet />
+          </main>
+        </div>
       )}
     </>
   );
