@@ -1,42 +1,40 @@
 .backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
 }
 
 .modal {
-    background-color: rgba(255, 255, 255, 0.49);
-    padding: 28px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    min-width: 100%;
+  background-color: rgba(255, 255, 255, 0.49);
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100%;
 }
 
-.transactionChoice{
-    display: flex;
-    gap: 20px;
-    /* justify-content: space-between; */
+.transactionChoice {
+  display: flex;
+  gap: 20px;
+  /* justify-content: space-between; */
 }
 
-.form{
-    display: flex;
-    flex-direction: column;
+.form {
+  display: flex;
+  flex-direction: column;
 }
 
 .formBlock {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-
 
 /*===================SWITCH==================*/
 /* .checkbox {
@@ -48,44 +46,44 @@
 
 /* The switch - the box around the slider */
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 80px;
-    /* width: 60px; */
-    height: 40px;
-    /* height: 34px; */
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  /* width: 60px; */
+  height: 40px;
+  /* height: 34px; */
 }
 
 /* Hide default HTML checkbox */
 .switch input {
-    display: none;
+  display: none;
 }
 
 /* The slider */
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #fff1f1;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 30px;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff1f1;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 30px;
 }
 
 .choiceBtn {
-    position: absolute;
-    /* content: ""; */
-    /* height: 44px; */
-    /* width: 44px; */
-    left: -19px;
-    bottom: -26px;
-    /* background-color: rgba(255, 182, 39, 1); */
-    -webkit-transition: .4s;
-    transition: .4s;
-    /* border-radius: 50%; */
+  position: absolute;
+  /* content: ""; */
+  /* height: 44px; */
+  /* width: 44px; */
+  left: -19px;
+  bottom: -26px;
+  /* background-color: rgba(255, 182, 39, 1); */
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  /* border-radius: 50%; */
 }
 /* .slider:before {
     position: absolute;
@@ -100,18 +98,18 @@
     border-radius: 50%;
 } */
 
-input:checked+.slider {
-    background-color: #2196F3;
+input:checked + .slider {
+  background-color: #2196f3;
 }
 
-input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
 }
 
-input:checked+ .slider>.choiceBtn {
-    -webkit-transform: translateX(44px);
-    -ms-transform: translateX(44px);
-    transform: translateX(44px);
+input:checked + .slider > .choiceBtn {
+  -webkit-transform: translateX(44px);
+  -ms-transform: translateX(44px);
+  transform: translateX(44px);
 }
 
 /* Rounded sliders */
@@ -124,14 +122,13 @@ input:checked+ .slider>.choiceBtn {
 } */
 
 @media screen and (min-width: 767.99px) {
-    .modal {
-        min-width: 540px;
-        min-height: 511px;
-    }
+  .modal {
+    min-width: 540px;
+    min-height: 511px;
+  }
 }
 
 /* desktop */
 
 @media screen and (min-width: 1199.99px) {
-    
 }

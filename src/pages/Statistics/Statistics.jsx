@@ -1,7 +1,8 @@
+import DiagramTab from 'components/DiagramTab/DiagramTab';
 import React from 'react';
 
 const Statistics = () => {
-  return <div>Statistics</div>;
+  return <DiagramTab />;
 };
 
 export default Statistics;

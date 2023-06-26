@@ -1,4 +1,3 @@
-import Dashboard from './Dashboard/Dashboard';
 import PublicRoutes from './PublicRoutes/PublicRoutes';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 import Home from './Home/Home';
@@ -10,10 +9,8 @@ import { refreshUser } from 'redux/auth/operations';
 import { selectToken } from 'redux/auth/selectors';
 import { getCurrencyThunk } from 'redux/currency/operations';
 import Loader from './Loader/Loader';
-// import Login from '../pages/Login/Login';
-// import Registration from 'pages/Registration/Registration';
-// import Statistics from 'pages/Statistics/Statistics';
 import { Suspense, lazy } from 'react';
+import Statistics from 'pages/Statistics/Statistics';
 
 const Registration = lazy(() => import('../pages/Registration/Registration'));
 const Login = lazy(() => import('../pages/Login/Login'));
@@ -42,11 +39,11 @@ export const App = () => {
               <Route path="/login" element={<Login />} />
             </Route>
             <Route path="/" element={<PrivateRoutes />}>
-              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="home" element={<Home />} />
-              {/* <Route path="statistics" element={<Statistics />} /> */}
+              <Route path="statistics" element={<Statistics />} />
               <Route path="currency" element={<Currency />} />
             </Route>
+            <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
         </Suspense>
       </div>

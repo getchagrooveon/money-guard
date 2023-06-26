@@ -16,9 +16,6 @@ import {
   TableRow,
   Sum,
   ButtonContainer,
-  ButtonDelTransaction,
-  ButtonEditTransaction,
-  StyledBiPencil,
 } from './Transactions.styled';
 import { formatMoney } from 'utils/formatMoney';
 import { MediaQuery } from 'components/MediaQuery/MediaQuery';
@@ -29,8 +26,11 @@ import {
   removeThunk,
 } from 'redux/transactions/operation';
 import { BtnAddTransaction } from 'components/BtnAddTransaction/BtnAddTransaction';
+import { setUpdatedTransaction } from 'redux/global/slice';
 
 export default function Transactions() {
+  // const [editTransaction, setEditTransaction] = useState(null);
+
   const dispatch = useDispatch();
   const transactions = useSelector(selectTransactions);
   const categories = useSelector(selectCategories);
@@ -39,7 +39,9 @@ export default function Transactions() {
     dispatch(getAllThunk());
     dispatch(categoriesThunk());
   }, [dispatch]);
-  const handleEditClick = object => console.log('enter Edit');
+  const handleEditClick = object => {
+    dispatch(setUpdatedTransaction(object));
+  };
 
   return (
     <>
@@ -84,20 +86,21 @@ export default function Transactions() {
                 </TransactionDetailsItem>
                 <TransactionDetailsItem>
                   <TransactionDetailsItemTitle>
-                    <ButtonDelTransaction
+                    <button
                       type="button"
                       onClick={() => dispatch(removeThunk(el.id))}
                     >
                       Delete
-                    </ButtonDelTransaction>
+                    </button>
                   </TransactionDetailsItemTitle>
-                  <ButtonEditTransaction
+                  <button
                     type="button"
-                    onClick={handleEditClick}
+                    onClick={() => {
+                      handleEditClick(el);
+                    }}
                   >
-                    <StyledBiPencil />
                     Edit
-                  </ButtonEditTransaction>
+                  </button>
                 </TransactionDetailsItem>
               </TransactionDetails>
             ))
@@ -129,18 +132,17 @@ export default function Transactions() {
                       {formatMoney(el.amount).replace('-', '')}
                     </Sum>
                     <ButtonContainer>
-                      <ButtonEditTransaction
-                        type="button"
-                        onClick={handleEditClick}
-                      >
-                        <StyledBiPencil />
-                      </ButtonEditTransaction>
-                      <ButtonDelTransaction
+                      <button type="button" onClick={handleEditClick}>
+                        Edit
+                      </button>
+                    </ButtonContainer>
+                    <ButtonContainer>
+                      <button
                         type="button"
                         onClick={() => dispatch(removeThunk(el.id))}
                       >
                         Delete
-                      </ButtonDelTransaction>
+                      </button>
                     </ButtonContainer>
                   </TableRow>
                 ))

@@ -1,11 +1,21 @@
 .overlayLogout {
-  position: fixed;
+  /* position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
   width: 100vw;
   height: 100vh;
-  background-color: #220d5b3b;
+  background-color: #220d5b3b; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
 }
 
 .modalLogout {
@@ -17,6 +27,7 @@
   background-color: rgba(255, 255, 255, 0.1);
   padding: 20px;
   text-align: center;
+  width: 320px;
 }
 
 .logoutAlert {
@@ -26,25 +37,33 @@
 }
 
 .btnModalLogout {
-  display: block;
-  background-image: linear-gradient(
-    167deg,
-    #ffc727 0%,
-    #9e40ba 61.46%,
-    #7000ff 90.54%
-  );
-  width: 280px;
-  height: 50px;
-  border: none;
-  border-radius: 32px;
   margin-top: 40px;
 }
 
 .btnCancelLogout {
-  display: block;
-  border: none;
-  border-radius: 32px;
+  margin-top: 20px;
+}
+
+.modalLogout > button {
+  cursor: pointer;
+  background-color: var(--main-text-color);
   width: 280px;
   height: 50px;
-  margin-top: 20px;
+  border: none;
+  border-radius: 32px;
+  transition: background-image 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    color 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modalLogout > button:hover,
+.modalLogout > button:focus {
+  color: var(--main-text-color);
+  background-image: linear-gradient(
+    96.76deg,
+    #ffc727 -16.42%,
+    #9e40ba 97.04%,
+    #7000ff 150.71%
+  );
+  box-shadow: 1px 9px 15px rgba(0, 0, 0, 0.2);
 }

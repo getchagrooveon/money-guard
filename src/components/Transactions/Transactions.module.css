@@ -1,31 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-:root {
-  --mainGradient: linear-gradient(
-    207deg,
-    rgba(52, 31, 160, 0.8) 0%,
-    rgba(80, 48, 154, 0.7) 35.94%,
-    rgba(106, 70, 165, 0.52) 61.04%,
-    rgba(133, 93, 175, 0.13) 100%
-  );
-  --secondaryGradient: linear-gradient(
-    360deg,
-    rgba(83, 61, 186, 0.7) 44.63%,
-    rgba(101, 35, 146, 0.8) 88.57%
-  );
-}
-
 .modal {
+  width: 320px;
   height: 600px;
   padding: 32px 20px 32px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  min-width: 100%;
+  justify-content: center;
+  background-color: #7000ff;
 }
-
 .backgroundColor {
-  background-image: var(--mainGradient), var(--secondaryGradient);
+  background-color: #7000ff;
+  box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(50px);
 }
 .title {
   display: flex;
@@ -69,7 +56,7 @@
 .inputLine {
   display: block;
   width: 100%;
-
+  background-color: #7000ff;
   outline: none;
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
@@ -78,7 +65,6 @@
   line-height: calc(27 / 18);
   color: #fbfbfb;
   padding-bottom: 8px;
-  padding-left: 20px;
 }
 .inputLine:hover {
   font-family: 'Poppins', sans-serif;
@@ -175,33 +161,4 @@ input:focus + .toggleSlider {
 input:checked + .toggleSlider:before {
   transform: translateX(26px);
   transition: transform 0.4s;
-}
-.customDatetime {
-  display: block;
-  width: 100%;
-  background-color: #7000ff;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  line-height: calc(27 / 18);
-  color: black;
-  padding-bottom: 8px;
-}
-/* .customDatetime:hover {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: calc(27 / 18);
-  color: #fbfbfb;
-} */
-.date {
-  margin-bottom: 40px;
-}
-.comment {
-  margin-bottom: 40px;
-}
-.amount {
-  margin-bottom: 40px;
 }
