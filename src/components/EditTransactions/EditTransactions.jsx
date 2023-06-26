@@ -18,6 +18,90 @@ const validationSchema = Yup.object({
 });
 
 export const EditTransactions = () => {
+  const customStyles = {
+    option: provided => {
+      return {
+        ...provided,
+        borderBottom: '1px solid rgba(255, 255, 255, 0.4);',
+        fontWeight: '400',
+        color: 'rgba(255, 255, 255, 0.4)',
+        backgroundColor: 'transparent',
+        cursor: 'pointer',
+        '&:hover': {
+          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          color: '#FF868D',
+          fontWeight: '400',
+        },
+        textAlign: 'left',
+      };
+    },
+    control: styles => ({
+      ...styles,
+      border: 'none',
+      boxShadow: 'none',
+      backgroundColor: 'transparent',
+    }),
+    singleValue: (provided, state) => {
+      const opacity = state.isDisabled ? 0.5 : 1;
+      const transition = 'opacity 300ms';
+
+      return {
+        ...provided,
+        opacity,
+        transition,
+        right: 5,
+        color: 'rgba(255, 255, 255, 0.4)',
+      };
+    },
+    menu: (provided, state) => {
+      return {
+        ...provided,
+        backgroundColor: 'rgba(83, 61, 186, 1)',
+        borderRadius: '8px',
+      };
+    },
+
+    valueContainer: () => {
+      return {
+        padding: '0px',
+        cursor: 'pointer',
+        '&:hover': {
+          cursor: 'text',
+        },
+      };
+    },
+    placeholder: () => {
+      return {
+        position: 'absolute',
+        left: 10,
+      };
+    },
+    indicatorSeparator: () => ({}),
+
+    indicators: () => {
+      return {
+        cursor: 'pointer',
+      };
+    },
+    dropdownIndicator: provided => {
+      return {
+        ...provided,
+        color: 'rgba(255, 255, 255, 0.4)',
+        '&:hover': {
+          color: '#fbfbfb',
+        },
+      };
+    },
+    input: provided => {
+      return {
+        ...provided,
+        margin: '0px',
+
+        minWidth: '100%',
+      };
+    },
+  };
+
   const {
     id = null,
     transactionDate = '',
@@ -92,7 +176,7 @@ export const EditTransactions = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <div className={`${css.backgroundColor} ${css.modal}`}>
         <h1 className={css.title}>Edit transactions</h1>
         {toggleValue && (
@@ -104,7 +188,7 @@ export const EditTransactions = () => {
             >
               Income
             </button>
-            <p>/</p>
+            <p className={css.slash}>/</p>
             <button
               type="button"
               className={`${css.toggle} ${
@@ -129,6 +213,7 @@ export const EditTransactions = () => {
           {toggleValue && (
             <Select
               className={css.inputLine}
+              styles={customStyles}
               options={options}
               value={formik.values.categoryId.value}
               onChange={({ value }) =>
@@ -149,7 +234,8 @@ export const EditTransactions = () => {
           <div className={css.date}>
             <Datetime
               inputProps={{ name: 'transactionDate' }}
-              className={css.customDatetime}
+              className={css.rdtPicker}
+              // className={`${css.inputLine} react-datetime-picker`}
               value={formik.values.transactionDate}
               dateFormat="YYYY-MM-DD"
               // input={true}
