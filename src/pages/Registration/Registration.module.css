@@ -1,7 +1,6 @@
 .screen {
-  background: radial-gradient(rgba(47, 21, 176, 1), rgba(106, 70, 165, 1));
-  box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
+  background: radial-gradient(rgba(60, 40, 160, 1), rgba(68, 53, 110, 1));
+
   /* background-color: var(--form-control); */
 
   text-align: center;
@@ -109,7 +108,7 @@
   width: 280px;
   color: var(--main-text-color);
   box-shadow: 1px 9px 15px 0px rgba(0, 0, 0, 0.2);
-
+  opacity: 1;
   cursor: pointer;
   transition: 0.2s;
 }
@@ -144,6 +143,7 @@
   box-shadow: 1px 9px 15px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: 0.2s;
+  opacity: 1;
 }
 
 .error_message {
@@ -157,21 +157,77 @@
 }
 @media (min-width: 768px) {
   .wrapper {
-    background: url(../../img/desktop/golden-coins-background-left-desktop.png)
-        left,
-      url(../../img/desktop/golden-coins-background-right-desktop.png) right,
-      linear-gradient(rgba(46, 23, 70, 1), rgba(106, 70, 165, 1));
+    height: 100%;
+    width: 100vw;
+    background: url(../../img/tablet/dollars-background-all-tablet.png),
+      radial-gradient(
+          at 18% 99%,
+          /* //внизу слева */ rgba(111, 50, 145, 1) 0px,
+          transparent 50%
+        )
+        repeat scroll 0% 0%,
+      /* //вверху справа */
+        radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      /* //внизу справа */
+        radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%)
+        repeat scroll 0% 0%,
+      /* //вверху справа лівіше */
+        radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      /* //вверху зліва правіше*/
+        radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      /* //зліва посередині*/
+        radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      /* //вверху зліва */ rgba(36, 34, 99, 1)
+        radial-gradient(
+          at 57% 33%,
+          rgba(96, 55, 169, 1) 0px,
+          rgb(22, 21, 61) 50%
+        )
+        repeat scroll 0% 0%;
+    background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 40px 0px 40px 0px;
   }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .wrapper {
+      background: url(../../img/tablet/dollars-background-all-2x@tablet.png),
+        radial-gradient(at 18% 99%, rgba(111, 50, 145, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        rgba(36, 34, 99, 1)
+          radial-gradient(
+            at 57% 33%,
+            rgba(96, 55, 169, 1) 0px,
+            rgb(22, 21, 61) 50%
+          )
+          repeat scroll 0% 0%;
+    }
+  }
   .screen {
+    box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
     width: 533px;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 40px 0;
-    opacity: 0.8;
+    margin-left: auto;
+    margin-right: auto;
   }
   .title {
     font-size: 27px;
@@ -198,5 +254,75 @@
   }
   .password_srtength {
     width: 410px;
+  }
+}
+@media (min-width: 1100px) {
+  .wrapper {
+    height: 100%;
+    width: 100vw;
+    background: url(../../img/desktop/dollars-background-left-desktop.png) left,
+      url(../../img/desktop/dollars-background-right-desktop.png) right,
+      radial-gradient(
+          at 18% 99%,
+          /* //внизу слева */ rgba(111, 50, 145, 1) 0px,
+          transparent 50%
+        )
+        repeat scroll 0% 0%,
+      /* //вверху справа */
+        radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      /* //внизу справа */
+        radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%)
+        repeat scroll 0% 0%,
+      /* //вверху справа лівіше */
+        radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      /* //вверху зліва правіше*/
+        radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      /* //зліва посередині*/
+        radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      /* //вверху зліва */ rgba(36, 34, 99, 1)
+        radial-gradient(
+          at 57% 33%,
+          rgba(96, 55, 169, 1) 0px,
+          rgb(22, 21, 61) 50%
+        )
+        repeat scroll 0% 0%;
+
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0px 40px 0px;
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .wrapper {
+      background: url(../../img/desktop/dollars-background-left-2x@desktop.png)
+          left,
+        url(../../img/desktop/dollars-background-right-2x@desktop.png) right,
+        radial-gradient(at 18% 99%, rgba(111, 50, 145, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        rgba(36, 34, 99, 1)
+          radial-gradient(
+            at 57% 33%,
+            rgba(96, 55, 169, 1) 0px,
+            rgb(22, 21, 61) 50%
+          )
+          repeat scroll 0% 0%;
+    }
   }
 }
