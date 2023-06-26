@@ -1,19 +1,10 @@
 import styled from '@emotion/styled';
 import { BiPencil } from 'react-icons/bi';
 
-export const TransactionMobContainer = styled.div`
-  width: 280px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 20px;
-  padding-right: 20px;
-`;
-
 export const TransactionDetails = styled.ul`
   border-radius: 10px;
   width: 100%;
   overflow: hidden;
-  margin-top: 32px;
   margin-bottom: 8px;
   border-left: 5px solid ${props => props.color};
 `;
@@ -48,7 +39,8 @@ export const SumText = styled.span`
 `;
 
 export const Table = styled.table`
-  margin-top: 20px;
+  margin-top: 34px;
+  margin-left: 37px;
   display: block;
   width: 100%;
 
@@ -56,32 +48,13 @@ export const Table = styled.table`
     width: 715px;
   }
 `;
-
-export const TransactionTabletContainer = styled.div`
-  max-width: 704px;
-  margin-top: 20px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 32px;
-  padding-right: 32px;
-`;
-
-export const TransactionDesktopContainer = styled.div`
-  max-width: 715px;
-  margin-top: 45px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 69px;
-  padding-right: 16px;
-`;
-
 export const TableBody = styled.tbody`
   display: block;
 `;
 
 export const TableHead = styled.tr`
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1.2fr 1.5fr 1.2fr 0.4fr 0.6fr;
+  grid-template-columns: 1.2fr 1fr 1.2fr 1.5fr 0.9fr 0.4fr 0.6fr;
   width: 100%;
   color: #fbfbfb;
   background-color: rgba(82, 59, 126, 0.6);
@@ -109,7 +82,7 @@ export const TableRow = styled.tr`
   position: relative;
   display: grid;
   padding: 16px 20px;
-  grid-template-columns: 1.2fr 1fr 1.2fr 1.5fr 1.2fr 0.4fr 0.6fr;
+  grid-template-columns: 1.9fr 1.2fr 1.7fr 1.5fr 1.2fr 0.8fr 1fr;
   width: 100%;
 
   &:after {
@@ -129,12 +102,11 @@ export const Sum = styled.td`
   color: ${props => props.color};
 `;
 
-export const ButtonContainer = styled.td`
+export const ButtonContainer = styled.tr`
   display: flex;
   justify-content: center;
-  align-items: right;
+  align-items: center;
   margin-left: auto;
-  margin-right: 12px;
 `;
 
 export const ButtonDelTransaction = styled.button`
@@ -157,9 +129,9 @@ export const ButtonDelTransaction = styled.button`
   cursor: pointer;
   transition: 0.2s;
 
-  .ButtonDelTransaction:active,
-  .ButtonDelransaction:focus,
-  .ButtonDelTransaction:hover {
+  &:active,
+  &:focus,
+  &:hover {
     box-shadow: 1px 5px 8px 0px rgba(0, 0, 0, 0.5);
   }
 `;
@@ -173,15 +145,15 @@ export const ButtonEditTransaction = styled.button`
   padding: 4px 12px;
   border-radius: 18px;
   border: none;
-  width: 69px;
+  width: 38px;
   height: 29px;
   color: ${({ theme }) => theme.colors.white60};
   cursor: pointer;
   transition: 0.2s;
 
-  .ButtonEditTransaction:active,
-  .ButtonEditTransaction:focus,
-  .ButtonEditTransaction:hover {
+  &:active,
+  &:focus,
+  &:hover {
     box-shadow: 1px 5px 8px 0px rgba(0, 0, 0, 0.5);
   }
 `;
