@@ -21,7 +21,6 @@ export const Currency = () => {
     eurBuy: eurPurchaseValue ? eurPurchaseValue.toFixed(2) : 'N/A',
     eurSell: eurSellValue ? eurSellValue.toFixed(2) : 'N/A',
   };
-
   return (
     <div className={css.currency}>
       <div>
