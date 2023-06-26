@@ -36,19 +36,19 @@ export const Currency = () => {
           <tbody className={css.currencybody}>
             <tr>
               <td className={css.left}>USD</td>
-              <td>{values.usdBuy}</td>
-              <td className={css.right}>{values.usdSell}</td>
+              <td>{values.usdBuy.toFixed(2)}</td>
+              <td className={css.right}>{values.usdSell.toFixed(2)}</td>
             </tr>
             <tr>
               <td className={css.left}>EUR</td>
-              <td>{values.eurBuy}</td>
-              <td className={css.right}>{values.eurSell}</td>
+              <td>{values.eurBuy.toFixed(2)}</td>
+              <td className={css.right}>{values.eurSell.toFixed(2)}</td>
             </tr>
           </tbody>
         </table>
       </div>
       <IconRateGraph className={css.iconRateGraph} />
-      <IconRateGraphOutline className={css.iconRateGraphOutline} />
+      {/* <IconRateGraphOutline className={css.iconRateGraphOutline} /> */}
     </div>
   );
 };

@@ -14,6 +14,7 @@ import Loader from './Loader/Loader';
 // import Registration from 'pages/Registration/Registration';
 // import Statistics from 'pages/Statistics/Statistics';
 import { Suspense, lazy } from 'react';
+import { currencyQueryTime } from 'redux/currency/selectors';
 
 const Registration = lazy(() => import('../pages/Registration/Registration'));
 const Login = lazy(() => import('../pages/Login/Login'));
@@ -23,13 +24,19 @@ export const App = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const LoggedIn = useSelector(selectToken);
+  const lastCurrencyQueryTime = useSelector(currencyQueryTime);
 
   useEffect(() => {
     if (LoggedIn) {
       dispatch(refreshUser(token));
-      dispatch(getCurrencyThunk());
     }
   }, [dispatch, token, LoggedIn]);
+
+  useEffect(() => {
+    if (Date.now() - lastCurrencyQueryTime > 600000) {
+      dispatch(getCurrencyThunk());
+    }
+  }, [dispatch, lastCurrencyQueryTime]);
 
   return (
     <>
