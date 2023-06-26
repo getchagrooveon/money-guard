@@ -7,10 +7,34 @@ import { BtnMinus } from './BtnMinus';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCategories } from 'redux/transactions/selectors';
 import { addThunk } from 'redux/transactions/operation';
+import 'flatpickr/dist/themes/material_green.css';
+import Flatpickr from 'react-flatpickr';
+// import flatpickr from 'flatpickr';
+// import 'flatpickr/dist/flatpickr.min.css';
+import 'flatpickr/dist/themes/dark.css';
+// const optionsFlatpickr = {
+//   enableTime: false,
+//   dateFormat: 'm/d/Y',
+//   defaultDate: '--/--/----',
+//   onClose(selectedDates) {
+//     selectedDates[0];
+//   },
+// };
 
 export const AddTransaction = ({ closeModal }) => {
   // const [isChecked, setIsChecked] = useState(false);
   const dispatch = useDispatch();
+
+  // const datePicker = document.getElementById('date');
+  // const optionsFlatpickr = {
+  //   enableTime: false,
+  //   dateFormat: 'm/d/Y',
+  //   defaultDate: '--/--/----',
+  // onClose(selectedDates) {
+  //   selectedDates[0];
+  // },
+  // };
+  // flatpickr(datePicker, optionsFlatpickr);
 
   const categori = useSelector(selectCategories);
   const income = categori.find(el => el.type === 'INCOME');
@@ -30,8 +54,8 @@ export const AddTransaction = ({ closeModal }) => {
   //     ));
   // }
 
-  const stylePlus = { color: 'yellow' };
-  const styleMinus = { color: 'red' };
+  // const stylePlus = { color: 'yellow' };
+  // const styleMinus = { color: 'red' };
 
   useEffect(() => {
     const closeEsc = e => {
@@ -88,11 +112,11 @@ export const AddTransaction = ({ closeModal }) => {
   return (
     <div className={css.backdrop} onClick={closeBeckdrop}>
       <div className={css.modal}>
-        <h2>Add transaction</h2>
+        <h2 className={css.header}>Add transaction</h2>
         {/* <div>{<BtnPlus />}</div> */}
         {/* <div>{<BtnMinus />}</div> */}
         <div className={css.transactionChoice}>
-          <p style={!type ? stylePlus : styleMinus}>Income</p>
+          <p className={!type ? css.income : undefined}>Income</p>
           <label className={css.switch}>
             <input
               type="checkbox"
@@ -110,7 +134,7 @@ export const AddTransaction = ({ closeModal }) => {
             <input type="checkbox" onChange={handleChecked} />
             <span className={`${css.slider} ${css.round}`}></span>
           </label> */}
-          <p style={type ? styleMinus : stylePlus}>Expense</p>
+          <p className={type ? css.expense : undefined}>Expense</p>
         </div>
         <form className={css.form} onSubmit={formik.handleSubmit}>
           {/* {isChecked ? <Income /> : <Expense />} */}
@@ -140,11 +164,27 @@ export const AddTransaction = ({ closeModal }) => {
               value={amount}
               onChange={formik.handleChange}
             />
-            <input
+            <Flatpickr
+              // defaultValue="07.10.2021"
+              options={{
+                dateFormat: 'd.m.Y',
+                disableMobile: 'true',
+              }}
               type="date"
               name="transactionDate"
-              value={transactionDate}
-              onChange={formik.handleChange}
+              id="date"
+              // options={optionsFlatpickr}
+              // value={transactionDate}
+              // onChange={e => {
+              //   console.log('e', e);
+              //   formik.handleChange(e[0]);
+              // }}
+              selected={(transactionDate && new Date(transactionDate)) || null}
+              onChange={val => {
+                formik.setFieldValue('transactionDate', val[0]);
+              }}
+              // placeholder={new Date()}
+              placeholder="DD.MM.YYYY"
             />
           </div>
           <input
@@ -153,10 +193,13 @@ export const AddTransaction = ({ closeModal }) => {
             placeholder="Comment"
             value={comment}
             onChange={formik.handleChange}
+            // className={css.inputComment}
           />
-          <button type="submit">Add</button>
+          <button className={css.btnAdd} type="submit">
+            Add
+          </button>
         </form>
-        <button type="button" onClick={closeButton}>
+        <button className={css.btn} type="button" onClick={closeButton}>
           Cancel
         </button>
       </div>
