@@ -1,6 +1,14 @@
 import styled from '@emotion/styled';
 import { BiPencil } from 'react-icons/bi';
 
+export const TransactionMobContainer = styled.div`
+  width: 280px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+`;
+
 export const TransactionDetails = styled.ul`
   border-radius: 10px;
   width: 100%;
@@ -49,18 +57,37 @@ export const Table = styled.table`
   }
 `;
 
+export const TransactionTabletContainer = styled.div`
+  max-width: 704px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+`;
+
+export const TransactionDesktopContainer = styled.div`
+  max-width: 715px;
+  margin-top: 45px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 69px;
+  padding-right: 16px;
+`;
+
 export const TableBody = styled.tbody`
   display: block;
-  width: 100%;
 `;
 
 export const TableHead = styled.tr`
   display: grid;
-  grid-template-columns: 1.5fr 1.2fr 1.6fr 1.8fr 1.4fr 1.5fr;
+  grid-template-columns: 1.2fr 1fr 1.2fr 1.5fr 1.2fr 0.4fr 0.6fr;
   width: 100%;
   color: #fbfbfb;
   background-color: rgba(82, 59, 126, 0.6);
-  padding: 16px 20px;
+  padding-left: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   border-radius: 8px;
   box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(50px);
@@ -82,7 +109,7 @@ export const TableRow = styled.tr`
   position: relative;
   display: grid;
   padding: 16px 20px;
-  grid-template-columns: 2fr 1.3fr 2.1fr 2fr 1.4fr 1.5fr;
+  grid-template-columns: 1.2fr 1fr 1.2fr 1.5fr 1.2fr 0.4fr 0.6fr;
   width: 100%;
 
   &:after {
