@@ -35,7 +35,7 @@ const LoginForm = () => {
 
   return (
     <section className={css.wrapper}>
-      <div className="containe">
+      <div className={css.container}>
         <div className={css.screen}>
           <NavLink to="/" className={css.logo}>
             <LogoSVG className={css.logoSvg} />

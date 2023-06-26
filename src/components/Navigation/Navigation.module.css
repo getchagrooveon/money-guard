@@ -4,6 +4,9 @@
   justify-content: center;
   width: 320px;
 }
+  .nav {
+      padding-top: 12px
+    }
 
 .navIcon {
   fill: rgba(255, 255, 255, 0.6);
@@ -16,7 +19,11 @@
 .navLink:hover .navIcon,
 .navLink:focus .navIcon {
   fill: #4a56e2;
-  /* background-color: var(--main-text-color); */
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(1, 9, 90, 0.1) 30%
+  );
 }
 
 .navText {
@@ -51,6 +58,7 @@
   }
 
   .navIcon {
+    border-radius: 4px;
     width: 24px;
     height: 24px;
   }
