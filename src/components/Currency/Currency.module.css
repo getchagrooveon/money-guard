@@ -81,6 +81,11 @@ td {
     display: none;
 }
 
+.USDvalue,
+.EURvalue {
+    display: none;
+}
+
 /* tablet */
 
 @media screen and (min-width: 768px) {
@@ -101,6 +106,11 @@ td {
     .graphsContainer {
         margin: 0 auto;
         padding: 0;
+    }
+
+    .USDvalue,
+    .EURvalue {
+        display: none;
     }
 }
 
