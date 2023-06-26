@@ -52,7 +52,7 @@ export const Registration = () => {
 
   return (
     <section className={css.wrapper}>
-      <div className="container">
+      <div className={css.container}>
         <div className={css.screen}>
           <div className={css.screen__content}>
             <NavLink to="/" className={css.logo}>
@@ -142,7 +142,7 @@ export const Registration = () => {
                   </div>
                 ) : null}
               </div>
-              <button type="submit" no-opacity className={css.login__submit}>
+              <button type="submit" className={css.login__submit}>
                 <span className={css.button__text}>Register</span>
               </button>
               <Link to="/login">
