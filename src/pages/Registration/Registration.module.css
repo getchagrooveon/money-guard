@@ -1,8 +1,8 @@
+.container {
+  padding: 0 20px;
+}
 .screen {
   background: radial-gradient(rgba(60, 40, 160, 1), rgba(68, 53, 110, 1));
-
-  /* background-color: var(--form-control); */
-
   text-align: center;
   padding: 23px 0;
 }
@@ -10,7 +10,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-
 .title {
   margin: 0 auto;
   margin-top: 0px;
@@ -19,18 +18,11 @@
   font-weight: 400;
   margin-bottom: 30px;
 }
-
-.login {
-  position: relative;
-}
-
 .login__field {
   padding-bottom: 26px;
-  position: relative;
 }
-
 .password_srtength {
-  width: 286px;
+  width: 280px;
   height: 4px;
   border-radius: 8px;
   margin-left: auto;
@@ -72,8 +64,8 @@
   font-family: inherit;
   color: rgba(255, 255, 255, 0.6);
   font-weight: 400;
-  width: 216px;
-  min-width: 216px;
+  width: 280px;
+  min-width: 280px;
   transition: 0.2s;
   position: relative;
 }
@@ -99,8 +91,9 @@
     #7000ff 90.54%
   );
   font-size: 18px;
+
   margin-top: 11px;
-  padding: 12px 0px;
+  padding: 15px 0px;
   border-radius: 20px;
   border: none;
   letter-spacing: 1.6px;
@@ -133,7 +126,7 @@
   background: var(--main-text-color);
   font-size: 18px;
   margin-top: 24px;
-  padding: 14px 0px;
+  padding: 15px 0px;
   border-radius: 20px;
   border: none;
   letter-spacing: 1.6px;
@@ -160,28 +153,19 @@
     height: 100%;
     width: 100vw;
     background: url(../../img/tablet/dollars-background-all-tablet.png),
-      radial-gradient(
-          at 18% 99%,
-          /* //внизу слева */ rgba(111, 50, 145, 1) 0px,
-          transparent 50%
-        )
+      radial-gradient(at 18% 99%, rgba(111, 50, 145, 1) 0px, transparent 50%)
         repeat scroll 0% 0%,
-      /* //вверху справа */
-        radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%)
+      radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%) repeat
+        scroll 0% 0%,
+      radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%) repeat
+        scroll 0% 0%,
+      radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
         repeat scroll 0% 0%,
-      /* //внизу справа */
-        radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%)
+      radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
         repeat scroll 0% 0%,
-      /* //вверху справа лівіше */
-        radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
+      radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
         repeat scroll 0% 0%,
-      /* //вверху зліва правіше*/
-        radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
-        repeat scroll 0% 0%,
-      /* //зліва посередині*/
-        radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
-        repeat scroll 0% 0%,
-      /* //вверху зліва */ rgba(36, 34, 99, 1)
+      rgba(36, 34, 99, 1)
         radial-gradient(
           at 57% 33%,
           rgba(96, 55, 169, 1) 0px,
@@ -194,6 +178,7 @@
     align-items: center;
     justify-content: center;
     padding: 40px 0px 40px 0px;
+    height: 100%;
   }
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
@@ -241,49 +226,42 @@
     padding: 12px;
     padding-left: 58px;
     font-size: 18px;
-    width: 340px;
-    min-width: 216px;
+    width: 410px;
+    min-width: 410px;
   }
   .login__submit {
     width: 300px;
     margin-top: 20px;
     margin-bottom: 20px;
+    padding: 15px 0px;
   }
   .login__link {
     width: 300px;
+    padding: 15px 0px;
   }
   .password_srtength {
     width: 410px;
   }
 }
-@media (min-width: 1100px) {
+@media (min-width: 1280px) {
   .wrapper {
     height: 100%;
     width: 100vw;
     background: url(../../img/desktop/dollars-background-left-desktop.png) left,
       url(../../img/desktop/dollars-background-right-desktop.png) right,
-      radial-gradient(
-          at 18% 99%,
-          /* //внизу слева */ rgba(111, 50, 145, 1) 0px,
-          transparent 50%
-        )
+      radial-gradient(at 18% 99%, rgba(111, 50, 145, 1) 0px, transparent 50%)
         repeat scroll 0% 0%,
-      /* //вверху справа */
-        radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%)
+      radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%) repeat
+        scroll 0% 0%,
+      radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%) repeat
+        scroll 0% 0%,
+      radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
         repeat scroll 0% 0%,
-      /* //внизу справа */
-        radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%)
+      radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
         repeat scroll 0% 0%,
-      /* //вверху справа лівіше */
-        radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
+      radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
         repeat scroll 0% 0%,
-      /* //вверху зліва правіше*/
-        radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
-        repeat scroll 0% 0%,
-      /* //зліва посередині*/
-        radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
-        repeat scroll 0% 0%,
-      /* //вверху зліва */ rgba(36, 34, 99, 1)
+      rgba(36, 34, 99, 1)
         radial-gradient(
           at 57% 33%,
           rgba(96, 55, 169, 1) 0px,
@@ -295,8 +273,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
+
     padding: 40px 0px 40px 0px;
   }
+
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
