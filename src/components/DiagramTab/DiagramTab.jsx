@@ -56,30 +56,35 @@ export default function DiagramTab() {
   }, [dispatch]);
   return (
     <div className={css.diagram}>
-      <Chart sumData={sumData} />
-      <div className={css.selectWrapper}>
-        <Select
-          className={css.select}
-          options={months}
-          onChange={e => {
-            if (e.value !== currentMonth) {
-              currentMonth = e.value;
-              console.log('Sended query', e);
-            }
-          }}
-        />
-        <Select
-          className={css.select}
-          options={years}
-          onChange={e => {
-            if (e.value !== currentYear) {
-              currentYear = e.value;
-              console.log('Sended query', e);
-            }
-          }}
-        />
+      <div>
+        <h2 className={css.statistics}>Statistics</h2>
+        <Chart sumData={sumData} />
       </div>
-      <TableBlock data={sumData} />
+      <div>
+        <div className={css.selectWrapper}>
+          <Select
+            className={css.select}
+            options={months}
+            onChange={e => {
+              if (e.value !== currentMonth) {
+                currentMonth = e.value;
+                console.log('Sended query', e);
+              }
+            }}
+          />
+          <Select
+            className={css.select}
+            options={years}
+            onChange={e => {
+              if (e.value !== currentYear) {
+                currentYear = e.value;
+                console.log('Sended query', e);
+              }
+            }}
+          />
+        </div>
+        <TableBlock data={sumData} />
+      </div>
     </div>
   );
 }

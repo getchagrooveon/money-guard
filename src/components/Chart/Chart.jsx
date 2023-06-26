@@ -13,10 +13,8 @@ const data = {
   ],
 };
 export default function Chart({ sumData }) {
-  //   data.labels = sumData.map(e => e.name);
   data.datasets[0].data = sumData.map(e => e.total);
   data.datasets[0].backgroundColor = sumData.map(e => e.color);
-  //   console.log(data.datasets[0].backgroundColor);
   return (
     <div className={css.chart}>
       <Doughnut data={data} />
