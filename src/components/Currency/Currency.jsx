@@ -6,7 +6,7 @@ import {
   USDBuyRate,
   USDSellRate,
 } from 'redux/currency/selectors';
-// import { IconRateGraph } from 'components/Icons/IconRateGraph';
+import { IconRateGraph } from 'components/Icons/IconRateGraph';
 // import { IconRateGraphOutline } from 'components/Icons/IconRateGraphOutline';
 
 export const Currency = () => {
@@ -16,10 +16,10 @@ export const Currency = () => {
   const eurSellValue = useSelector(EURSellRate);
 
   const values = {
-    usdBuy: usdPurchaseValue ? usdPurchaseValue : 'N/A',
-    usdSell: usdSellValue ? usdSellValue : 'N/A',
-    eurBuy: eurPurchaseValue ? eurPurchaseValue : 'N/A',
-    eurSell: eurSellValue ? eurSellValue : 'N/A',
+    usdBuy: usdPurchaseValue ? usdPurchaseValue.toFixed(2) : 'N/A',
+    usdSell: usdSellValue ? usdSellValue.toFixed(2) : 'N/A',
+    eurBuy: eurPurchaseValue ? eurPurchaseValue.toFixed(2) : 'N/A',
+    eurSell: eurSellValue ? eurSellValue.toFixed(2) : 'N/A',
   };
 
   return (
@@ -32,7 +32,7 @@ export const Currency = () => {
             <th className={css.right}>Sell</th>
           </tr>
         </thead>
-        <tbody className={css.currencybody}>
+        <tbody>
           <tr>
             <td className={css.left}>USD</td>
             <td>{values.usdBuy}</td>
@@ -46,7 +46,7 @@ export const Currency = () => {
         </tbody>
       </table>
 
-      {/* <IconRateGraph className={css.iconRateGraph} /> */}
+      <IconRateGraph className={css.iconRateGraph} />
       {/* <IconRateGraphOutline className={css.iconRateGraphOutline} /> */}
     </div>
   );

@@ -30,9 +30,10 @@ export const App = () => {
   }, [dispatch, token, LoggedIn]);
 
   useEffect(() => {
-    if (Date.now() - lastCurrencyQueryTime > 600000) {
+    const timeNow = Date.now();
+    if (timeNow - lastCurrencyQueryTime > 600000) {
       dispatch(getCurrencyThunk());
-    }
+    } else return;
   }, [dispatch, lastCurrencyQueryTime]);
 
   return (
