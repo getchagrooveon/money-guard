@@ -1,0 +1,23 @@
+.balancrDesktop {
+  position: absolute;
+}
+
+.containerNopadding {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1248px;
+  padding-right: 16px;
+}
+
+.containerPadd {
+  padding-left: 16px;
+}
+
+.desktopSidebar {
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+  height: calc(100vh - 81px);
+}
+
+.layout {
+  height: 100vh;
+}
