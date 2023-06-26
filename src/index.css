@@ -144,7 +144,7 @@ a {
 
 /* desktop */
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .container {
     width: 1248px;
     padding: 0 16px;

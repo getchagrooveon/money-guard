@@ -1,6 +1,5 @@
 import PublicRoutes from './PublicRoutes/PublicRoutes';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
-import Home from './Home/Home';
 import Currency from './Currency/Currency';
 import { Navigate, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -10,7 +9,9 @@ import { selectToken } from 'redux/auth/selectors';
 import { getCurrencyThunk } from 'redux/currency/operations';
 import Loader from './Loader/Loader';
 import { Suspense, lazy } from 'react';
+import { currencyQueryTime } from 'redux/currency/selectors';
 import Statistics from 'pages/Statistics/Statistics';
+import Home from './Home/Home';
 
 const Registration = lazy(() => import('../pages/Registration/Registration'));
 const Login = lazy(() => import('../pages/Login/Login'));
@@ -20,13 +21,19 @@ export const App = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const LoggedIn = useSelector(selectToken);
+  const lastCurrencyQueryTime = useSelector(currencyQueryTime);
 
   useEffect(() => {
     if (LoggedIn) {
       dispatch(refreshUser(token));
-      dispatch(getCurrencyThunk());
     }
   }, [dispatch, token, LoggedIn]);
+
+  useEffect(() => {
+    if (Date.now() - lastCurrencyQueryTime > 600000) {
+      dispatch(getCurrencyThunk());
+    }
+  }, [dispatch, lastCurrencyQueryTime]);
 
   return (
     <>

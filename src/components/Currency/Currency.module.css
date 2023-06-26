@@ -1,5 +1,4 @@
 .currencytable {
-    min-width: 100%;
     text-align: center;
     color: var(--main-text-color);
     font-size: 16px;
@@ -51,4 +50,5 @@ td {
     width: 320px;
     height: 100px;
     flex-shrink: 0;
+    stroke: red;
 }
