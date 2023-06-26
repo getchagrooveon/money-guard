@@ -32,7 +32,7 @@ const Dashboard = () => {
         </div>
       )}
       {!isDesktop && !isMobile && (
-        <div>
+        <div className={css.dashboard}>
           <main style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ display: 'flex' }}>
               <div>
