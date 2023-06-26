@@ -7,6 +7,7 @@ export const TransactionDetails = styled.ul`
   overflow: hidden;
   margin-top: 32px;
   margin-bottom: 8px;
+  border-left: 5px solid ${props => props.color};
 `;
 
 export const TransactionDetailsItem = styled.li`
@@ -18,7 +19,6 @@ export const TransactionDetailsItem = styled.li`
   background: linear-gradient(220deg, #6d54eb 3.47%, #652392 90.06%);
   padding: 12px 20px;
   font-size: 16px;
-  border-left: 5px solid ${({ theme }) => theme.colors.dashboardText};
 
   &:after {
     position: absolute;
@@ -36,7 +36,7 @@ export const TransactionDetailsItemTitle = styled.p`
 `;
 
 export const SumText = styled.span`
-  color: ${({ theme }) => theme.colors.dashboardText};
+  color: ${props => props.color};
 `;
 
 export const Table = styled.table`
@@ -56,7 +56,7 @@ export const TableBody = styled.tbody`
 
 export const TableHead = styled.tr`
   display: grid;
-  grid-template-columns: 1.6fr 1.2fr 2fr 2fr 1fr 2fr;
+  grid-template-columns: 1.5fr 1.2fr 1.6fr 1.8fr 1.4fr 1.5fr;
   width: 100%;
   color: #fbfbfb;
   background-color: rgba(82, 59, 126, 0.6);
@@ -67,7 +67,6 @@ export const TableHead = styled.tr`
 `;
 
 export const TableHeader = styled.th`
-  font: ${({ theme }) => theme.fonts.secondary};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   font-size: 16px;
   color: #fbfbfb;
@@ -79,11 +78,11 @@ export const TableRow = styled.tr`
   font-weight: ${({ theme }) => theme.fontWeight.normal};
   font-size: 14px;
   color: #fbfbfb;
-  text-align: center;
+  text-align: left;
   position: relative;
   display: grid;
   padding: 16px 20px;
-  grid-template-columns: 1.6fr 1.2fr 2fr 2fr 1fr 2fr;
+  grid-template-columns: 2fr 1.3fr 2.1fr 2fr 1.4fr 1.5fr;
   width: 100%;
 
   &:after {
@@ -99,7 +98,8 @@ export const TableRow = styled.tr`
 
 export const Sum = styled.td`
   text-align: right;
-  color: ${({ theme }) => theme.colors.dashboardText};
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
+  color: ${props => props.color};
 `;
 
 export const ButtonContainer = styled.td`
@@ -107,7 +107,7 @@ export const ButtonContainer = styled.td`
   justify-content: center;
   align-items: right;
   margin-left: auto;
-  margin-right: 15px;
+  margin-right: 12px;
 `;
 
 export const ButtonDelTransaction = styled.button`
