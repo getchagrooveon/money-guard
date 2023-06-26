@@ -1,9 +1,37 @@
 .diagram {
   width: 320px;
 }
+.selectWrapper {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  column-gap: 16px;
+}
+.select {
+  width: 320px;
+}
 
 @media screen and (min-width: 768px) {
   .diagram {
     width: 768px;
+  }
+  .selectWrapper {
+    width: 336px;
+    flex-direction: row;
+  }
+  .select {
+    width: 160px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .diagram {
+    width: 768px;
+  }
+  .selectWrapper {
+    width: 395px;
+  }
+  .select {
+    width: 180px;
   }
 }

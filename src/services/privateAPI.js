@@ -1,4 +1,9 @@
 import axios from 'axios';
+import {
+  closeAddModal,
+  closeEditModal,
+  closeLogoutModal,
+} from 'redux/global/slice';
 
 const privateAPI = axios.create({
   baseURL: 'https://wallet.goit.ua/',
@@ -24,12 +29,14 @@ export const refresh = async body => {
   }
 };
 
-export const logout = async () => {
+export const logout = async (_, { dispatch }) => {
   try {
     const { data } = await privateAPI.delete('api/auth/sign-out');
+    dispatch(closeLogoutModal());
     token.unset();
     return data;
   } catch (error) {
+    dispatch(closeLogoutModal());
     token.unset();
     throw error;
   }
@@ -40,8 +47,9 @@ export const getTransactions = async () => {
   return data;
 };
 
-export const addTransaction = async body => {
+export const addTransaction = async (body, { dispatch }) => {
   const { data } = await privateAPI.post('api/transactions', body);
+  dispatch(closeAddModal());
   return data;
 };
 
@@ -50,16 +58,13 @@ export const removeTransaction = async id => {
   return id;
 };
 
-export const editTransaction = async ({
-  id,
-  transactionDate,
-  type,
-  categoryId,
-  comment,
-  amount,
-}) => {
+export const editTransaction = async (
+  { id, transactionDate, type, categoryId, comment, amount },
+  { dispatch }
+) => {
   const body = { transactionDate, type, categoryId, comment, amount };
   const { data } = await privateAPI.patch(`api/transactions/${id}`, body);
+  dispatch(closeEditModal());
   return data;
 };
 
