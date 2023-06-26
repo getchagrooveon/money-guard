@@ -9,13 +9,25 @@
 }
 
 .currency{
-    background-image: linear-gradient(to bottom, #937eff, #b45af0), radial-gradient(circle, #512da8, #311b92);
         background-repeat: no-repeat;
         background-size: cover;
         padding-bottom: 310px;
         padding-left: 20px;
         padding-right: 20px;
+        background:
+                radial-gradient(at 18% 99%, rgba(111, 50, 145, 1) 0px, transparent 50%) repeat scroll 0% 0%,
+                radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%) repeat scroll 0% 0%,
+                radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%) repeat scroll 0% 0%,
+                radial-gradient(at 96% 10%, rgb(61, 41, 121) 0px, transparent 50%) repeat scroll 0% 0%,
+                radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%) repeat scroll 0% 0%,
+                radial-gradient(at 1% 79%, rgb(74, 67, 155) 0px, transparent 50%) repeat scroll 0% 0%,
+                rgb(28, 24, 151) radial-gradient(at 57% 33%,
+                    rgba(96, 55, 169, 1) 0px,
+                    rgb(101, 32, 190) 10%) repeat scroll 0% 0%;
+
 }
+
+
 .head {
     display:flex;
     flex-direction: row;
@@ -52,18 +64,41 @@ td {
     font-weight: 400;
 }
 
-.iconRateGraph {
-    display: block;
-    width: 320px;
-    height: 70px;
-    flex-shrink: 0;
-    fill:rgba(255, 255, 255, 0.20)
+.main {
+    margin-top: 6px;
+    width: 335px;
+    background-image:
+            linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)),
+            linear-gradient(rgba(57, 0, 150, 0.2));
+border-bottom-left-radius: 5px;
+border-bottom-right-radius: 5px;
 }
 
-.classNameOutline {
-    width: 320px;
-    height: 88px;
-    flex-shrink: 0;
-    fill: aqua;
-    margin: 0 auto;
+.outline {
+    /* position: absolute;
+    bottom: 54%; */
+    width: 335px;
+    height: 80px;
+}
+
+/* tablet */
+
+@media screen and (min-width: 768px) {
+    .currency {
+        display: block;
+        align-items: center;
+    }
+    .graphsContainer {
+        align-content: center;
+        margin: 0 auto;
+    }
+}
+
+/* desktop */
+
+@media screen and (min-width: 1280px) {
+    .container {
+        width: 1248px;
+        padding: 0 16px;
+    }
 }

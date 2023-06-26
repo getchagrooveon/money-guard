@@ -1,31 +1,19 @@
 import css from './Currency.module.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
   EURBuyRate,
   EURSellRate,
   USDBuyRate,
   USDSellRate,
-  currencyQueryTime,
 } from 'redux/currency/selectors';
 import { IconRateGraph } from 'components/Icons/IconRateGraph';
-import { useEffect } from 'react';
-import { getCurrencyThunk } from 'redux/currency/operations';
-// import { IconRateGraphOutline } from 'components/Icons/IconRateGraphOutline';
+import { IconRateGraphOutline } from 'components/Icons/IconRateGraphOutline';
 
 export const Currency = () => {
   const usdPurchaseValue = useSelector(USDBuyRate);
   const usdSellValue = useSelector(USDSellRate);
   const eurPurchaseValue = useSelector(EURBuyRate);
   const eurSellValue = useSelector(EURSellRate);
-  const lastCurrencyQueryTime = useSelector(currencyQueryTime);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const timeNow = Date.now();
-    if (timeNow - lastCurrencyQueryTime > 600000) {
-      dispatch(getCurrencyThunk());
-    } else return;
-  }, [dispatch, lastCurrencyQueryTime]);
 
   const values = {
     usdBuy: usdPurchaseValue ? usdPurchaseValue.toFixed(2) : 'N/A',
@@ -57,9 +45,10 @@ export const Currency = () => {
           </tr>
         </tbody>
       </table>
-
-      <IconRateGraph className={css.iconRateGraph} />
-      {/* <IconRateGraphOutline className={css.iconRateGraphOutline} /> */}
+      <div className="container">
+        <IconRateGraphOutline className={css.outline} />
+        <IconRateGraph className={css.main} />
+      </div>
     </div>
   );
 };

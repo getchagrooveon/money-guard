@@ -21,12 +21,19 @@ export const App = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const LoggedIn = useSelector(selectToken);
+  const lastCurrencyQueryTime = useSelector(currencyQueryTime);
 
   useEffect(() => {
     if (LoggedIn) {
       dispatch(refreshUser(token));
     }
   }, [dispatch, token, LoggedIn]);
+
+  useEffect(() => {
+    if (Date.now() - lastCurrencyQueryTime > 600000) {
+      dispatch(getCurrencyThunk());
+    }
+  }, [dispatch, lastCurrencyQueryTime]);
 
   return (
     <>
