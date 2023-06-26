@@ -9,32 +9,11 @@ import { selectCategories } from 'redux/transactions/selectors';
 import { addThunk } from 'redux/transactions/operation';
 import 'flatpickr/dist/themes/material_green.css';
 import Flatpickr from 'react-flatpickr';
-// import flatpickr from 'flatpickr';
-// import 'flatpickr/dist/flatpickr.min.css';
+import 'flatpickr/dist/flatpickr.min.css';
 import 'flatpickr/dist/themes/dark.css';
-// const optionsFlatpickr = {
-//   enableTime: false,
-//   dateFormat: 'm/d/Y',
-//   defaultDate: '--/--/----',
-//   onClose(selectedDates) {
-//     selectedDates[0];
-//   },
-// };
 
 export const AddTransaction = ({ closeModal }) => {
-  // const [isChecked, setIsChecked] = useState(false);
   const dispatch = useDispatch();
-
-  // const datePicker = document.getElementById('date');
-  // const optionsFlatpickr = {
-  //   enableTime: false,
-  //   dateFormat: 'm/d/Y',
-  //   defaultDate: '--/--/----',
-  // onClose(selectedDates) {
-  //   selectedDates[0];
-  // },
-  // };
-  // flatpickr(datePicker, optionsFlatpickr);
 
   const categori = useSelector(selectCategories);
   const income = categori.find(el => el.type === 'INCOME');
@@ -45,22 +24,10 @@ export const AddTransaction = ({ closeModal }) => {
     label: el.name,
   }));
 
-  // {
-  //   categori &&
-  //     categori.map(el => (
-  //       <option key={el.id} value={el.id}>
-  //         {el.name}
-  //       </option>
-  //     ));
-  // }
-
-  // const stylePlus = { color: 'yellow' };
-  // const styleMinus = { color: 'red' };
-
   useEffect(() => {
     const closeEsc = e => {
       if (e.key === 'Escape') {
-        closeModal(false);
+        closeModal();
       }
     };
 
@@ -95,26 +62,19 @@ export const AddTransaction = ({ closeModal }) => {
   const { type, amount, transactionDate, comment, categoryId } = formik.values;
 
   const closeButton = () => {
-    closeModal(false);
+    closeModal();
   };
 
   const closeBeckdrop = e => {
     if (e.target === e.currentTarget) {
-      closeModal(false);
+      closeModal();
     }
   };
-
-  // const handleChecked = e => {
-  //   const { checked } = e.target;
-  //   setIsChecked(checked);
-  // };
 
   return (
     <div className={css.backdrop} onClick={closeBeckdrop}>
       <div className={css.modal}>
         <h2 className={css.header}>Add transaction</h2>
-        {/* <div>{<BtnPlus />}</div> */}
-        {/* <div>{<BtnMinus />}</div> */}
         <div className={css.transactionChoice}>
           <p className={!type ? css.income : undefined}>Income</p>
           <label className={css.switch}>
@@ -206,11 +166,3 @@ export const AddTransaction = ({ closeModal }) => {
     </div>
   );
 };
-
-// {
-//   "transactionDate": "string",
-//   "type": "INCOME",
-//   "categoryId": "string",
-//   "comment": "string",
-//   "amount": 0
-// }

@@ -147,14 +147,7 @@ input {
 }
 
 /*===================SWITCH==================*/
-/* .checkbox {
-    position: relative;
-    width: 80px;
-    height: 40px;
-    -webkit-appearance: none;
-} */
 
-/* The switch - the box around the slider */
 .switch {
   position: relative;
   display: inline-block;
@@ -164,12 +157,10 @@ input {
   /* height: 34px; */
 }
 
-/* Hide default HTML checkbox */
 .switch input {
   display: none;
 }
 
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -185,9 +176,6 @@ input {
 
 .choiceBtn {
   position: absolute;
-  /* content: ""; */
-  /* height: 44px; */
-  /* width: 44px; */
   left: -19px;
   bottom: -26px;
   /* background-color: rgba(255, 182, 39, 1); */
@@ -195,18 +183,7 @@ input {
   transition: 0.4s;
   /* border-radius: 50%; */
 }
-/* .slider:before {
-    position: absolute;
-    content: "";
-    height: 44px;
-    width: 44px;
-    left: -4px;
-    bottom: -2px;
-    background-color: rgba(255, 182, 39, 1);
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 50%;
-} */
+
 
 input:checked + .slider {
   background-color: #ffffff;
@@ -232,14 +209,6 @@ input:checked + .slider > .choiceBtn {
 
 /*===================================================*/
 
-/* Rounded sliders */
-/* .slider.round {
-    border-radius: 34px;
-} */
-
-/* .slider.round:before {
-    border-radius: 50%;
-} */
 
 @media screen and (min-width: 767.99px) {
   .modal {
@@ -255,7 +224,6 @@ input:checked + .slider > .choiceBtn {
   }
 }
 
-/* desktop */
 
 @media screen and (min-width: 1199.99px) {
 }
