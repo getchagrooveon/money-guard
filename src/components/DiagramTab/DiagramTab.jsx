@@ -1,5 +1,5 @@
 import Chart from 'components/Chart/Chart';
-import Table from 'components/Table/Table';
+import TableBlock from 'components/Table/Table';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { summaryThunk } from 'redux/transactions/operation';
@@ -8,6 +8,34 @@ import {
   selectCategoriesSummary,
 } from 'redux/transactions/selectors';
 import { getRandomHexColor } from 'utils/getRandomColor';
+import Select from 'react-select';
+
+const months = [
+  { label: 'January', value: 0 },
+  { label: 'February', value: 1 },
+  { label: 'March', value: 2 },
+  { label: 'April', value: 3 },
+  { label: 'May', value: 4 },
+  { label: 'June', value: 5 },
+  { label: 'July', value: 6 },
+  { label: 'August', value: 7 },
+  { label: 'September', value: 8 },
+  { label: 'October', value: 9 },
+  { label: 'November', value: 10 },
+  { label: 'December', value: 11 },
+];
+
+const years = [
+  { label: '2018', value: 2018 },
+  { label: '2019', value: 2019 },
+  { label: '2020', value: 2020 },
+  { label: '2021', value: 2021 },
+  { label: '2022', value: 2022 },
+  { label: '2023', value: 2023 },
+];
+
+let currentYear = null;
+let currentMonth = null;
 
 export default function DiagramTab() {
   const dispatch = useDispatch();
@@ -26,9 +54,27 @@ export default function DiagramTab() {
     dispatch(summaryThunk());
   }, [dispatch]);
   return (
-    <>
+    <div style={{ width: '300px' }}>
       <Chart sumData={sumData} />
-      <Table data={sumData} />
-    </>
+      <Select
+        options={months}
+        onChange={e => {
+          if (e.value !== currentMonth) {
+            currentMonth = e.value;
+            console.log('Sended query', e);
+          }
+        }}
+      />
+      <Select
+        options={years}
+        onChange={e => {
+          if (e.value !== currentYear) {
+            currentYear = e.value;
+            console.log('Sended query', e);
+          }
+        }}
+      />
+      <TableBlock data={sumData} />
+    </div>
   );
 }
