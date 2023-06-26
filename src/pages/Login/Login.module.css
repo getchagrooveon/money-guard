@@ -1,6 +1,5 @@
 .screen {
-  background: radial-gradient(rgba(47, 21, 176, 1), rgba(106, 70, 165, 1));
-  /* border-radius: 454px; */
+  background: radial-gradient(rgba(60, 40, 160, 1), rgba(68, 53, 110, 1));
   box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
   text-align: center;
   padding: 98px 0;
@@ -141,22 +140,91 @@
 
 @media (min-width: 768px) {
   .wrapper {
-    background: url(../../img/desktop/golden-coins-background-left-desktop.png)
-        left,
-      url(../../img/desktop/golden-coins-background-right-desktop.png) right,
-      linear-gradient(rgba(46, 23, 70, 1), rgba(106, 70, 165, 1));
+    background: url(../../img/tablet/golden-coins-background-left-tablet.png)
+        left top,
+      url(../../img/tablet/golden-coins-background-right-tablet.png) right,
+      radial-gradient(
+          at 8% 89%,
+          /* //внизу слева */ rgba(19, 19, 25, 1) 0px,
+          transparent 50%
+        )
+        repeat scroll 0% 0%,
+      /* //вверху справа */
+        radial-gradient(at 97% 8%, rgba(19, 19, 25, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      /* //внизу справа */
+        radial-gradient(
+          at 79% 82%,
+          rgba(114, 44, 135, 1) 0px,
+          rgba(42, 28, 134, 1) 50% 0px,
+          transparent 60%
+        )
+        repeat scroll 0% 0%,
+      /* //вверху справа лівіше */
+        radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      /* //вверху зліва правіше*/
+        radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      /* //зліва посередині*/
+        radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      /* //вверху зліва */ rgba(114, 44, 135, 1)
+        radial-gradient(
+          at 57% 33%,
+          rgba(96, 55, 169, 1) 0px,
+          rgba(114, 44, 135, 1) 50%
+        )
+        repeat scroll 0% 0%;
     background-repeat: no-repeat;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    min-height: 590px;
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .wrapper {
+      background: url(../../img/tablet/golden-coins-background-left-2x@tablet.png)
+          left top,
+        url(../../img/tablet/golden-coins-background-right-2x@tablet.png) right,
+        radial-gradient(at 8% 89%, rgba(19, 19, 25, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 97% 8%, rgba(19, 19, 25, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(
+            at 79% 82%,
+            rgba(114, 44, 135, 1) 0px,
+            rgba(42, 28, 134, 1) 50% 0px,
+            transparent 60%
+          )
+          repeat scroll 0% 0%,
+        radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        rgba(114, 44, 135, 1)
+          radial-gradient(
+            at 57% 33%,
+            rgba(96, 55, 169, 1) 0px,
+            rgba(114, 44, 135, 1) 50%
+          )
+          repeat scroll 0% 0%;
+    }
   }
   .screen {
+    box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.25);
+
     width: 533px;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 80px 0;
-    opacity: 0.8;
+    margin-left: auto;
+    margin-right: auto;
   }
   .title {
     font-size: 27px;
@@ -180,5 +248,85 @@
   }
   .registration__link {
     width: 300px;
+  }
+}
+@media (min-width: 1280px) {
+  .wrapper {
+    background: url(../../img/desktop/golden-coins-background-left-desktop.png)
+        left top,
+      url(../../img/desktop/golden-coins-background-right-desktop.png) right,
+      radial-gradient(
+          at 8% 89%,
+          /* //внизу слева */ rgba(19, 19, 25, 1) 0px,
+          transparent 50%
+        )
+        repeat scroll 0% 0%,
+      /* //вверху справа */
+        radial-gradient(at 97% 8%, rgba(19, 19, 25, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      /* //внизу справа */
+        radial-gradient(
+          at 79% 82%,
+          rgba(114, 44, 135, 1) 0px,
+          rgba(42, 28, 134, 1) 50% 0px,
+          transparent 60%
+        )
+        repeat scroll 0% 0%,
+      /* //вверху справа лівіше */
+        radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      /* //вверху зліва правіше*/
+        radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      /* //зліва посередині*/
+        radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      /* //вверху зліва */ rgba(114, 44, 135, 1)
+        radial-gradient(
+          at 57% 33%,
+          rgba(96, 55, 169, 1) 0px,
+          rgba(114, 44, 135, 1) 50%
+        )
+        repeat scroll 0% 0%;
+
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .wrapper {
+      background: url(../../img/desktop/golden-coins-background-left-2x@desktop.png)
+          left top,
+        url(../../img/desktop/golden-coins-background-right-2x@desktop.png)
+          right,
+        radial-gradient(at 8% 89%, rgba(19, 19, 25, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 97% 8%, rgba(19, 19, 25, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(
+            at 79% 82%,
+            rgba(114, 44, 135, 1) 0px,
+            rgba(42, 28, 134, 1) 50% 0px,
+            transparent 60%
+          )
+          repeat scroll 0% 0%,
+        radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        rgba(114, 44, 135, 1)
+          radial-gradient(
+            at 57% 33%,
+            rgba(96, 55, 169, 1) 0px,
+            rgba(114, 44, 135, 1) 50%
+          )
+          repeat scroll 0% 0%;
+    }
   }
 }

@@ -8,7 +8,6 @@ import { LogoSVG } from 'components/Icons/LogoSVG';
 import css from './Login.module.css';
 import { IconEmail } from 'components/Icons/IconEmail';
 import { IconLock } from 'components/Icons/IconLock';
-// import backgroundDesktop from '../../img/img_temporary/registr-min.png';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -35,11 +34,8 @@ const LoginForm = () => {
   });
 
   return (
-    <div className="container">
-      <div
-        className={css.wrapper}
-        // style={{ backgroundImage: `url(${backgroundDesktop})` }}
-      >
+    <section className={css.wrapper}>
+      <div className="containe">
         <div className={css.screen}>
           <NavLink to="/" className={css.logo}>
             <LogoSVG className={css.logoSvg} />
@@ -81,13 +77,13 @@ const LoginForm = () => {
             <button type="submit" className={css.login__submit}>
               <span className={css.button__text}>Log in</span>
             </button>
-            <div className={css.registration__link}>
-              <Link to="/registration">Register</Link>
-            </div>
+            <Link to="/registration">
+              <div className={css.registration__link}>Register</div>
+            </Link>
           </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
