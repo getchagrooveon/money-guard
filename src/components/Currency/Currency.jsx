@@ -24,7 +24,7 @@ export const Currency = () => {
 
   return (
     <div className={css.currency}>
-      <div className="container">
+      <div>
         <table className={css.currencytable} cellSpacing="0" cellPadding="0">
           <thead>
             <tr>
