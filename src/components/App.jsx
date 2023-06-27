@@ -22,16 +22,6 @@ export const App = () => {
   const token = useSelector(selectToken);
   const lastCurrencyQueryTime = useSelector(currencyQueryTime);
 
-  // useEffect(() => {
-  //   if (token) {
-  //     dispatch(refreshUser(token));
-  //   }
-  //   if (Date.now() - lastCurrencyQueryTime > 600000) {
-  //     return;
-  //   }
-  //   dispatch(getCurrencyThunk());
-  // }, [dispatch, token, lastCurrencyQueryTime]);
-
   useEffect(() => {
     if (Date.now() - lastCurrencyQueryTime > 600000) {
       return;
