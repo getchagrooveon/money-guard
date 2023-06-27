@@ -13,7 +13,7 @@ export const Balance = () => {
       {!isDesktop && (
         <div className={css.balanceBox}>
           <p className={css.balanceTitle}>Your balance</p>
-          <p className={css.balance}>
+          <p className={css.balance.toFixed(2)}>
             <span className={css.uah}>&#8372;</span> {balance}
           </p>
         </div>
