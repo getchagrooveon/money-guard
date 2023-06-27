@@ -240,8 +240,6 @@
 
 @media (min-width: 1280px) {
   .wrapper {
-    height: 100%;
-    width: 100vw;
     background: url(../../img/desktop/dollars-background-left-desktop.png) left,
       url(../../img/desktop/dollars-background-right-desktop.png) right,
       radial-gradient(at 18% 99%, rgba(111, 50, 145, 1) 0px, transparent 50%) repeat scroll 0% 0%,
@@ -258,8 +256,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-
     padding: 40px 0px 40px 0px;
   }
 
