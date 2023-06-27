@@ -37,21 +37,21 @@
     text-align: right;
 }
 
-thead {
+.currency thead {
     height: 50px;
     background-color: rgba(255, 255, 255, 0.20);
 }
 
-tr>td {
+.currency tr>td {
     border-top: 8px solid transparent;
 }
 
-th,
+.currency th,
 td {
     min-width: 33.33%;
 }
 
-td {
+.currency td {
     font-weight: 400;
 }
 

@@ -1,11 +1,13 @@
 .dashboard {
-background: radial-gradient(at 18% 99%, rgba(111, 50, 145, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-  radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%) repeat scroll 0% 0%,
-  radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%) repeat scroll 0% 0%,
-  radial-gradient(at 96% 10%, rgb(61, 41, 121) 0px, transparent 50%) repeat scroll 0% 0%,
-  radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-  radial-gradient(at 1% 79%, rgb(74, 67, 155) 0px, transparent 50%) repeat scroll 0% 0%,
-  rgb(28, 24, 151) radial-gradient(at 57% 33%,
-    rgba(96, 55, 169, 1) 0px,
-    rgb(101, 32, 190) 10%) repeat scroll 0% 0%;
+  background: radial-gradient(at 18% 99%,
+      rgba(71, 30, 132, 1) 0px,
+      transparent 50%) repeat scroll 0% 0%,
+    radial-gradient(at 97% 8%, rgba(22, 21, 37, 1) 0px, transparent 50%) repeat scroll 0% 0%,
+    radial-gradient(at 55% 89%, rgba(19, 18, 23, 1) 0px, transparent 60%) repeat scroll 0% 0%,
+    radial-gradient(at 86% 40%, rgba(19, 18, 23, 1) 0px, transparent 50%) repeat scroll 0% 0%,
+    radial-gradient(at 42% 20%, rgba(69, 33, 99, 1) 0px, transparent 60%) repeat scroll 0% 0%,
+    radial-gradient(at 78% 82%, rgb(83, 54, 163) 0px, transparent 50%) repeat scroll 0% 0%,
+    rgba(56, 36, 97, 1) radial-gradient(at 57% 33%,
+      rgba(60, 35, 121, 1) 0px,
+      rgba(60, 39, 116, 1) 10%) repeat scroll 0% 0%;
 }
