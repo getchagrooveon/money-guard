@@ -43,6 +43,8 @@ export const Table = styled.table`
   margin-left: 37px; */
   display: block;
   width: 100%;
+  height: 428px;
+  overflow-y: auto;
 
   ${({ theme }) => theme.media.desktop} {
     width: 715px;
@@ -53,9 +55,11 @@ export const TableBody = styled.tbody`
 `;
 
 export const TableHead = styled.tr`
+  border-top: none;
   display: grid;
   grid-template-columns: 1.2fr 1fr 1.2fr 1.5fr 0.9fr 0.4fr 0.6fr;
   width: 100%;
+  height: 56px;
   color: #fbfbfb;
   background-color: rgba(82, 59, 126, 0.6);
   padding-left: 20px;
@@ -76,14 +80,18 @@ export const TableHeader = styled.th`
 export const TableRow = styled.tr`
   font: ${({ theme }) => theme.fonts.secondary};
   font-weight: ${({ theme }) => theme.fontWeight.normal};
+  border-top: none;
   font-size: 14px;
   color: #fbfbfb;
   text-align: left;
   position: relative;
-  display: grid;
   padding: 16px 20px;
+  margin: 0;
+  display: grid;
   grid-template-columns: 1.9fr 1.2fr 1.7fr 1.5fr 1.2fr 0.8fr 1fr;
   width: 100%;
+  justify-content: center;
+  align-items: center;
 
   &:after {
     position: absolute;
@@ -97,16 +105,17 @@ export const TableRow = styled.tr`
 `;
 
 export const Sum = styled.td`
+  border-top: none;
   text-align: right;
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   color: ${props => props.color};
 `;
 
 export const ButtonContainer = styled.td`
-  display: flex;
+  border-top: none;
+  text-align: right;
   justify-content: center;
   align-items: center;
-  margin-left: auto;
 `;
 
 export const ButtonDelTransaction = styled.button`
@@ -157,6 +166,23 @@ export const ButtonEditTransaction = styled.button`
     box-shadow: 1px 5px 8px 0px rgba(0, 0, 0, 0.5);
   }
 `;
+
+export const BtnEditTransaction = styled.button`
+  background: transparent;
+  border-radius: 50%;
+  border: none;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:active,
+  &:focus,
+  &:hover {
+    box-shadow: 1px 5px 8px 0px rgba(0, 0, 0, 0.5);
+  }
+`;
+
 export const StyledBiPencil = styled(BiPencil)`
   width: 14px;
   height: 14px;

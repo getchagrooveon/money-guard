@@ -16,6 +16,7 @@ import {
   Sum,
   ButtonContainer,
   ButtonEditTransaction,
+  BtnEditTransaction,
   ButtonDelTransaction,
   StyledBiPencil,
 } from './Transactions.styled';
@@ -134,12 +135,12 @@ export default function Transactions() {
                       {formatMoney(el.amount).replace('-', '')}
                     </Sum>
                     <ButtonContainer>
-                      <ButtonEditTransaction
+                      <BtnEditTransaction
                         type="button"
                         onClick={() => handleEditClick(el)}
                       >
                         <StyledBiPencil />
-                      </ButtonEditTransaction>
+                      </BtnEditTransaction>
                     </ButtonContainer>
                     <ButtonContainer>
                       <ButtonDelTransaction
