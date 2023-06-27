@@ -10,9 +10,135 @@ import { addThunk } from 'redux/transactions/operation';
 import 'flatpickr/dist/themes/material_green.css';
 import Flatpickr from 'react-flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+// import 'flatpickr/dist/flatpickr.css';
+// import 'flatpickr/dist/themes/airbnb.css';
 // import 'flatpickr/dist/themes/dark.css';
+// import "flatpickr/dist/themes/material_green.css"
 
 export const AddTransaction = ({ closeModal }) => {
+  /*================Selector style=================*/
+  const customStyles = {
+    option: provided => {
+      return {
+        ...provided,
+        background: 'transparent',
+        border: 'none',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.4)',
+        outline: 'none',
+
+        // padding: '8px 20px',
+        color: '#FBFBFB',
+        fontSize: '18px',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.4);',
+        fontWeight: '400',
+        color: 'rgba(255, 255, 255, 0.4)',
+        backgroundColor: 'transparent',
+        cursor: 'pointer',
+        '&:hover': {
+          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+          color: '#FF868D',
+          fontWeight: '400',
+        },
+        textAlign: 'left',
+      };
+    },
+    control: styles => ({
+      ...styles,
+      border: 'none',
+      borderBottom: '1px solid rgba(255, 255, 255, 0.4)',
+      borderRadius: 0,
+      boxShadow: 'none',
+      backgroundColor: 'transparent',
+    }),
+    /*=== текст в інпуті, обраний з випадаючого списку ===*/
+    singleValue: (provided, state) => {
+      const opacity = state.isDisabled ? 0.5 : 1;
+      const transition = 'opacity 300ms';
+
+      return {
+        ...provided,
+        opacity,
+        transition,
+        right: 5,
+        color: '#FBFBFB',
+        padding: '8px 20px',
+        // color: 'red',
+        // backgroundColor: 'green',
+      };
+    },
+    /*=== випадаячий список ===*/
+    menu: (provided, state) => {
+      return {
+        ...provided,
+        backgroundColor: 'rgba(83, 61, 186, 1)',
+        borderRadius: '8px',
+        // color: 'red',
+        // backgroundColor: 'green',
+      };
+    },
+    menuList: base => ({
+      ...base,
+      '::-webkit-scrollbar': {
+        display: 'none',
+
+        // scroll: 'smooth',
+      },
+    }),
+
+    // valueContainer: () => {
+    //   return {
+    //     padding: '8px 20px',
+    //     cursor: 'pointer',
+    //     // color: 'red',
+    //     // backgroundColor: 'green',
+    //     '&:hover': {
+    //       cursor: 'text',
+    //     },
+    //   };
+    // },
+    /*=== текст плейсхолдеру ===*/
+    placeholder: () => {
+      return {
+        // backgroundColor: 'red',
+        color: 'rgba(255, 255, 255, 0.5)',
+        position: 'absolute',
+        left: 10,
+        padding: '8px 20px',
+        // height: '15px',
+      };
+    },
+    indicatorSeparator: () => ({}),
+
+    indicators: () => {
+      return {
+        cursor: 'pointer',
+      };
+    },
+    /*=== стрілочка для відкриття випадаючого списку===*/
+    dropdownIndicator: provided => {
+      return {
+        ...provided,
+        color: 'rgba(255, 255, 255, 0.4)',
+        '&:hover': {
+          color: '#fbfbfb',
+        },
+      };
+    },
+    /*=== текст котрий вводять вручну в інпут ===*/
+    input: provided => {
+      return {
+        ...provided,
+        margin: '0px',
+        color: '#FBFBFB',
+        // backgroundColor: 'red',
+        padding: '8px 20px',
+
+        minWidth: '100%',
+      };
+    },
+  };
+  /*===============End Selector style================*/
+
   const dispatch = useDispatch();
 
   const categori = useSelector(selectCategories);
@@ -76,7 +202,7 @@ export const AddTransaction = ({ closeModal }) => {
       <div className={css.modal}>
         <h2 className={css.header}>Add transaction</h2>
         <div className={css.transactionChoice}>
-          <p className={!type ? css.income : undefined}>Income</p>
+          <p className={!type ? css.income : css.text}>Income</p>
           <label className={css.switch}>
             <input
               type="checkbox"
@@ -94,7 +220,7 @@ export const AddTransaction = ({ closeModal }) => {
             <input type="checkbox" onChange={handleChecked} />
             <span className={`${css.slider} ${css.round}`}></span>
           </label> */}
-          <p className={type ? css.expense : undefined}>Expense</p>
+          <p className={type ? css.expense : css.text}>Expense</p>
         </div>
         <form className={css.form} onSubmit={formik.handleSubmit}>
           {/* {isChecked ? <Income /> : <Expense />} */}
@@ -103,6 +229,7 @@ export const AddTransaction = ({ closeModal }) => {
               placeholder="Select a category"
               // name="categoryId"
               options={options}
+              styles={customStyles}
               value={categoryId?.value}
               onChange={({ value }) =>
                 formik.setFieldValue('categoryId', value)
