@@ -4,9 +4,15 @@
   justify-content: center;
   width: 320px;
 }
-  .nav {
-      padding-top: 12px
-    }
+.nav {
+  padding: 12px 0 0 0;
+}
+
+.navList {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
 
 .navIcon {
   fill: rgba(255, 255, 255, 0.6);
@@ -22,7 +28,7 @@
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 1) 50%,
-    rgba(1, 9, 90, 0.1) 30%
+    rgba(56, 63, 142, 0.1) 30%
   );
 }
 
