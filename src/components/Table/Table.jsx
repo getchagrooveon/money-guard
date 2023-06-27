@@ -10,7 +10,6 @@ const IconBox = styled.div`
 `;
 
 export default function TableBlock(props) {
-  console.log('Theme table', props);
   const { data } = props;
   return (
     <table className={css.table}>
