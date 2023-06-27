@@ -11,7 +11,7 @@ import 'flatpickr/dist/themes/material_green.css';
 import Flatpickr from 'react-flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import { customStyles } from '../../utils/selectStyle';
-import { Backdrop } from 'components/Backdrop/Backdrop';
+import { Backdrop } from '../Backdrop/Backdrop';
 
 const svgClose = (
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none">
