@@ -13,6 +13,8 @@ import { closeEditModal } from 'redux/global/slice';
 import 'flatpickr/dist/themes/material_green.css';
 import Flatpickr from 'react-flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+import { customStyles } from 'utils/selectStyle';
+import { Backdrop } from 'components/Backdrop/Backdrop';
 
 const validationSchema = Yup.object({
   amount: Yup.number('must be a number').required(
@@ -21,101 +23,101 @@ const validationSchema = Yup.object({
 });
 
 export const EditTransactions = () => {
-  const customStyles = {
-    option: provided => {
-      return {
-        ...provided,
-        borderBottom: '1px solid rgba(255, 255, 255, 0.4);',
-        fontWeight: '400',
-        color: 'rgba(251, 251, 251, 1)',
-        backgroundColor: 'transparent',
-        cursor: 'pointer',
-        '&:hover': {
-          backgroundColor: 'rgba(255, 255, 255, 0.1)',
-          color: '#FF868D',
-          fontWeight: '400',
-        },
-        textAlign: 'left',
-      };
-    },
-    control: styles => ({
-      ...styles,
-      paddingBottom: '0px',
-      border: 'none',
-      boxShadow: 'none',
-      backgroundColor: 'transparent',
-    }),
-    singleValue: (provided, state) => {
-      const opacity = state.isDisabled ? 0.5 : 1;
-      const transition = 'opacity 300ms';
+  // const customStyles = {
+  //   option: provided => {
+  //     return {
+  //       ...provided,
+  //       borderBottom: '1px solid rgba(255, 255, 255, 0.4);',
+  //       fontWeight: '400',
+  //       color: 'rgba(251, 251, 251, 1)',
+  //       backgroundColor: 'transparent',
+  //       cursor: 'pointer',
+  //       '&:hover': {
+  //         backgroundColor: 'rgba(255, 255, 255, 0.1)',
+  //         color: '#FF868D',
+  //         fontWeight: '400',
+  //       },
+  //       textAlign: 'left',
+  //     };
+  //   },
+  //   control: styles => ({
+  //     ...styles,
+  //     paddingBottom: '0px',
+  //     border: 'none',
+  //     boxShadow: 'none',
+  //     backgroundColor: 'transparent',
+  //   }),
+  //   singleValue: (provided, state) => {
+  //     const opacity = state.isDisabled ? 0.5 : 1;
+  //     const transition = 'opacity 300ms';
 
-      return {
-        ...provided,
-        opacity,
-        transition,
-        right: 5,
-        fontWeigth: '400',
-        color: 'rgba(251, 251, 251, 1)',
-      };
-    },
-    menu: (provided, state) => {
-      return {
-        ...provided,
-        backgroundColor: 'rgba(83, 61, 186, 1)',
-        borderRadius: '8px',
-        height: '320px',
-      };
-    },
-    menuList: base => ({
-      ...base,
-      overflow: 'auto',
-      '::-webkit-scrollbar': {
-        display: 'none',
-        scrollBehavior: 'smooth',
-      },
-    }),
+  //     return {
+  //       ...provided,
+  //       opacity,
+  //       transition,
+  //       right: 5,
+  //       fontWeigth: '400',
+  //       color: 'rgba(251, 251, 251, 1)',
+  //     };
+  //   },
+  //   menu: (provided, state) => {
+  //     return {
+  //       ...provided,
+  //       backgroundColor: 'rgba(83, 61, 186, 1)',
+  //       borderRadius: '8px',
+  //       height: '320px',
+  //     };
+  //   },
+  //   menuList: base => ({
+  //     ...base,
+  //     overflow: 'auto',
+  //     '::-webkit-scrollbar': {
+  //       display: 'none',
+  //       scrollBehavior: 'smooth',
+  //     },
+  //   }),
 
-    valueContainer: () => {
-      return {
-        height: '10px',
-        padding: '0px',
-        cursor: 'pointer',
-        '&:hover': {
-          cursor: 'text',
-        },
-      };
-    },
-    placeholder: () => {
-      return {
-        position: 'absolute',
-        left: 10,
-      };
-    },
-    indicatorSeparator: () => ({}),
+  //   valueContainer: () => {
+  //     return {
+  //       height: '10px',
+  //       padding: '0px',
+  //       cursor: 'pointer',
+  //       '&:hover': {
+  //         cursor: 'text',
+  //       },
+  //     };
+  //   },
+  //   placeholder: () => {
+  //     return {
+  //       position: 'absolute',
+  //       left: 10,
+  //     };
+  //   },
+  //   indicatorSeparator: () => ({}),
 
-    indicators: () => {
-      return {
-        cursor: 'pointer',
-      };
-    },
-    dropdownIndicator: provided => {
-      return {
-        ...provided,
-        color: 'rgba(255, 255, 255, 0.4)',
-        '&:hover': {
-          color: '#fbfbfb',
-        },
-      };
-    },
-    // input: provided => {
-    //   return {
-    //     ...provided,
-    //     margin: '0px',
+  //   indicators: () => {
+  //     return {
+  //       cursor: 'pointer',
+  //     };
+  //   },
+  //   dropdownIndicator: provided => {
+  //     return {
+  //       ...provided,
+  //       color: 'rgba(255, 255, 255, 0.4)',
+  //       '&:hover': {
+  //         color: '#fbfbfb',
+  //       },
+  //     };
+  //   },
+  //   // input: provided => {
+  //   //   return {
+  //   //     ...provided,
+  //   //     margin: '0px',
 
-    //     minWidth: '100%',
-    //   };
-    // },
-  };
+  //   //     minWidth: '100%',
+  //   //   };
+  //   // },
+  // };
 
   const {
     id = null,
@@ -189,10 +191,21 @@ export const EditTransactions = () => {
       <path stroke="#FBFBFB" d="m1 1 16 16M1 17 17 1" />
     </svg>
   );
+
+  const closeBeckdrop = e => {
+    if (e.target === e.currentTarget) {
+      dispatch(closeEditModal());
+    }
+  };
+  const closeBtn = () => {
+    dispatch(closeEditModal());
+  };
+
   return (
-    <div className={css.container}>
+    // <div className={css.container}>
+    <Backdrop onClick={closeBeckdrop}>
       <div className={css.modal}>
-        <button className={css.closeBtn} type="button">
+        <button onClick={closeBtn} className={css.closeBtn} type="button">
           {svgClose}
         </button>
 
@@ -218,7 +231,6 @@ export const EditTransactions = () => {
         <form className={css.form}>
           {toggleValue && showSelect && (
             <Select
-              className={css.inputLine}
               styles={customStyles}
               options={options}
               value={formik.values.categoryId.value}
@@ -277,11 +289,12 @@ export const EditTransactions = () => {
             SAVE
           </button>
         </form>
-        <button className={css.btnCancel} type="button">
+        <button onClick={closeBtn} className={css.btnCancel} type="button">
           CANCEL
         </button>
       </div>
-    </div>
+      {/* </div> */}
+    </Backdrop>
   );
 };
 export default EditTransactions;
