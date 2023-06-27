@@ -6,9 +6,7 @@ import { formatMoney } from 'utils/formatMoney';
 
 export const Balance = () => {
   const isDesktop = useMediaQuery({ query: '(min-width:1280px)' });
-
   const balance = useSelector(state => state.auth.user.balance);
-  console.log(formatMoney(balance));
 
   return (
     <>
