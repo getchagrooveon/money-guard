@@ -51,9 +51,11 @@ export default function DiagramTab() {
     name: c.name,
     total: 0 - sum.find(e => e.name === c.name)?.total || 0,
   }));
+
   useEffect(() => {
     dispatch(summaryThunk());
   }, [dispatch]);
+
   return (
     <div className={css.diagram}>
       <div>

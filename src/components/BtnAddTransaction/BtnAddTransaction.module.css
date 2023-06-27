@@ -2,6 +2,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 
     width: 44px;
     height: 44px;
@@ -19,4 +22,11 @@
 .btnAdd:focus {
     scale: 1.03;
     box-shadow: 1px 5px 8px 0px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (min-width: 768px) {
+  .btnAdd{
+    bottom: 40px;
+        right: 40px;
+  }
 }

@@ -1,3 +1,7 @@
+.homeTab {
+  padding-top: 12px;
+}
+
 @media screen and (min-width: 768px) {
   .homeTab {
     height: calc(100vh - 81px);
