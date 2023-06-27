@@ -3,10 +3,15 @@ import Transactions from '../../pages/Transactions/Transactions';
 import css from './Home.module.css';
 import { useMediaQuery } from 'react-responsive';
 import { Balance } from 'components/Balance/Balance';
+import { useSelector } from 'react-redux';
+import { selectTransaction } from 'redux/global/selectors';
+import EditTransactions from 'components/EditTransactions/EditTransactions';
 
 const Home = () => {
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   const isDesktop = useMediaQuery({ query: '(min-width:1280px)' });
+  const transaction = useSelector(selectTransaction);
+
   return (
     <div className={css.homeTab}>
       {isMobile && (
@@ -23,6 +28,7 @@ const Home = () => {
       )}
 
       {isDesktop && <Transactions />}
+      {transaction && <EditTransactions />}
     </div>
   );
 };
