@@ -9,8 +9,10 @@ import { IconUser } from 'components/Icons/IconUser';
 import { IconLock } from 'components/Icons/IconLock';
 import { IconEmail } from 'components/Icons/IconEmail';
 import PasswordStrengthIndicator from 'components/PasswordStrengthIndicator/PasswordStrengthIndicator';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-export const Registration = () => {
+const Registration = () => {
   const validationSchema = Yup.object({
     username: Yup.string().required('Please enter your name'),
     email: Yup.string()
@@ -29,14 +31,6 @@ export const Registration = () => {
   const onSubmit = values => {
     const { confirmPassword, ...payload } = values;
     dispatch(registerUser(payload));
-    // .then(res => {
-    //   if (res.payload === 409) {
-    //     return alert('User with such email already exists');
-    //   }
-    //   if (res.payload === 400) {
-    //     return alert('Validation error');
-    //   }
-    // });
   };
 
   const formik = useFormik({
@@ -52,6 +46,7 @@ export const Registration = () => {
 
   return (
     <section className={css.wrapper}>
+      <ToastContainer />
       <div className={css.container}>
         <div className={css.screen}>
           <div className={css.screen__content}>
