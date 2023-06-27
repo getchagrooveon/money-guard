@@ -20,25 +20,26 @@ const Login = lazy(() => import('../pages/Login/Login'));
 export const App = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
-  const LoggedIn = useSelector(selectToken);
   const lastCurrencyQueryTime = useSelector(currencyQueryTime);
 
   useEffect(() => {
-    if (LoggedIn) {
-      dispatch(refreshUser(token));
-    }
     if (Date.now() - lastCurrencyQueryTime > 600000) {
       return;
     }
     dispatch(getCurrencyThunk());
-  }, [dispatch, token, LoggedIn, lastCurrencyQueryTime]);
+  }, [dispatch, lastCurrencyQueryTime]);
+
+  useEffect(() => {
+    if (token) {
+      dispatch(refreshUser(token));
+    }
+  }, [dispatch, token]);
 
   return (
     <>
       <div>
         <Suspense fallback={<Loader />}>
           <Routes>
-            <Route path="/" element={<Navigate to={'/dashboard'} />} />
             <Route path="/" element={<PublicRoutes />}>
               <Route path="/registration" element={<Registration />} />
               <Route path="/login" element={<Login />} />

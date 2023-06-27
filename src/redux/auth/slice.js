@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { loginUser, logoutUser, refreshUser, registerUser } from './operations';
+import { addThunk, updateThunk } from 'redux/transactions/operation';
 
 const initialState = {
   user: {
@@ -40,6 +41,14 @@ const handleLogout = state => {
   state.user = initialState.user;
 };
 
+const handleAddTransaction = (state, { payload }) => {
+  state.user.balance = payload.balanceAfter;
+};
+
+const handleUpdateTransaction = (state, { payload }) => {
+  state.user.balance = payload.balanceAfter;
+};
+
 const authSlise = createSlice({
   name: 'auth',
   initialState,
@@ -56,7 +65,9 @@ const authSlise = createSlice({
       .addCase(refreshUser.rejected, handleLoginRejected)
       .addCase(logoutUser.pending, handlePending)
       .addCase(logoutUser.fulfilled, handleLogout)
-      .addCase(logoutUser.rejected, handleLogout);
+      .addCase(logoutUser.rejected, handleLogout)
+      .addCase(addThunk.fulfilled, handleAddTransaction)
+      .addCase(updateThunk.fulfilled, handleUpdateTransaction);
   },
 });
 

@@ -10,6 +10,7 @@ import Select from 'react-select';
 import { updateThunk } from 'redux/transactions/operation';
 import { selectCategories } from 'redux/transactions/selectors';
 import { selectTransaction } from 'redux/global/selectors';
+import { closeEditModal } from 'redux/global/slice';
 
 const validationSchema = Yup.object({
   amount: Yup.number('must be a number').required(
@@ -161,15 +162,16 @@ export const EditTransactions = () => {
 
   useEffect(() => {
     const onClose = event => {
+      console.log(event);
       if (event.code === 'Escape') {
-        dispatch();
+        dispatch(closeEditModal());
       }
     };
-    document.addEventListener('keypress', onClose);
+    window.addEventListener('keydown', onClose);
     return () => {
-      document.removeEventListener('keypress', onClose);
+      window.removeEventListener('keydown', onClose);
     };
-  });
+  }, [dispatch]);
 
   const handleToggle = () => {
     setToggleValue(prevToggleValue => !prevToggleValue);

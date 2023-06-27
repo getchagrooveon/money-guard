@@ -29,12 +29,13 @@
 
 .headerLeft {
   display: flex;
+  justify-content: center;
   align-items: center;
   margin-left: auto;
 }
 
 .name {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .hiddenExit {
@@ -48,7 +49,7 @@
 .iconExit {
   width: 18px;
   height: 18px;
-  margin-left: 8px;
+
   fill: rgba(255, 255, 255, 0.6);
 }
 
@@ -69,6 +70,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .iconExit {
+    margin-left: 8px;
+  }
+
   .header {
     padding: 16px 0;
   }
@@ -79,6 +84,9 @@
   }
 
   .logoText {
+    font-size: 18px;
+  }
+  .name {
     font-size: 18px;
   }
 

@@ -39,8 +39,8 @@ export const SumText = styled.span`
 `;
 
 export const Table = styled.table`
-  margin-top: 34px;
-  margin-left: 37px;
+  /* margin-top: 34px;
+  margin-left: 37px; */
   display: block;
   width: 100%;
 
@@ -102,7 +102,7 @@ export const Sum = styled.td`
   color: ${props => props.color};
 `;
 
-export const ButtonContainer = styled.tr`
+export const ButtonContainer = styled.td`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -145,7 +145,7 @@ export const ButtonEditTransaction = styled.button`
   padding: 4px 12px;
   border-radius: 18px;
   border: none;
-  width: 38px;
+  width: 69px;
   height: 29px;
   color: ${({ theme }) => theme.colors.white60};
   cursor: pointer;

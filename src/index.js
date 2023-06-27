@@ -11,15 +11,15 @@ import { ThemeProvider } from '@emotion/react';
 import { theme } from 'assets/theme';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <BrowserRouter basename="/money-guard">
-      <Provider store={store}>
-        <ThemeProvider theme={theme}>
-          <PersistGate persistor={persistor}>
-            <App />
-          </PersistGate>
-        </ThemeProvider>
-      </Provider>
-    </BrowserRouter>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <BrowserRouter basename="/money-guard">
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <PersistGate persistor={persistor}>
+          <App />
+        </PersistGate>
+      </ThemeProvider>
+    </Provider>
+  </BrowserRouter>
+  // </React.StrictMode>
 );

@@ -14,7 +14,7 @@ export const Balance = () => {
         <div className={css.balanceBox}>
           <p className={css.balanceTitle}>Your balance</p>
           <p className={css.balance}>
-            <span className={css.uah}>&#8372;</span> {balance}
+            <span className={css.uah}>&#8372;</span> {balance.toFixed(2)}
           </p>
         </div>
       )}
@@ -22,7 +22,7 @@ export const Balance = () => {
         <div className={css.balanceBox}>
           <p className={css.balanceTitle}>Your balance</p>
           <p className={css.balance}>
-            <span className={css.uah}>&#8372;</span> {balance}
+            <span className={css.uah}>&#8372;</span> {balance.toFixed(2)}
           </p>
         </div>
       )}
