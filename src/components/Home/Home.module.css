@@ -2,4 +2,8 @@
   .homeTab {
     height: calc(100vh - 81px);
   }
+
+  .homeTab {
+    padding-top: 12px;
+  }
 }

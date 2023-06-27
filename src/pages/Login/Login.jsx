@@ -8,6 +8,8 @@ import { LogoSVG } from 'components/Icons/LogoSVG';
 import css from './Login.module.css';
 import { IconEmail } from 'components/Icons/IconEmail';
 import { IconLock } from 'components/Icons/IconLock';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -24,18 +26,14 @@ const LoginForm = () => {
     },
     validationSchema,
     onSubmit: values => {
-      dispatch(loginUser(values)).then(data => {
-        console.log('data :>> ', data);
-        // if (data.meta.rejectedWithValue) {
-        //   return alert('Login or password is incorrect');
-        // }
-      });
+      dispatch(loginUser(values));
     },
   });
 
   return (
     <section className={css.wrapper}>
-      <div className="containe">
+      <ToastContainer />
+      <div className={css.container}>
         <div className={css.screen}>
           <NavLink to="/" className={css.logo}>
             <LogoSVG className={css.logoSvg} />
