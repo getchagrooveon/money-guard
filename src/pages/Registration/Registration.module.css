@@ -91,10 +91,12 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  background: linear-gradient(167deg,
-      #ffc727 0%,
-      #9e40ba 61.46%,
-      #7000ff 90.54%);
+  background: linear-gradient(
+    167deg,
+    #ffc727 0%,
+    #9e40ba 61.46%,
+    #7000ff 90.54%
+  );
   font-size: 18px;
 
   margin-top: 11px;
@@ -159,39 +161,87 @@
     height: 100%;
     width: 100vw;
     background: url(../../img/tablet/dollars-background-all-tablet.png),
-      radial-gradient(at 18% 99%, rgba(111, 50, 145, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-      radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%) repeat scroll 0% 0%,
-      radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%) repeat scroll 0% 0%,
-      radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-      radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-      radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-      rgba(36, 34, 99, 1) radial-gradient(at 57% 33%,
-        rgba(96, 55, 169, 1) 0px,
-        rgb(22, 21, 61) 50%) repeat scroll 0% 0%;
+      radial-gradient(at 18% 99%, rgba(111, 50, 145, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%) repeat
+        scroll 0% 0%,
+      radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%) repeat
+        scroll 0% 0%,
+      radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      rgba(36, 34, 99, 1)
+        radial-gradient(
+          at 57% 33%,
+          rgba(96, 55, 169, 1) 0px,
+          rgb(22, 21, 61) 50%
+        )
+        repeat scroll 0% 0%;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 40px 0px 40px 0px;
-    height: 100vh;
   }
 
   @media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
     .wrapper {
       background: url(../../img/tablet/dollars-background-all-2x@tablet.png),
-        radial-gradient(at 18% 99%, rgba(111, 50, 145, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-        radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%) repeat scroll 0% 0%,
-        radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%) repeat scroll 0% 0%,
-        radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-        radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-        radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-        rgba(36, 34, 99, 1) radial-gradient(at 57% 33%,
-          rgba(96, 55, 169, 1) 0px,
-          rgb(22, 21, 61) 50%) repeat scroll 0% 0%;
-
+        radial-gradient(at 18% 99%, rgba(111, 50, 145, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        rgba(36, 34, 99, 1)
+          radial-gradient(
+            at 57% 33%,
+            rgba(96, 55, 169, 1) 0px,
+            rgb(22, 21, 61) 50%
+          )
+          repeat scroll 0% 0%;
+    }
+    @media (min-device-pixel-ratio: 3),
+      (min-resolution: 288dpi),
+      (min-resolution: 3dppx) {
+      .wrapper {
+        background: url(../../img/tablet/dollars-background-all-3x@tablet.png),
+          radial-gradient(
+              at 18% 99%,
+              rgba(111, 50, 145, 1) 0px,
+              transparent 50%
+            )
+            repeat scroll 0% 0%,
+          radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%)
+            repeat scroll 0% 0%,
+          radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%)
+            repeat scroll 0% 0%,
+          radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
+            repeat scroll 0% 0%,
+          radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
+            repeat scroll 0% 0%,
+          radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
+            repeat scroll 0% 0%,
+          rgba(36, 34, 99, 1)
+            radial-gradient(
+              at 57% 33%,
+              rgba(96, 55, 169, 1) 0px,
+              rgb(22, 21, 61) 50%
+            )
+            repeat scroll 0% 0%;
+      }
     }
   }
 
@@ -240,42 +290,91 @@
 
 @media (min-width: 1280px) {
   .wrapper {
-    background: url(../../img/desktop/dollars-background-left-desktop.png) left,
-      url(../../img/desktop/dollars-background-right-desktop.png) right,
-      radial-gradient(at 18% 99%, rgba(111, 50, 145, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-      radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%) repeat scroll 0% 0%,
-      radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%) repeat scroll 0% 0%,
-      radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-      radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-      radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-      rgba(36, 34, 99, 1) radial-gradient(at 57% 33%,
-        rgba(96, 55, 169, 1) 0px,
-        rgb(22, 21, 61) 50%) repeat scroll 0% 0%;
+    background: url(../../img/desktop/dollars-background-left-desktop.png) left
+        top,
+      url(../../img/desktop/dollars-background-right-desktop.png) right top,
+      radial-gradient(at 18% 99%, rgba(111, 50, 145, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%) repeat
+        scroll 0% 0%,
+      radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%) repeat
+        scroll 0% 0%,
+      radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
+        repeat scroll 0% 0%,
+      rgba(36, 34, 99, 1)
+        radial-gradient(
+          at 57% 33%,
+          rgba(96, 55, 169, 1) 0px,
+          rgb(22, 21, 61) 50%
+        )
+        repeat scroll 0% 0%;
 
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    width: 100vw;
+
     padding: 40px 0px 40px 0px;
   }
 
   @media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
     .wrapper {
-      background: url(../../img/desktop/dollars-background-left-2x@desktop.png) left,
+      background: url(../../img/desktop/dollars-background-left-2x@desktop.png)
+          left,
         url(../../img/desktop/dollars-background-right-2x@desktop.png) right,
-        radial-gradient(at 18% 99%, rgba(111, 50, 145, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-        radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%) repeat scroll 0% 0%,
-        radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%) repeat scroll 0% 0%,
-        radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-        radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-        radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%) repeat scroll 0% 0%,
-        rgba(36, 34, 99, 1) radial-gradient(at 57% 33%,
-          rgba(96, 55, 169, 1) 0px,
-          rgb(22, 21, 61) 50%) repeat scroll 0% 0%;
+        radial-gradient(at 18% 99%, rgba(111, 50, 145, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        rgba(36, 34, 99, 1)
+          radial-gradient(
+            at 57% 33%,
+            rgba(96, 55, 169, 1) 0px,
+            rgb(22, 21, 61) 50%
+          )
+          repeat scroll 0% 0%;
+    }
+  }
+  @media (min-device-pixel-ratio: 3),
+    (min-resolution: 288dpi),
+    (min-resolution: 3dppx) {
+    .wrapper {
+      background: url(../../img/desktop/dollars-background-left-3x@desktop.png)
+          left,
+        url(../../img/desktop/golden-coins-background-right-desktop.png) right,
+        radial-gradient(at 18% 99%, rgba(111, 50, 145, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 97% 8%, rgba(100, 41, 146) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 79% 82%, rgba(18, 17, 20) 0px, transparent 60%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 96% 10%, rgba(35, 27, 58, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 42% 20%, rgba(42, 28, 134, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        radial-gradient(at 1% 79%, rgba(37, 33, 80, 1) 0px, transparent 50%)
+          repeat scroll 0% 0%,
+        rgba(36, 34, 99, 1)
+          radial-gradient(
+            at 57% 33%,
+            rgba(96, 55, 169, 1) 0px,
+            rgb(22, 21, 61) 50%
+          )
+          repeat scroll 0% 0%;
     }
   }
 }
