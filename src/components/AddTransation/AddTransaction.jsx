@@ -28,9 +28,9 @@ export const AddTransaction = ({ closeModal }) => {
         outline: 'none',
 
         // padding: '8px 20px',
-        color: '#FBFBFB',
+        // color: '#FBFBFB',
         fontSize: '18px',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.4);',
+        // borderBottom: '1px solid rgba(255, 255, 255, 0.4);',
         fontWeight: '400',
         color: 'rgba(255, 255, 255, 0.4)',
         backgroundColor: 'transparent',
