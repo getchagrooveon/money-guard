@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/money-guard/static/css/main.b8f90e19.css",
+    "main.css": "/money-guard/static/css/main.b3f324c8.css",
     "main.js": "/money-guard/static/js/main.7ec2cf25.js",
     "static/css/193.7ce5bf90.chunk.css": "/money-guard/static/css/193.7ce5bf90.chunk.css",
     "static/js/193.533ee020.chunk.js": "/money-guard/static/js/193.533ee020.chunk.js",
@@ -26,7 +26,7 @@
     "static/media/golden-coins-background-left-tablet.png": "/money-guard/static/media/golden-coins-background-left-tablet.93767d6f95635edd9323.png",
     "static/media/golden-coins-background-right-tablet.png": "/money-guard/static/media/golden-coins-background-right-tablet.795bf9fc5c27e868c5dd.png",
     "index.html": "/money-guard/index.html",
-    "main.b8f90e19.css.map": "/money-guard/static/css/main.b8f90e19.css.map",
+    "main.b3f324c8.css.map": "/money-guard/static/css/main.b3f324c8.css.map",
     "main.7ec2cf25.js.map": "/money-guard/static/js/main.7ec2cf25.js.map",
     "193.7ce5bf90.chunk.css.map": "/money-guard/static/css/193.7ce5bf90.chunk.css.map",
     "193.533ee020.chunk.js.map": "/money-guard/static/js/193.533ee020.chunk.js.map",
@@ -35,7 +35,7 @@
     "544.7c3dd9d6.chunk.css.map": "/money-guard/static/css/544.7c3dd9d6.chunk.css.map"
   },
   "entrypoints": [
-    "static/css/main.b8f90e19.css",
+    "static/css/main.b3f324c8.css",
     "static/js/main.7ec2cf25.js"
   ]
 }
