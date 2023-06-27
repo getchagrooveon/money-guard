@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import css from './EditTransactions.module.css';
-import Datetime from 'react-datetime';
+// import Datetime from 'react-datetime';
 import 'react-datetime/css/react-datetime.css';
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -11,6 +10,9 @@ import { updateThunk } from 'redux/transactions/operation';
 import { selectCategories } from 'redux/transactions/selectors';
 import { selectTransaction } from 'redux/global/selectors';
 import { closeEditModal } from 'redux/global/slice';
+import 'flatpickr/dist/themes/material_green.css';
+import Flatpickr from 'react-flatpickr';
+import 'flatpickr/dist/flatpickr.min.css';
 
 const validationSchema = Yup.object({
   amount: Yup.number('must be a number').required(
@@ -25,7 +27,7 @@ export const EditTransactions = () => {
         ...provided,
         borderBottom: '1px solid rgba(255, 255, 255, 0.4);',
         fontWeight: '400',
-        color: 'rgba(255, 255, 255, 0.4)',
+        color: 'rgba(251, 251, 251, 1)',
         backgroundColor: 'transparent',
         cursor: 'pointer',
         '&:hover': {
@@ -38,6 +40,7 @@ export const EditTransactions = () => {
     },
     control: styles => ({
       ...styles,
+      paddingBottom: '0px',
       border: 'none',
       boxShadow: 'none',
       backgroundColor: 'transparent',
@@ -51,7 +54,8 @@ export const EditTransactions = () => {
         opacity,
         transition,
         right: 5,
-        color: 'rgba(255, 255, 255, 0.4)',
+        fontWeigth: '400',
+        color: 'rgba(251, 251, 251, 1)',
       };
     },
     menu: (provided, state) => {
@@ -59,11 +63,21 @@ export const EditTransactions = () => {
         ...provided,
         backgroundColor: 'rgba(83, 61, 186, 1)',
         borderRadius: '8px',
+        height: '320px',
       };
     },
+    menuList: base => ({
+      ...base,
+      overflow: 'auto',
+      '::-webkit-scrollbar': {
+        display: 'none',
+        scrollBehavior: 'smooth',
+      },
+    }),
 
     valueContainer: () => {
       return {
+        height: '10px',
         padding: '0px',
         cursor: 'pointer',
         '&:hover': {
@@ -93,14 +107,14 @@ export const EditTransactions = () => {
         },
       };
     },
-    input: provided => {
-      return {
-        ...provided,
-        margin: '0px',
+    // input: provided => {
+    //   return {
+    //     ...provided,
+    //     margin: '0px',
 
-        minWidth: '100%',
-      };
-    },
+    //     minWidth: '100%',
+    //   };
+    // },
   };
 
   const {
@@ -121,7 +135,10 @@ export const EditTransactions = () => {
   }));
 
   const dispatch = useDispatch();
-  const [toggleValue, setToggleValue] = useState(type === 'EXPENSE');
+  // const [toggleValue, setToggleValue] = useState(type === 'EXPENSE');
+
+  const [toggleValue, setToggleValue] = useState(type === 'INCOME');
+  const [showSelect, setShowSelect] = useState(false);
   const formik = useFormik({
     initialValues: {
       amount,
@@ -131,38 +148,27 @@ export const EditTransactions = () => {
       type: toggleValue ? 'INCOME' : 'EXPENSE',
     },
     validationSchema,
+    onSubmit: values => {
+      const transactionDate = values.transactionDate.format('YYYY-MM-DD');
+      const updatedValues = {
+        ...values,
+        type: toggleValue ? 'INCOME' : 'EXPENSE',
+        id,
+        transactionDate,
+      };
 
-    onSubmit: value => {
-      const transactionDate = value.transactionDate.format('YYYY-MM-DD');
-      if (type) {
-        dispatch(
-          updateThunk({
-            ...value,
-            type: 'EXPENSE',
-            amount: 0 - value.amount,
-            id,
-            transactionDate,
-          })
-        );
-      } else {
-        dispatch(
-          updateThunk({
-            ...value,
-            type: income.type,
-            categoryId: income.id,
-            id,
-            transactionDate,
-          })
-        );
+      if (!toggleValue) {
+        updatedValues.type = income.type;
+        updatedValues.categoryId = income.id;
+        updatedValues.amount = 0 - updatedValues.amount;
       }
 
-      console.log(value, transactionDate);
+      dispatch(updateThunk(updatedValues));
     },
   });
 
   useEffect(() => {
     const onClose = event => {
-      console.log(event);
       if (event.code === 'Escape') {
         dispatch(closeEditModal());
       }
@@ -173,46 +179,44 @@ export const EditTransactions = () => {
     };
   }, [dispatch]);
 
-  const handleToggle = () => {
-    setToggleValue(prevToggleValue => !prevToggleValue);
+  const handleToggle = value => {
+    setToggleValue(value);
+    setShowSelect(value);
   };
 
+  const svgClose = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none">
+      <path stroke="#FBFBFB" d="m1 1 16 16M1 17 17 1" />
+    </svg>
+  );
   return (
-    <div className="container">
-      <div className={`${css.backgroundColor} ${css.modal}`}>
+    <div className={css.container}>
+      <div className={css.modal}>
+        <button className={css.closeBtn} type="button">
+          {svgClose}
+        </button>
+
         <h1 className={css.title}>Edit transactions</h1>
-        {toggleValue && (
-          <div className={css.toggleContainer}>
-            <button
-              type="button"
-              className={`${css.toggle} ${toggleValue ? css.activeToggle : ''}`}
-              onClick={handleToggle}
-            >
-              Income
-            </button>
-            <p className={css.slash}>/</p>
-            <button
-              type="button"
-              className={`${css.toggle} ${
-                !toggleValue ? css.activeToggle : ''
-              }`}
-              onClick={handleToggle}
-            >
-              Expense
-            </button>
-          </div>
-        )}
-        <form className={css.inputForm} onSubmit={formik.handleSubmit}>
-          <label className={css.toggleSwitch}>
-            <input
-              type="radio"
-              name="type"
-              checked={toggleValue}
-              onChange={handleToggle}
-            />
-            <span className={css.toggleSlider}></span>
-          </label>
-          {toggleValue && (
+        <div className={css.toggleContainer}>
+          <button
+            type="button"
+            className={`${css.toggle} ${!toggleValue ? css.orangeToggle : ''}`}
+            onClick={() => handleToggle(false)}
+          >
+            Income
+          </button>
+          <p className={css.slash}>/</p>
+          <button
+            type="button"
+            className={`${css.toggle} ${toggleValue ? css.pinkToggle : ''}`}
+            onClick={() => handleToggle(true)}
+          >
+            Expense
+          </button>
+        </div>
+
+        <form className={css.form}>
+          {toggleValue && showSelect && (
             <Select
               className={css.inputLine}
               styles={customStyles}
@@ -223,7 +227,7 @@ export const EditTransactions = () => {
               }
             />
           )}
-          <div className={css.amount}>
+          <div className={css.formBlock}>
             <input
               onChange={formik.handleChange}
               className={css.inputLine}
@@ -231,39 +235,53 @@ export const EditTransactions = () => {
               name="amount"
               placeholder="Transaction amount"
               value={formik.values.amount}
-            ></input>
-          </div>
-          <div className={css.date}>
-            <Datetime
-              inputProps={{ name: 'transactionDate' }}
-              className={css.rdtPicker}
-              // className={`${css.inputLine} react-datetime-picker`}
-              value={formik.values.transactionDate}
-              dateFormat="YYYY-MM-DD"
-              // input={true}
-              onChange={value => formik.setFieldValue('transactionDate', value)}
             />
+
+            <Flatpickr
+              // defaultValue="07.10.2021"
+              options={{
+                dateFormat: 'd.m.Y',
+                disableMobile: 'true',
+              }}
+              type="date"
+              name="transactionDate"
+              id="date"
+              selected={(transactionDate && new Date(transactionDate)) || null}
+              onChange={val => {
+                formik.setFieldValue('transactionDate', val[0]);
+              }}
+              placeholder="DD.MM.YYYY"
+            />
+
+            {/* <Datetime
+                inputProps={{ name: 'transactionDate' }}
+                className={css.rdtPicker}
+                value={formik.values.transactionDate}
+                dateFormat="YYYY-MM-DD"
+                onChange={value =>
+                  formik.setFieldValue('transactionDate', value)
+                }
+              /> */}
           </div>
-          <div className={css.comment}>
-            <input
-              onChange={formik.handleChange}
-              className={css.inputLine}
-              type="text"
-              name="comment"
-              placeholder="Comment"
-              value={formik.values.comment}
-            ></input>
-          </div>
-          <button className={css.btnSaveCancel} type="submit">
+
+          <input
+            onChange={formik.handleChange}
+            className={css.inputComment}
+            type="text"
+            name="comment"
+            placeholder="Comment"
+            value={formik.values.comment}
+          />
+
+          <button className={css.btnSave} type="submit">
             SAVE
           </button>
-          <button className={css.btnSaveCancel} type="button">
-            CANCEL
-          </button>
         </form>
+        <button className={css.btnCancel} type="button">
+          CANCEL
+        </button>
       </div>
     </div>
   );
 };
-
 export default EditTransactions;

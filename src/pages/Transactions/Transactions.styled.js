@@ -43,7 +43,7 @@ export const Table = styled.table`
   margin-left: 37px; */
   display: block;
   width: 100%;
-  height: 428px;
+  height: 422px;
   overflow-y: auto;
 
   ${({ theme }) => theme.media.desktop} {
@@ -57,7 +57,7 @@ export const TableBody = styled.tbody`
 export const TableHead = styled.tr`
   border-top: none;
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1.2fr 1.5fr 0.9fr 0.4fr 0.6fr;
+  grid-template-columns: 1.2fr 0.8fr 1.2fr 1.7fr 0.7fr 0.4fr 0.6fr;
   width: 100%;
   height: 56px;
   color: #fbfbfb;
@@ -85,10 +85,10 @@ export const TableRow = styled.tr`
   color: #fbfbfb;
   text-align: left;
   position: relative;
-  padding: 16px 20px;
+  padding-left: 20px;
   margin: 0;
   display: grid;
-  grid-template-columns: 1.9fr 1.2fr 1.7fr 1.5fr 1.2fr 0.8fr 1fr;
+  grid-template-columns: 2fr 0.9fr 1.8fr 1.5fr 1.5fr 0.8fr 1fr;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -116,6 +116,8 @@ export const ButtonContainer = styled.td`
   text-align: right;
   justify-content: center;
   align-items: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
 `;
 
 export const ButtonDelTransaction = styled.button`
