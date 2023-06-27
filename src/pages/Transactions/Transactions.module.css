@@ -34,12 +34,13 @@
 }
 
 .table {
-    margin-top: 20px;
+    margin-top: 40px;
     display: block;
     width: 100%;
 }
 
 .transactionTabletContainer {
+
     max-width: 768px;
     margin-top: 20px;
     margin-right: auto;
@@ -49,6 +50,7 @@
 }
 
 .transactionDesktopContainer {
+    margin-top: 40px;
     max-width: 800px;
     margin-right: auto;
     margin-left: auto;
