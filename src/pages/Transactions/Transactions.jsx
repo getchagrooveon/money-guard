@@ -41,6 +41,10 @@ export default function Transactions() {
     dispatch(categoriesThunk());
   }, [dispatch]);
 
+  const sortedTransactions = transactions.slice().sort((a, b) => {
+    return new Date(b.transactionDate) - new Date(a.transactionDate);
+  });
+
   const handleEditClick = object => {
     dispatch(setUpdatedTransaction(object));
   };
@@ -48,8 +52,8 @@ export default function Transactions() {
   return (
     <>
       <MediaQuery deviceName={'mobileAll'}>
-        {transactions.length > 0 && categories.length > 0
-          ? transactions.map((el, i) => (
+        {sortedTransactions.length > 0 && categories.length > 0
+          ? sortedTransactions.map((el, i) => (
               <TransactionDetails
                 key={el.id}
                 color={el.amount < 0 ? '#FF868D' : '#FFB627'}
@@ -120,8 +124,8 @@ export default function Transactions() {
               <TableHeader></TableHeader>
               <TableHeader></TableHeader>
             </TableHead>
-            {transactions.length > 0 && categories.length > 0
-              ? transactions.map(el => (
+            {sortedTransactions.length > 0 && categories.length > 0
+              ? sortedTransactions.map((el, i) => (
                   <TableRow key={el.id}>
                     <td>
                       {new Date(el.transactionDate)
