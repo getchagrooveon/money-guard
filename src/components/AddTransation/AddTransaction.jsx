@@ -10,6 +10,7 @@ import { addThunk } from 'redux/transactions/operation';
 import 'flatpickr/dist/themes/material_green.css';
 import Flatpickr from 'react-flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+import moment from 'moment';
 // import 'flatpickr/dist/flatpickr.css';
 // import 'flatpickr/dist/themes/airbnb.css';
 // import 'flatpickr/dist/themes/dark.css';
@@ -174,13 +175,32 @@ export const AddTransaction = ({ closeModal }) => {
     },
 
     onSubmit: value => {
+      console.log('value', value);
+
+      const date = value.transactionDate
+        .toString()
+        .replace('00:00:00', '12:00:00');
+
+      // const date = moment(value.transactionDate, 'YYYY-MM-DD').toString();
+
+      console.log('date', date);
       if (type) {
         dispatch(
-          addThunk({ ...value, type: 'EXPENSE', amount: 0 - value.amount })
+          addThunk({
+            ...value,
+            type: 'EXPENSE',
+            amount: 0 - value.amount,
+            transactionDate: new Date(date),
+          })
         );
       } else {
         dispatch(
-          addThunk({ ...value, type: income.type, categoryId: income.id })
+          addThunk({
+            ...value,
+            type: income.type,
+            categoryId: income.id,
+            transactionDate: new Date(date),
+          })
         );
       }
     },
