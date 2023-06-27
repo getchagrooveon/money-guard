@@ -10,7 +10,8 @@ import { addThunk } from 'redux/transactions/operation';
 import 'flatpickr/dist/themes/material_green.css';
 import Flatpickr from 'react-flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
-import { customStyles } from 'utils/selectStyle';
+import { customStyles } from '../../utils/selectStyle';
+import { Backdrop } from 'components/Backdrop/Backdrop';
 
 const svgClose = (
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none">
@@ -92,7 +93,8 @@ export const AddTransaction = ({ closeModal }) => {
   };
 
   return (
-    <div className={css.backdrop} onClick={closeBeckdrop}>
+    <Backdrop onClick={closeBeckdrop}>
+      {/* <div className={css.backdrop} onClick={closeBeckdrop}> */}
       <div className={css.modal}>
         <button className={css.closeBtn} type="button" onClick={closeButton}>
           {svgClose}
@@ -165,6 +167,7 @@ export const AddTransaction = ({ closeModal }) => {
           Cancel
         </button>
       </div>
-    </div>
+      {/* </div> */}
+    </Backdrop>
   );
 };
