@@ -7,6 +7,7 @@ import {
   selectCategories,
   selectCategoriesSummary,
   selectExpenseSummary,
+  selectIncomeSummary,
 } from 'redux/transactions/selectors';
 import { getRandomHexColor } from 'utils/getRandomColor';
 import Select from 'react-select';
@@ -146,7 +147,8 @@ export default function DiagramTab() {
   const sum = useSelector(selectCategoriesSummary).filter(
     e => e.type === 'EXPENSE'
   );
-  const totalExpenses = useSelector(selectExpenseSummary);
+  const totalExpenses = 0 - useSelector(selectExpenseSummary);
+  const totalIncome = useSelector(selectIncomeSummary);
   const sumData = categories
     .map(c => ({
       color: getRandomHexColor(),
@@ -166,7 +168,7 @@ export default function DiagramTab() {
         <div className={css.totalWrapper}>
           <Chart sumData={sumData} />
           <span className={css.total}>
-            &#8372; {formatMoney(0 - totalExpenses)}
+            &#8372; {formatMoney(totalExpenses)}
           </span>
         </div>
       </div>
@@ -197,7 +199,11 @@ export default function DiagramTab() {
             }}
           />
         </div>
-        <TableBlock data={sumData} />
+        <TableBlock
+          data={sumData}
+          expenses={totalExpenses}
+          income={totalIncome}
+        />
       </div>
     </div>
   );

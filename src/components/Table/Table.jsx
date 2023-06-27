@@ -1,6 +1,7 @@
 import React from 'react';
 import css from './Table.module.css';
 import styled from '@emotion/styled';
+import { formatMoney } from 'utils/formatMoney';
 
 const IconBox = styled.div`
   min-width: 24px;
@@ -8,9 +9,10 @@ const IconBox = styled.div`
   border-radius: 2px;
   background-color: ${({ color }) => color || '#ffffff'};
 `;
+const colors = ['#FF868D', '#FFB627'];
 
 export default function TableBlock(props) {
-  const { data } = props;
+  const { data, income, expenses } = props;
   return (
     <table className={css.table}>
       <thead className={css.head}>
@@ -26,9 +28,17 @@ export default function TableBlock(props) {
               <IconBox color={e.color} />
               {e.name}
             </th>
-            <th className={css.cell}>{e.total}</th>
+            <th className={css.cell}>{formatMoney(e.total)}</th>
           </tr>
         ))}
+        <tr className={css.rowAfter}>
+          <th>Expenses:</th>
+          <th style={{ color: colors[0] }}>{formatMoney(expenses)}</th>
+        </tr>
+        <tr className={css.rowAfter}>
+          <th>Income:</th>
+          <th style={{ color: colors[1] }}>{formatMoney(income)}</th>
+        </tr>
       </tbody>
     </table>
   );
