@@ -14,12 +14,12 @@ export const Layout = () => {
     <div className={css.layout}>
       <Header />
       {isMobile && (
-        <>
+        <div className={css.wrapperMobile}>
           <div className="container">
             <Navigation />
           </div>
           <Outlet />
-        </>
+        </div>
       )}
 
       {!isMobile && !isDesktop && (
