@@ -10,7 +10,6 @@ import { addThunk } from 'redux/transactions/operation';
 import 'flatpickr/dist/themes/material_green.css';
 import Flatpickr from 'react-flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
-import moment from 'moment';
 // import 'flatpickr/dist/flatpickr.css';
 // import 'flatpickr/dist/themes/airbnb.css';
 // import 'flatpickr/dist/themes/dark.css';
