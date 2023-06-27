@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { BiPencil } from 'react-icons/bi';
 
 export const TransactionDetails = styled.ul`
+  margin-top: 8px;
   border-radius: 10px;
   width: 100%;
   overflow: hidden;
@@ -41,13 +42,19 @@ export const SumText = styled.span`
 export const Table = styled.table`
   /* margin-top: 34px;
   margin-left: 37px; */
+
   display: block;
   width: 100%;
   height: 422px;
   overflow-y: auto;
 
   ${({ theme }) => theme.media.desktop} {
+    margin-top: 46px;
     width: 715px;
+  }
+
+  ${({ theme }) => theme.media.tablet} {
+    margin-top: 20px;
   }
 `;
 export const TableBody = styled.tbody`

@@ -15,10 +15,9 @@
     background:
         rgba(74, 86, 226, 0.1);
     margin: 0 auto;
-
+    margin-top: 24px;
 
 }
-
 
 .head {
     display: flex;
@@ -90,6 +89,7 @@
 
 @media screen and (min-width: 768px) {
     .currency {
+        margin-top: 0px;
         display: block;
         align-items: center;
         padding-bottom: 0;
