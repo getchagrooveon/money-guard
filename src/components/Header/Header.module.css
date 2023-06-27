@@ -29,12 +29,13 @@
 
 .headerLeft {
   display: flex;
+  justify-content: center;
   align-items: center;
   margin-left: auto;
 }
 
 .name {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .hiddenExit {
@@ -83,6 +84,9 @@
   }
 
   .logoText {
+    font-size: 18px;
+  }
+  .name {
     font-size: 18px;
   }
 
