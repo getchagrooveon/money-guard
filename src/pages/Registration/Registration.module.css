@@ -318,13 +318,11 @@
           rgb(22, 21, 61) 50%
         )
         repeat scroll 0% 0%;
-
+    width: 100vw;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* height: 100%; */
-    padding: 20px 0;
   }
 
   @media (min-device-pixel-ratio: 2),
