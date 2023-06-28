@@ -56,7 +56,7 @@ export default function Transactions() {
       <MediaQuery deviceName={'mobileAll'}>
         {!sortedTransactions.length && (
           <NoTransactions>
-            Please add transactions (click button &#8853; )
+            Please add transactions (click button &#10010; )
           </NoTransactions>
         )}
         {sortedTransactions.length > 0 && categories.length > 0
@@ -133,7 +133,7 @@ export default function Transactions() {
             </TableHead>
             {!sortedTransactions.length && (
               <NoTransactions>
-                Please add transactions (click button &#8853; )
+                Please add transactions (click button &#10010; )
               </NoTransactions>
             )}
             {sortedTransactions.length > 0 && categories.length > 0
