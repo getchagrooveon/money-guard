@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit/dist';
+import { toast } from 'react-toastify';
 import { refreshUser } from 'redux/auth/operations';
 import { selectToken } from 'redux/auth/selectors';
 import {
@@ -27,6 +28,9 @@ export const removeThunk = createAsyncThunk(
     try {
       const response = await removeTransaction(id);
       dispatch(refreshUser(token));
+      toast.success('Transaction deleted', {
+        position: 'bottom-right',
+      });
       return response;
     } catch {
       return rejectWithValue();
