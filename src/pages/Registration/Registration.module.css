@@ -1,8 +1,10 @@
 .container {
-  padding: 0 20px;
+  padding: 0;
 }
 .wrapper {
   background: radial-gradient(rgba(60, 40, 160, 1), rgba(68, 53, 110, 1));
+  margin: 0;
+  background-size: cover;
   height: 100vh;
 }
 
@@ -316,13 +318,11 @@
           rgb(22, 21, 61) 50%
         )
         repeat scroll 0% 0%;
-
+    width: 100vw;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    padding: 40px 0px 40px 0px;
   }
 
   @media (min-device-pixel-ratio: 2),
