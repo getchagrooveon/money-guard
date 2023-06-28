@@ -3,6 +3,8 @@
 }
 .wrapper {
   background: radial-gradient(rgba(60, 40, 160, 1), rgba(68, 53, 110, 1));
+  width: 100vh;
+  margin: 0;
 }
 .screen {
   text-align: center;
