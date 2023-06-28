@@ -3,6 +3,7 @@ import {
   selectCategories,
   selectTransactions,
 } from 'redux/transactions/selectors';
+import { ToastContainer } from 'react-toastify';
 import {
   TransactionDetails,
   TransactionDetailsItem,
@@ -160,6 +161,7 @@ export default function Transactions() {
           </TableBody>
         </Table>
       </MediaQuery>
+      <ToastContainer />
       <BtnAddTransaction />
     </>
   );
