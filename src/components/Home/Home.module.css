@@ -12,9 +12,3 @@
     height: calc(100vh - 309px);
   }
 }
-
-@media screen and (min-width: 1280px) {
-  .homeTab {
-    height: calc(100vh - px);
-  }
-}
