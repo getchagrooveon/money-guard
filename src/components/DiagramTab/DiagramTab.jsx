@@ -33,7 +33,7 @@ export default function DiagramTab() {
     .filter(e => e.total > 0);
 
   useEffect(() => {
-    dispatch(summaryThunk());
+    dispatch(summaryThunk(current));
   }, [dispatch]);
 
   return (
