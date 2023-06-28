@@ -11,13 +11,13 @@ import { IconLock } from 'components/Icons/IconLock';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+const validationSchema = Yup.object().shape({
+  email: Yup.string().email('Invalid e-mail').required('E-mail is required'),
+  password: Yup.string().required('Password is required'),
+});
+
 const LoginForm = () => {
   const dispatch = useDispatch();
-
-  const validationSchema = Yup.object().shape({
-    email: Yup.string().email('Invalid e-mail').required('E-mail is required'),
-    password: Yup.string().required('Password is required'),
-  });
 
   const formik = useFormik({
     initialValues: {
