@@ -149,7 +149,7 @@
 
 @media (min-width: 768px) {
   .wrapper {
-    height: 100%;
+    height: 100vh;
     background: url(../../img/tablet/golden-coins-background-left-tablet.png)
         left top,
       url(../../img/tablet/golden-coins-background-right-tablet.png) right,
