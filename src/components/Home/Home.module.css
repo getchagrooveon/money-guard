@@ -1,5 +1,6 @@
 .homeTab {
   padding-top: 12px;
+  height: calc(100vh - 119px);
 }
 
 @media screen and (min-width: 768px) {
@@ -8,6 +9,12 @@
   }
 
   .homeTab {
-    height: calc(100vh - 81px);
+    height: calc(100vh - 309px);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .homeTab {
+    height: calc(100vh - px);
   }
 }

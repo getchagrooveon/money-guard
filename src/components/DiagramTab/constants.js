@@ -77,8 +77,9 @@ export const customStyles = {
     return {
       ...provided,
       background:
-        'linear-gradient(0deg,rgba(83, 61, 186, 0.7) 0%,rgba(80, 48, 154, 0.7) 36%,rgba(106, 70, 165, 0.8) 61%,rgba(133, 93, 175, 0.66) 100%)',
+        'linear-gradient(0deg,rgba(83, 61, 186, 0.7) 0%,rgba(80, 48, 154, 0.9) 36%,rgba(106, 70, 165, 0.9) 61%,rgba(133, 93, 175, 0.9) 100%)',
       borderRadius: '8px',
+      blur: '5px',
     };
   },
   menuList: base => ({

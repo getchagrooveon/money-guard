@@ -6,16 +6,20 @@
   flex-direction: column;
   gap: 32px;
   margin: 0 auto;
+  height: 100vh;
 }
+
 .statistics {
   color: #fbfbfb;
   text-align: center;
   font: 400 30px 'Poppins', sans-serif;
   text-align: left;
 }
+
 .totalWrapper {
   position: relative;
 }
+
 .total {
   color: #fbfbfb;
   text-align: center;
@@ -26,12 +30,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .selectWrapper {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
   column-gap: 16px;
 }
+
 .select {
   width: 100%;
 }
@@ -42,23 +48,28 @@
     max-height: calc(100vh - 280px);
     flex-direction: row;
   }
+
   .selectWrapper {
     width: 336px;
     flex-direction: row;
   }
+
   .statistics {
     margin-top: -20px;
   }
 }
+
 @media screen and (min-width: 1280px) {
   .diagram {
     max-height: calc(100vh - 80px);
     padding-top: 97px;
     width: 768px;
   }
+
   .selectWrapper {
     width: 395px;
   }
+
   .statistics {
     margin-top: -65px;
   }

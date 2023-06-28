@@ -56,7 +56,7 @@ export const EditTransactions = () => {
       const updatedValues = {
         ...values,
         categoryId: values.type ? income.id : values.categoryId,
-        amount: values.type ? values.amount : 0 - values.amount,
+        amount: values.type ? Number(values.amount) : 0 - values.amount,
         type: values.type ? 'INCOME' : 'EXPENSE',
         id: initialValues.id,
         transactionDate,
@@ -130,6 +130,7 @@ export const EditTransactions = () => {
               defaultValue={options.find(e => e.value === categoryId)}
               styles={customStyles}
               options={options}
+              isDisabled={true}
               onChange={({ value }) => {
                 formik.setFieldValue('categoryId', value);
               }}
@@ -182,5 +183,3 @@ export const EditTransactions = () => {
   );
 };
 export default EditTransactions;
-
-
