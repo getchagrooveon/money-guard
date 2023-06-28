@@ -20,6 +20,7 @@ import {
   BtnEditTransaction,
   ButtonDelTransaction,
   StyledBiPencil,
+  NoTransactions,
 } from './Transactions.styled';
 import { formatMoney } from 'utils/formatMoney';
 import { MediaQuery } from 'components/MediaQuery/MediaQuery';
@@ -53,6 +54,11 @@ export default function Transactions() {
   return (
     <>
       <MediaQuery deviceName={'mobileAll'}>
+        {!sortedTransactions.length && (
+          <NoTransactions>
+            Please add transactions (click button &#10010; )
+          </NoTransactions>
+        )}
         {sortedTransactions.length > 0 && categories.length > 0
           ? sortedTransactions.map((el, i) => (
               <TransactionDetails
@@ -125,6 +131,11 @@ export default function Transactions() {
               <TableHeader></TableHeader>
               <TableHeader></TableHeader>
             </TableHead>
+            {!sortedTransactions.length && (
+              <NoTransactions>
+                Please add transactions (click button &#10010; )
+              </NoTransactions>
+            )}
             {sortedTransactions.length > 0 && categories.length > 0
               ? sortedTransactions.map((el, i) => (
                   <TableRow key={el.id}>
