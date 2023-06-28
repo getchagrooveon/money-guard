@@ -5,17 +5,14 @@ import { Navigate, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { refreshUser } from 'redux/auth/operations';
-import {
-  selectIsLoading,
-  selectIsLoggedIn,
-  selectToken,
-} from 'redux/auth/selectors';
+import { selectIsLoading, selectToken } from 'redux/auth/selectors';
 import { getCurrencyThunk } from 'redux/currency/operations';
 import Loader from './Loader/Loader';
 import { Suspense, lazy } from 'react';
 import { currencyQueryTime } from 'redux/currency/selectors';
 import Statistics from 'pages/Statistics/Statistics';
 import Home from './Home/Home';
+// import Dashboard from './Dashboard/Dashboard';
 
 const Registration = lazy(() => import('../pages/Registration/Registration'));
 const Login = lazy(() => import('../pages/Login/Login'));
@@ -26,12 +23,12 @@ export const App = () => {
   const token = useSelector(selectToken);
   const lastCurrencyQueryTime = useSelector(currencyQueryTime);
   const isLoading = useSelector(selectIsLoading);
+  const delay = 600000;
 
   useEffect(() => {
-    if (Date.now() - lastCurrencyQueryTime > 600000) {
-      return;
+    if (Date.now() - lastCurrencyQueryTime < delay) {
+      dispatch(getCurrencyThunk());
     }
-    dispatch(getCurrencyThunk());
   }, [dispatch, lastCurrencyQueryTime]);
 
   useEffect(() => {
