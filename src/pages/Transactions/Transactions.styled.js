@@ -197,3 +197,13 @@ export const StyledBiPencil = styled(BiPencil)`
   height: 14px;
   fill: rgba(255, 255, 255, 0.6);
 `;
+export const NoTransactions = styled.div`
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
+  font-size: 16px;
+  color: #fbfbfb;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  max-width: 200px;
+  margin: 0 auto;
+`;
