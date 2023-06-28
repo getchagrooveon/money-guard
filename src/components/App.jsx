@@ -5,7 +5,11 @@ import { Navigate, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { refreshUser } from 'redux/auth/operations';
-import { selectToken } from 'redux/auth/selectors';
+import {
+  selectIsLoading,
+  selectIsLoggedIn,
+  selectToken,
+} from 'redux/auth/selectors';
 import { getCurrencyThunk } from 'redux/currency/operations';
 import Loader from './Loader/Loader';
 import { Suspense, lazy } from 'react';
@@ -21,6 +25,7 @@ export const App = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const lastCurrencyQueryTime = useSelector(currencyQueryTime);
+  const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
     if (Date.now() - lastCurrencyQueryTime > 600000) {
@@ -37,7 +42,7 @@ export const App = () => {
 
   return (
     <>
-      <div>
+      {!isLoading ? (
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<PublicRoutes />}>
@@ -52,7 +57,9 @@ export const App = () => {
             <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
         </Suspense>
-      </div>
+      ) : (
+        <Loader />
+      )}
     </>
   );
 };

@@ -1,10 +1,18 @@
-.loader {
-    
-}
 .backdrop {
-display: flex;
-justify-content: center;
-align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 100vh;
+    background: radial-gradient(at 18% 99%,
+            rgba(71, 30, 132, 1) 0px,
+            transparent 50%) repeat scroll 0% 0%,
+        radial-gradient(at 97% 8%, rgba(22, 21, 37, 1) 0px, transparent 50%) repeat scroll 0% 0%,
+        radial-gradient(at 55% 89%, rgba(19, 18, 23, 1) 0px, transparent 60%) repeat scroll 0% 0%,
+        radial-gradient(at 86% 40%, rgba(19, 18, 23, 1) 0px, transparent 50%) repeat scroll 0% 0%,
+        radial-gradient(at 42% 20%, rgba(69, 33, 99, 1) 0px, transparent 60%) repeat scroll 0% 0%,
+        radial-gradient(at 78% 82%, rgb(83, 54, 163) 0px, transparent 50%) repeat scroll 0% 0%,
+        rgba(56, 36, 97, 1) radial-gradient(at 57% 33%,
+            rgba(60, 35, 121, 1) 0px,
+            rgba(60, 39, 116, 1) 10%) repeat scroll 0% 0%;
 }
