@@ -1,4 +1,3 @@
-import React from 'react';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
@@ -8,8 +7,6 @@ import { LogoSVG } from 'components/Icons/LogoSVG';
 import css from './Login.module.css';
 import { IconEmail } from 'components/Icons/IconEmail';
 import { IconLock } from 'components/Icons/IconLock';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email('Invalid e-mail').required('E-mail is required'),
@@ -32,7 +29,6 @@ const LoginForm = () => {
 
   return (
     <section className={css.wrapper}>
-      <ToastContainer />
       <div className={css.container}>
         <div className={css.screen}>
           <NavLink to="/" className={css.logo}>

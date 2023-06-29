@@ -16,15 +16,16 @@ import { colors, current, customStyles, months, years } from './constants';
 
 export default function DiagramTab() {
   const dispatch = useDispatch();
-  const categories = useSelector(selectCategories).filter(
-    e => e.type === 'EXPENSE'
-  );
+
+  const categories = useSelector(selectCategories);
+
   const sum = useSelector(selectCategoriesSummary).filter(
     e => e.type === 'EXPENSE'
   );
   const totalExpenses = 0 - useSelector(selectExpenseSummary);
   const totalIncome = useSelector(selectIncomeSummary);
   const sumData = categories
+    .filter(e => e.type === 'EXPENSE')
     .map((c, i) => ({
       color: colors[i],
       name: c.name,

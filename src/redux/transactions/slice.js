@@ -21,7 +21,6 @@ const initialState = {
 };
 const handleRejected = (state, { payload }) => {
   state.isLoading = false;
-  console.log('Error occurred:', payload);
 };
 const handleAllTransactions = (state, { payload }) => {
   state.transactions = payload;
@@ -31,7 +30,6 @@ const handlePending = state => {
   state.isLoading = true;
 };
 const handleAdd = (state, { payload }) => {
-  console.log('add:', payload);
   state.transactions.push(payload);
   state.isLoading = false;
 };

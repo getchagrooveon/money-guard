@@ -198,6 +198,7 @@ export const StyledBiPencil = styled(BiPencil)`
   fill: rgba(255, 255, 255, 0.6);
 `;
 export const NoTransactions = styled.div`
+  display: block;
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   font-size: 16px;
   color: #fbfbfb;
