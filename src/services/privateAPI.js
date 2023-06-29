@@ -1,4 +1,7 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import { refreshUser } from 'redux/auth/operations';
+import { selectToken } from 'redux/auth/selectors';
 import {
   closeAddModal,
   closeEditModal,
@@ -48,13 +51,22 @@ export const getTransactions = async () => {
 };
 
 export const addTransaction = async (body, { dispatch }) => {
-  const { data } = await privateAPI.post('api/transactions', body);
-  dispatch(closeAddModal());
-  return data;
+  try {
+    const { data } = await privateAPI.post('api/transactions', body);
+    toast.success('Transaction added');
+    dispatch(closeAddModal());
+    return data;
+  } catch (error) {
+    error.response.data?.message.map(e => toast.error(e));
+    throw error;
+  }
 };
 
-export const removeTransaction = async id => {
+export const removeTransaction = async (id, { dispatch, getState }) => {
+  const token = selectToken(getState());
+  dispatch(refreshUser(token));
   await privateAPI.delete(`api/transactions/${id}`);
+  toast.success('Transaction removed');
   return id;
 };
 
@@ -62,10 +74,16 @@ export const editTransaction = async (
   { id, transactionDate, type, categoryId, comment, amount },
   { dispatch }
 ) => {
-  const body = { transactionDate, type, categoryId, comment, amount };
-  const { data } = await privateAPI.patch(`api/transactions/${id}`, body);
-  dispatch(closeEditModal());
-  return data;
+  try {
+    const body = { transactionDate, type, categoryId, comment, amount };
+    const { data } = await privateAPI.patch(`api/transactions/${id}`, body);
+    toast.success('Transaction changed');
+    dispatch(closeEditModal());
+    return data;
+  } catch (error) {
+    error.response.data?.message.map(e => toast.error(e));
+    throw error;
+  }
 };
 
 export const getCategories = async () => {

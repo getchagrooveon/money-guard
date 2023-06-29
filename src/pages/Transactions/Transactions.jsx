@@ -3,7 +3,6 @@ import {
   selectCategories,
   selectTransactions,
 } from 'redux/transactions/selectors';
-import { ToastContainer } from 'react-toastify';
 import {
   TransactionDetails,
   TransactionDetailsItem,
@@ -120,6 +119,11 @@ export default function Transactions() {
           : ''}
       </MediaQuery>
       <MediaQuery deviceName={'tabletFrom'}>
+        {!sortedTransactions.length && (
+          <NoTransactions>
+            Please add transactions (click button &#10010; )
+          </NoTransactions>
+        )}
         <Table>
           <TableBody>
             <TableHead>
@@ -131,11 +135,6 @@ export default function Transactions() {
               <TableHeader></TableHeader>
               <TableHeader></TableHeader>
             </TableHead>
-            {!sortedTransactions.length && (
-              <NoTransactions>
-                Please add transactions (click button &#10010; )
-              </NoTransactions>
-            )}
             {sortedTransactions.length > 0 && categories.length > 0
               ? sortedTransactions.map((el, i) => (
                   <TableRow key={el.id}>
@@ -172,7 +171,6 @@ export default function Transactions() {
           </TableBody>
         </Table>
       </MediaQuery>
-      <ToastContainer />
       <BtnAddTransaction />
     </>
   );

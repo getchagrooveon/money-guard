@@ -1,7 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit/dist';
-import { toast } from 'react-toastify';
-import { refreshUser } from 'redux/auth/operations';
-import { selectToken } from 'redux/auth/selectors';
 import {
   addTransaction,
   editTransaction,
@@ -23,19 +20,7 @@ export const updateThunk = createAsyncThunk(
 
 export const removeThunk = createAsyncThunk(
   'transactions/remove',
-  async (id, { rejectWithValue, dispatch, getState }) => {
-    const token = selectToken(getState());
-    try {
-      const response = await removeTransaction(id);
-      dispatch(refreshUser(token));
-      toast.success('Transaction deleted', {
-        position: 'bottom-right',
-      });
-      return response;
-    } catch {
-      return rejectWithValue();
-    }
-  }
+  removeTransaction
 );
 
 export const addThunk = createAsyncThunk('transactions/add', addTransaction);

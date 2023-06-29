@@ -9,8 +9,6 @@ import { IconUser } from 'components/Icons/IconUser';
 import { IconLock } from 'components/Icons/IconLock';
 import { IconEmail } from 'components/Icons/IconEmail';
 import PasswordStrengthIndicator from 'components/PasswordStrengthIndicator/PasswordStrengthIndicator';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const validationSchema = Yup.object({
   username: Yup.string().required('Please enter your name'),
@@ -47,7 +45,6 @@ const Registration = () => {
 
   return (
     <section className={css.wrapper}>
-      <ToastContainer />
       <div className={css.container}>
         <div className={css.screen}>
           <div className={css.screen__content}>
