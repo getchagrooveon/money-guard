@@ -39,6 +39,7 @@ export const App = () => {
 
   return (
     <>
+      <Route path="/" element={<Navigate to="/home" />} />
       {!isLoading ? (
         <Suspense fallback={<Loader />}>
           <Routes>
